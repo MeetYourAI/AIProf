@@ -31,13 +31,6 @@ AiProf - Unleash the Power of Artificial Intelligence
 
 Welcome to AiProf, your gateway to exploring and harnessing the capabilities of artificial intelligence. Our platform brings you a world of cutting-edge AI functions and services that cater to a wide range of applications. Whether you're a developer, a data scientist, or simply curious about AI, AiProf offers you a diverse array of tools to supercharge your projects.
 
-Key Features:
-- Discover Advanced AI Functions: Dive into a collection of sophisticated AI functions that cover natural language processing, computer vision, predictive analytics, and more.
-- Seamlessly Integrate APIs: Access and integrate third-party APIs to extend the functionality of your applications.
-- Accessible Paywall Features: Unlock premium AI functions through a secure and user-friendly payment system. Choose from a variety of convenient payment methods.
-- Personalized User Experience: Create an account and tailor your AI experience with personalized preferences and saved settings.
-- Developer-Friendly Documentation: Leverage our comprehensive documentation to seamlessly integrate AiProf's AI functions into your projects.
-
 Why AiProf?
 At AiProf, we're committed to democratizing artificial intelligence. Our platform empowers individuals, businesses, and researchers to tap into the potential of AI without barriers. Whether you're a seasoned AI professional or a newcomer to the field, AiProf is designed to enhance your capabilities, facilitate innovation, and drive your projects forward.
 
@@ -64,7 +57,10 @@ Let AiProf redefine your AI experience and unlock new horizons of possibilities!
 ### Key Features <a name="key-features"></a>
 - **Learning Platform**
 - **Virtual learning assistance**
-- **Assesment Platform**
+- **Assessment Platform**
+- Seamlessly Integrate APIs
+- Personalized User Experience
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -126,7 +122,7 @@ You can deploy this project using:
  **Ibrahim ibu**
 - GitHub: [@githubhandle](https://github.com/ibugithub)
 - Twitter: [@twitterhandle](https://twitter.com/mdibrahimibuu)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/ibuu)
+- LinkedIn [LinkedIn](https://linkedin.com/in/ibuu)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
