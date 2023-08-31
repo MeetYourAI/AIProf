@@ -29,7 +29,7 @@ const Footer = () => {
                   />
                 </Link>
                 <p className="mb-9 text-base font-medium leading-relaxed text-body-color">
-                  With AiProf, we're on a mission to transform education through AI-driven learning.
+                  With AiProf, we are on a mission to transform education through AI-driven learning.
                 </p>
                 <div className="flex items-center">
                   <a
