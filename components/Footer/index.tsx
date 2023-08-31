@@ -14,23 +14,22 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src="/images/logo/logo.jpg"
+                    src="/images/logo/logo.svg"
                     alt="logo"
-                    className="w-1/4 dark:hidden"
+                    className="w-2/6 dark:hidden"
                     width={140}
                     height={30}
                   />
                   <Image
-                    src="/images/logo/logo.jpg"
+                    src="/images/logo/logo.svg"
                     alt="logo"
-                    className="hidden w-1/4 dark:block"
+                    className="hidden w-2/6 dark:block"
                     width={140}
                     height={30}
                   />
                 </Link>
                 <p className="mb-9 text-base font-medium leading-relaxed text-body-color">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                  With AiProf, we're on a mission to transform education through AI-driven learning.
                 </p>
                 <div className="flex items-center">
                   <a

@@ -54,18 +54,18 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/logo.jpg"
+                  src="/images/logo/logo.svg"
                   alt="logo"
                   width={140}
                   height={30}
-                  className="w-2/5 dark:hidden"
+                  className="w-1/6 dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.jpg"
+                  src="/images/logo/logo.svg"
                   alt="logo"
                   width={140}
-                  height={30}
-                  className="hidden w-2/5 dark:block"
+                  height={20}
+                  className="hidden w-2/3 dark:block"
                 />
               </Link>
             </div>
@@ -163,7 +163,7 @@ const Header = () => {
                   Sign Up
                 </Link>
                 <div>
-                  <ThemeToggler />
+                  {/* <ThemeToggler /> */}
                 </div>
               </div>
             </div>
