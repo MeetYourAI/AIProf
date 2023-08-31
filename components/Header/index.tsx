@@ -163,7 +163,7 @@ const Header = () => {
                   Sign Up
                 </Link>
                 <div>
-                  <ThemeToggler />
+                  {/* <ThemeToggler /> */}
                 </div>
               </div>
             </div>
