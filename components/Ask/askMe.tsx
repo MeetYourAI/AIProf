@@ -2,12 +2,10 @@
 import React, { useState} from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import LoadingDots from './loadingAnimation';
 
 const AskMe = () => {
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState('');
-  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
  
   const handleAsk = async () => {
@@ -20,7 +18,7 @@ const AskMe = () => {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'X-RapidAPI-Key': '3e23859a70msh24ff10192c00a8dp1962edjsn2a9fc0364514',
+          'X-RapidAPI-Key': '12865b262bmsh1df342a7a8209adp11946djsned15b0207e45',
           'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
         },
         body: JSON.stringify({
