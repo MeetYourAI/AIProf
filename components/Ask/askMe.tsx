@@ -1,11 +1,19 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
+import Image from 'next/image';
+import LoadingDots from './loadingAnimation';
 
 const AskMe = () => {
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState('');
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+ 
   const handleAsk = async () => {
+    setQuestion('')
+    setResponse('Response is coming....')
+    setIsLoading(true)
     try {
       const url = 'https://open-ai21.p.rapidapi.com/conversationgpt';
       const options = {
@@ -33,23 +41,65 @@ const AskMe = () => {
           data: options.body
         })
         .then((response) => {
-          console.log('the response.GPT is', response.data.GPT);
-          console.log('the type of response.GPT is', typeof (response.data.GPT));
           const regex = /\\n/g;
           const ans = response.data.GPT.replace(regex, '<br>');
-          console.log('the ANS IS', ans);
           setResponse(ans);
+          setIsLoading(false)
         })
         .catch((error) => {
           console.error(error);
+          setIsLoading(false)
+          setResponse('Something went wrong. Please try again')
         });
     } catch (error) {
       console.error(error);
+      setIsLoading(false)
+      setResponse('Something went wrong. Please try again')
     }
-
-    // setResponse("**Whispers of the Wind**\n\nIn a world where chaos reigns,\nAmidst the trials and storms that drain,\nThere lies a gentle whisper of the wind,\nA tranquil melody on which we transcend.\n\nThrough forests dense and rivers wide,\nThe wind carries secrets unspoken, untied,\nIt weaves through valleys and mountain peaks,\nA soothing touch that brings solace, it seeks.\n\nIn whispered verses, stories are told,\nOf far-off lands, of legends of old,\nEach gust carries the echoes of time,\nA symphony of whispers, both gentle and sublime.\n\nIt dances through meadows, fields so green,\nCaressing the flowers, painting a serene scene,\nThe wind's gentle touch, a tender embrace,\nAs it carries the fragrance of nature's grace.\n\nIt whispers to the leaves as they sway,\nSharing secrets of night and day,\nIt sings to the birds as they take flight,\nGuiding them through the darkness of the night.\n\nFrom ocean waves crashing against shore,\nTo sandy dunes standing tall and more,\nThe wind whispers of journeys yet to be,\nInstilling in us a sense of wanderlust, wild and free.\n\nIt carries our dreams to distant lands,\nFilling our hearts with hopes and plans,\nIn its gentle whispers, we find solace,\nA reminder that even in chaos, there is a place.\n\nSo pause for a moment and listen well,\nTo the whispers of the wind's ancient spell,\nLet it transport you to a world unseen,\nWhere dreams flourish and hearts convene.");
   };
 
+  // const handleAsk = () => {
+  //   try {
+  //     setQuestion('')
+  //     setResponse('Response is coming....')
+  //     setIsLoading(true)
+  //     const encodedParams = new URLSearchParams();
+  //     const ques = question 
+  //     encodedParams.set('in', ques);
+  //     encodedParams.set('op', 'in');
+  //     encodedParams.set('cbot', '1');
+  //     encodedParams.set('SessionID', 'RapidAPI1');
+  //     encodedParams.set('cbid', '1');
+  //     encodedParams.set('key', 'RHMN5hnQ4wTYZBGCF3dfxzypt68rVP');
+  //     encodedParams.set('ChatSource', 'RapidAPI');
+  //     encodedParams.set('duration', '1');
+  
+  //     const options = {
+  //       method: 'POST',
+  //       url: 'https://robomatic-ai.p.rapidapi.com/api',
+  //       headers: {
+  //         'content-type': 'application/x-www-form-urlencoded',
+  //         'X-RapidAPI-Key': '3e23859a70msh24ff10192c00a8dp1962edjsn2a9fc0364514',
+  //         'X-RapidAPI-Host': 'robomatic-ai.p.rapidapi.com'
+  //       },
+  //       data: encodedParams,
+  //     };
+  
+  //     axios
+  //       .request(options)
+  //       .then((response) => {
+  //         setResponse(response.data.out);
+  //         setIsLoading(false)
+  //       })
+  //       .catch((error) => {
+  //         setResponse('Sorry some went wrong. Please try again')
+  //         setIsLoading(false)
+  //       });
+  
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }   
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -62,17 +112,19 @@ const AskMe = () => {
           onChange={(e) => setQuestion(e.target.value)}
         />
         <button
-          className="px-4 py-2  rounded-md hover:bg-blue-600 focus:outline-none"
+          className="px-4 py-2  rounded-md hover:bg-blue-600 focus:outline-none"   
           onClick={handleAsk}
           style={{
             background: 'radial-gradient(#01471e, #000000)',
           }}
+          disabled={isLoading}
         >
-          Ask
+          {isLoading ? <Image src={"/images/loading2.svg"} width={110} height={20} alt='this is a loading animation' /> : "Ask"}
+          
         </button>
       </div>
-      <div style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: response }} />
-
+      {response && <div className='mt-6' style={{ color: 'black' }} dangerouslySetInnerHTML={{ __html: response }} />}
+      
     </div>
   );
 };
