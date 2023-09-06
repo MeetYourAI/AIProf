@@ -10,9 +10,8 @@
   
 
 
+// When to deploying on the github pages.
 module.exports = {
-
-  output: {
-    export: true,
-  },
+  output: 'export',
 };
+
