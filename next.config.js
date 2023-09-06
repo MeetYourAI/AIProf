@@ -13,5 +13,8 @@
 // When to deploying on the github pages.
 module.exports = {
   output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/AiProf' : '',
 };
+
+
 
