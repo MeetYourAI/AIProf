@@ -14,6 +14,7 @@
 module.exports = {
   output: 'export',
   basePath: '/AiProf',
+  appDir: true,
 };
 
 
