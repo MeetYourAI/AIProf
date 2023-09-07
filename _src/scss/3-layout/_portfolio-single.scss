@@ -1,0 +1,156 @@
+.portfolio-single {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  .featured-area {
+    margin-bottom: 3rem;
+  }
+
+  .project-featured-img {
+    max-height: 450px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    .featured-img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: cover;
+    }
+  }
+
+  .info-area {
+    margin: 1rem 0;
+    position: sticky;
+    top: 120px;
+
+    .project-info {
+      padding: 1rem 0;
+
+      @include screen-lg {
+        margin-bottom: 0;
+      }
+
+      .info {
+        position: relative;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba($clr-main-rgb, 0.5);
+        border-top: 0.25rem solid rgba($clr-main-rgb, 1);
+        border-bottom-#{$start-direction}-radius: 0.25rem;
+        border-bottom-#{$end-direction}-radius: 0.25rem;
+        padding: 2rem 1rem;
+
+        .title {
+          display: inline-block;
+          font-size: 1rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          color: $clr-main;
+          margin-bottom: 0.75rem;
+        }
+
+        .detail {
+          display: inline-block;
+          font-size: 1.25rem;
+          font-weight: 400;
+          text-transform: capitalize;
+          margin-bottom: 0;
+          line-height: 1;
+        }
+
+        .icon {
+          position: absolute;
+          font-size: 2.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          #{$end-direction}: 1.25rem;
+          color: rgba($clr-main-rgb, 0.35);
+          z-index: -1;
+        }
+        .sc-flat {
+          display: flex;
+          .sc-item {
+            font-size: 1rem;
+
+            .sc-icon {
+              color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main-area {
+    .sub-heading {
+      text-transform: capitalize;
+
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-text {
+      position: relative;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      opacity: 0.75;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      padding-#{$start-direction}: 0;
+      margin-bottom: 2rem;
+
+      .list-item {
+        padding: 0.5rem 1.5rem;
+        padding-#{$start-direction}: 0;
+        position: relative;
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: 1rem;
+        opacity: 0.85;
+        display: flex;
+        align-items: baseline;
+
+        .icon {
+          color: $clr-main;
+          margin-#{$end-direction}: 0.5rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .project-video {
+      min-height: 450px;
+      position: relative;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      padding: 8rem 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include screen-md {
+        padding: 6rem 0;
+        min-height: 300px;
+      }
+    }
+
+    .result-img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

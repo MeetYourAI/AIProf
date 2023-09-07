@@ -1,0 +1,121 @@
+.err-404 {
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  padding: 120px 0;
+  background-color: $clr-dark-blue;
+
+  @include screen-md {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  @media (max-height: 600px) {
+    height: auto;
+  }
+
+  .img-wrapper {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    .img-404 {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      display: inline-block;
+      margin-top: -6rem;
+    }
+  }
+
+  .err-title {
+    font-size: 15rem;
+    font-weight: 800;
+
+    line-height: 1;
+    margin-bottom: 0;
+    color: $clr-white;
+
+    @include screen-md {
+      font-size: 6rem;
+    }
+  }
+
+  .err-subtitle {
+    color: $clr-grey;
+    font-size: 4rem;
+
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @include screen-md {
+      font-size: 2rem;
+    }
+  }
+
+  .err-text {
+    color: $clr-grey;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+
+    @include screen-md {
+      font-size: 1rem;
+    }
+  }
+
+  .search-form {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 2rem;
+  }
+
+  .search-input {
+    border: 2px solid rgba($clr-white-rgb, 0.5);
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    color: $clr-main;
+    -webkit-appearance: none;
+    width: 100%;
+    @include ma-transition();
+
+    &:focus {
+      border-color: rgba($clr-white-rgb, 1);
+    }
+  }
+
+  .search-btn {
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    background: $clr-main;
+    #{$end-direction}: 0rem;
+    top: 50%;
+    transform: translateY(-50%);
+    //using long border radius values to make it correct at rtl pages
+    border-top-#{$start-direction}-radius: 0;
+    border-top-#{$end-direction}-radius: 2rem;
+    border-bottom-#{$end-direction}-radius: 2rem;
+    border-bottom-#{$start-direction}-radius: 0;
+    @include ma-transition;
+    cursor: pointer;
+
+    .icon {
+      color: $clr-white;
+      @include ma-transition;
+    }
+
+    &:hover {
+      background: $clr-white;
+
+      .icon {
+        color: $clr-main;
+      }
+    }
+  }
+}

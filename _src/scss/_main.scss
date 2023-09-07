@@ -1,0 +1,105 @@
+/*===================================================
+Project: SmartLet Property Management
+Inspired by AminThemes
+====================================================*/
+
+/*==
+- global-rules and helper classes
+- page-header
+- page-hero 
+- services
+- about 
+- portfolio 
+- portfolio-single  
+- our-team 
+- our-clients 
+- faq 
+- testimonials 
+- contact-us 
+- take-action 
+- page-footer 
+- blog
+- 404 Page
+- pricing
+- stats
+- Dark Theme Rules
+===*/
+
+/* start global, helper classes , Components Rules*/
+@import "1-helpers/_variables";
+@import "1-helpers/_mixins";
+@import "1-helpers/_globals";
+@import "1-helpers/_custom-animations";
+
+@import "2-components/_buttons";
+@import "2-components/_breadcrumb";
+@import "2-components/_forms";
+@import "2-components/_loading-screen";
+@import "2-components/_header-search-box";
+/*ُEnd global, helper classes , components Rules*/
+
+/* Start .page-header Rules   */
+@import "3-layout/_page-header";
+/*
+ End .page-header Rules    
+*/
+
+/*   Start .page-hero Rules   */
+@import "3-layout/_page-hero";
+/*   End .page-hero Rules   */
+
+/*    Start .services Section Rules    */
+@import "3-layout/_services";
+/*    End .services Section Rules   */
+
+/*   Start about Section   */
+@import "3-layout/_about";
+/*   End about Section    */
+
+/*    Start portfolio Section  */
+@import "3-layout/_portfolio";
+/*    End portfolio Section  */
+
+/*   Start our-team Section   */
+@import "3-layout/_our-team";
+/*   End our-team Section   */
+
+/*   Start our-clients Section   */
+@import "3-layout/_our-clients";
+/*   End our-clients Section   */
+
+/*   Start faq Section   */
+@import "3-layout/_faq";
+/*   End faq Section  */
+
+/*   Start testimonials Section   */
+@import "3-layout/_testimonials";
+/*   End testimonials Section   */
+
+/*    Start contact-us Section  */
+@import "3-layout/_contact-us";
+/*    End contact-us Section  */
+
+/*   Start take-action Section   */
+@import "3-layout/_take-action";
+/*   End take-action Section   */
+
+/*    Start page-footer Section  */
+@import "3-layout/_page-footer";
+/*    End page-footer Section  */
+
+/*    Start blog Page  */
+@import "3-layout/_blog";
+/*    End blog Page  */
+
+/*   Start pricing Section  */
+@import "3-layout/_pricing";
+/*    End pricing Section  */
+
+/*   Start stats section Rules  */
+@import "3-layout/_stats";
+/*  End  stats section Rules    */
+
+/*    Start dark theme rules  */
+@import "1-helpers/_dark-theme";
+/*    End dark theme rules  */

@@ -1,0 +1,145 @@
+.signing-page {
+  min-height: 100vh;
+}
+
+.sining-area {
+  border-radius: 0.5rem;
+  padding: 2rem;
+
+  @include screen-md {
+    width: 75%;
+  }
+
+  @include screen-sm {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}
+
+.keep-me-logged-in {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .check-input {
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid $clr-main;
+    outline: none;
+    cursor: pointer;
+
+    &:checked ~ .icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    #{$start-direction}: -3px;
+    top: -3px;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: $clr-main;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    @include ma-transition;
+  }
+
+  .lbl {
+    position: static !important;
+    margin: 0;
+    padding: 0;
+    margin-#{$start-direction}: 0.5rem;
+    text-transform: capitalize;
+    opacity: 0.75;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+}
+
+.submit-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  button[type="submit"] {
+    flex-shrink: 0;
+    margin-#{$end-direction}: 2rem;
+  }
+}
+
+.sign-here {
+  padding: 0.5rem 0;
+
+  .sign-hint {
+    text-transform: capitalize;
+    opacity: 0.75;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sign-link {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: $clr-main;
+    margin-#{$start-direction}: 5px;
+  }
+}
+
+.notices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .reset-link {
+    text-decoration: none;
+    text-transform: capitalize;
+    opacity: 0.75;
+  }
+}
+
+.agree-terms {
+  .disclaimer {
+    text-transform: capitalize;
+    color: $clr-dark-grey;
+    font-size: 0.85rem;
+
+    .rules-link {
+      text-transform: capitalize;
+      color: $clr-main;
+      text-decoration: none;
+      margin: 0 5px;
+      display: inline-block;
+    }
+  }
+}
+
+.form-headding-hint {
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+  background-color: $clr-main;
+
+  .hint-text {
+    text-transform: capitalize;
+    font-weight: 500;
+    margin: 0;
+    color: $clr-white;
+
+    &::selection {
+      background-color: $clr-white;
+      color: $clr-main;
+    }
+  }
+}
+
+.lost-password-page {
+  .input-wrapper {
+    margin-bottom: 1.5rem;
+  }
+}

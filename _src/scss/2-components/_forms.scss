@@ -1,0 +1,397 @@
+.req {
+  color: $clr-danger;
+}
+
+.not-req {
+  display: none;
+}
+
+/* conatct forms rules */
+.custom-form-area {
+  position: relative;
+  %label-rules {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    position: absolute;
+    #{$start-direction}: 0;
+    top: 0px;
+    @include ma-transition(all, 0.3s);
+  }
+
+  %label-correct-position-while-the-input-has-text {
+    top: -30px;
+    color: $clr-main;
+  }
+
+  .error-msg {
+    position: absolute;
+    #{$end-direction}: 1rem;
+    top: 0;
+    transform: translateY(50%);
+    font-size: 0.85rem;
+    color: $clr-danger;
+    display: none;
+  }
+
+  .done-msg {
+    position: absolute;
+    #{$end-direction}: 1rem;
+    bottom: 0;
+    font-size: 1rem;
+    background-color: $clr-success;
+    color: $clr-white;
+    padding: 0.5rem 0;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    z-index: 11111111;
+    @include ma-transition();
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .input-wrapper {
+    position: relative;
+    margin-bottom: 3rem;
+
+    .input-icon {
+      position: absolute;
+      #{$start-direction}: auto;
+      #{$end-direction}: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.75rem;
+      pointer-events: none;
+    }
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="password"],
+  input[type="url"],
+  input[type="search"],
+  input[type="number"],
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    outline: none;
+    border: 1px solid rgba($clr-dark-blue-rgb, 0.25);
+    background: $clr-white;
+    margin-bottom: 1rem;
+    @include ma-transition(all, 0.3s);
+
+    &:focus {
+      & ~ .input-label {
+        @extend %label-correct-position-while-the-input-has-text;
+      }
+    }
+
+    [type="submit"] {
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+
+  select {
+    appearance: none;
+    text-transform: capitalize;
+  }
+
+  textarea {
+    min-height: 10rem;
+  }
+
+  input[type="submit"] {
+    outline: none;
+    border: none;
+  }
+
+  &.input-under-lined {
+    .input-wrapper {
+      &.has-text {
+        .input-label {
+          @extend %label-correct-position-while-the-input-has-text;
+          top: -25px;
+        }
+
+        .b-border {
+          transform: scaleX(1);
+        }
+      }
+
+      .b-border {
+        display: block;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: center;
+        height: 2px;
+        background: $clr-main;
+        position: absolute;
+        bottom: 0;
+        #{$start-direction}: 0;
+        z-index: 1;
+        @include ma-transition(all, 0.3s);
+      }
+    }
+
+    .input-label {
+      @extend %label-rules;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="search"],
+    input[type="number"],
+    textarea {
+      padding: 0.5rem 0;
+      border: none;
+      border-bottom: 1px solid rgba($clr-main-rgb, 0.35);
+
+      &:focus {
+        & ~ .b-border {
+          transform: scaleX(1);
+        }
+
+        & ~ .input-label {
+          @extend %label-correct-position-while-the-input-has-text;
+          top: -25px;
+        }
+      }
+    }
+  }
+
+  &.input-boxed {
+    padding-top: 30px;
+
+    .input-wrapper {
+      &.has-text {
+        .input-label {
+          @extend %label-correct-position-while-the-input-has-text;
+        }
+      }
+    }
+
+    .input-label {
+      @extend %label-rules;
+      top: -30px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="search"],
+    input[type="number"],
+    textarea {
+      &:focus {
+        border-color: rgba($clr-main-rgb, 1);
+
+        & ~ .input-label {
+          @extend %label-correct-position-while-the-input-has-text;
+        }
+      }
+    }
+  }
+}
+
+/* mailchimp forms rules*/
+
+.mailchimp-form {
+  label,
+  .input-label {
+    margin-bottom: 0;
+    color: $clr-grey;
+  }
+
+  input:not([type="submit"]) {
+    color: $clr-white !important;
+  }
+
+  .mc-form-area {
+    position: relative;
+  }
+}
+.field-group {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  margin-bottom: 1rem;
+
+  input[type="email"],
+  input[type="text"] {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    outline: none !important;
+    border: none;
+    color: $clr-white;
+    background: rgba($clr-white-rgb, 0.35);
+    backdrop-filter: blur(4px);
+    margin-bottom: 0;
+
+    &::-webkit-input-placeholder {
+      color: $clr-white;
+    }
+  }
+}
+.one-field-form {
+  margin-bottom: 2rem;
+  .field-group {
+    margin-bottom: 0;
+  }
+  .email-label {
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    color: $clr-white;
+  }
+  input[type="email"] {
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+  }
+
+  .cta-area {
+    position: absolute;
+    bottom: 0;
+    // #{$end-direction}: 0;
+    right: 0;
+    // #{$start-direction}: auto;
+    left: auto;
+
+    .subscribe-btn {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+      min-height: 100%;
+      padding: 0.75rem;
+      border: none;
+
+      &:hover {
+        background-color: $clr-main;
+        border-color: $clr-main;
+        color: $clr-white;
+      }
+    }
+  }
+
+  .email-notice {
+    color: $clr-white;
+    opacity: 0.5;
+    font-weight: 100;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+}
+
+.three-field-form {
+  padding: 2rem 1rem;
+  background: $clr-white;
+
+  .form-heading {
+    margin-bottom: 2rem;
+    color: $clr-semi-dark-blue;
+    border-bottom: 2px solid $clr-main;
+    padding-bottom: 0.75rem;
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .highlight {
+    color: $clr-main;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  label,
+  .input-label {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    color: $clr-semi-dark-blue;
+    font-weight: 600;
+  }
+
+  input:not([type="submit"]) {
+    border: 1px solid rgba($clr-main-rgb, 0.5);
+    color: $clr-semi-dark-blue !important;
+    padding: 0.5rem 1rem !important;
+
+    &:hover,
+    &:focus {
+      border: 1px solid rgba($clr-main-rgb, 1);
+    }
+  }
+
+  .cta-area {
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+
+  &.has-dark-bg {
+    background-color: $clr-dark-blue;
+
+    .form-heading {
+      color: $clr-white;
+    }
+
+    label,
+    .input-label {
+      color: $clr-white;
+    }
+
+    input:not([type="submit"]) {
+      color: $clr-white !important;
+      background-color: $clr-semi-dark-blue !important;
+    }
+  }
+}
+
+/*mailchimp alerts*/
+.mailchimp-alerts {
+  position: absolute;
+  bottom: 0;
+  #{$start-direction}: 0;
+  z-index: -1;
+  @include ma-transition;
+
+  &.show-message {
+    bottom: 0;
+    top: auto;
+    transform: translateY(120%);
+    z-index: -1;
+  }
+
+  .mc-msg {
+    color: $clr-white;
+
+    &.active {
+      padding: 0.5rem 0.75rem;
+    }
+  }
+
+  .mc-submitting {
+    background-color: rgba($clr-warning-rgb, 0.5);
+  }
+
+  .mc-success {
+    background-color: rgba($clr-success-rgb, 0.5);
+  }
+
+  .mc-error {
+    background-color: rgba($clr-danger-rgb, 0.5);
+  }
+}

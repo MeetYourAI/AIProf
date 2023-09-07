@@ -1,0 +1,128 @@
+//This rules serv the contact-us form and the reply-form on the post-single page
+.contact-us {
+  .contact-form-panel {
+    .sec-heading {
+      margin-bottom: 2rem;
+    }
+
+    @include screen-lg {
+      padding-#{$start-direction}: 0;
+    }
+  }
+
+  .contact-info-panel {
+    position: relative;
+    z-index: 0;
+
+    .info-panel {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem;
+      border: 1px solid rgba(($clr-main-rgb), 0.35);
+      border-top: 0.25rem solid rgba(($clr-main-rgb), 1);
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+
+      .location-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+      }
+      .line-on-side {
+        margin-bottom: 2rem;
+        width: 4rem;
+        height: 2px;
+      }
+
+      .location-address {
+        font-size: 1.25rem;
+        margin-bottom: 2.25rem;
+        text-transform: capitalize;
+        opacity: 0.75;
+      }
+      .location-card {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          .icon {
+            color: $clr-white;
+            background-color: rgba($clr-main-rgb, 1);
+          }
+        }
+
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          width: 3rem;
+          height: 3rem;
+          color: $clr-main;
+          background-color: rgba($clr-main-rgb, 0.15);
+          border-radius: 0.25rem;
+          margin-#{$end-direction}: 1rem;
+          @include ma-transition(all, 0.3s);
+        }
+
+        .content-title {
+          font-size: 1.25rem;
+          font-weight: 500;
+          text-transform: capitalize;
+          margin-bottom: 0;
+          color: rgba($clr-main-rgb, 0.75);
+        }
+
+        .link {
+          display: block;
+          text-transform: lowercase;
+          text-decoration: none;
+          font-size: 1.1rem;
+          opacity: 0.75;
+          margin-bottom: 0.5rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .map-box {
+    .mapouter {
+      position: relative;
+      text-align: #{$end-direction};
+      height: 500px;
+      width: 100%;
+
+      .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        height: 500px;
+        width: 100%;
+      }
+
+      .map-iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+      }
+    }
+  }
+}
+
+/*End user-form Rules*/

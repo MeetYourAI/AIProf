@@ -1,0 +1,80 @@
+@function hexToRgb($hexcode) {
+  @return #{red($hexcode), green($hexcode), blue($hexcode)};
+}
+$fonts: (
+  "main": "",
+);
+$colors: (
+  // "main": #08bce9,
+  "main": #09aff4,
+  "accent": #0d1857,
+  "secondary": #4820a7,
+
+  "white": #fff,
+  "black": #121212,
+  "grey": #f1f1f1,
+  "semi-dark": #b8b8b8,
+  "dark-grey": #4d4d4d,
+  "extra-dark-grey": #202020,
+
+  "dark-blue": #060922,
+  "semi-dark-blue": #000531,
+
+  "danger": #fc0000,
+  "success": #217234,
+  "warning": #9b6a01
+);
+:root {
+  /*Colors CSS Varibales*/
+  @each $key, $val in $colors {
+    /*================  #{$key}-color values */
+    --clr-#{$key}: #{$val};
+    --clr-#{$key}-rgb: #{hexToRgb($val)};
+  }
+  --ltr-main-font-f: "Jost", "sans-serif";
+  --rtl-main-font-f: "Tajawal", "sans-serif";
+}
+
+//colors varibales
+$clr-white: var(--clr-white);
+$clr-white-rgb: var(--clr-white-rgb);
+
+$clr-black: var(--clr-black);
+$clr-black-rgb: var(--clr-black-rgb);
+
+$clr-grey: var(--clr-grey);
+$clr-grey-rgb: var(--clr-grey-rgb);
+
+$clr-semi-dark: var(--clr-semi-dark);
+$clr-semi-dark-rgb: var(--clr-semi-dark-rgb);
+
+$clr-dark-grey: var(--clr-dark-grey);
+$clr-dark-grey-rgb: var(--clr-dark-grey-rgb);
+
+$clr-dark-blue: var(--clr-dark-blue);
+$clr-dark-blue-rgb: var(--clr-dark-blue-rgb);
+
+$clr-semi-dark-blue: var(--clr-semi-dark-blue);
+$clr-semi-dark-blue-rgb: var(--clr-semi-dark-blue-rgb);
+
+$clr-danger: var(--clr-danger);
+$clr-danger-rgb: var(--clr-danger-rgb);
+
+$clr-success: var(--clr-success);
+$clr-success-rgb: var(--clr-success-rgb);
+
+$clr-warning: var(--clr-warning);
+$clr-warning-rgb: var(--clr-warning-rgb);
+
+$clr-main: var(--clr-main);
+$clr-main-rgb: var(--clr-main-rgb);
+
+$accent-clr: var(--clr-accent);
+$accent-clr-rgb: var(--clr-accent-rgb);
+
+$clr-secondary: var(--clr-secondary);
+$clr-secondary-rgb: var(--clr-secondary-rgb);
+
+// Font Variables
+$fontMainLtr: var(--ltr-main-font-f);
+$fontMainRtl: var(--rtl-main-font-f);

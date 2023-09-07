@@ -1,0 +1,678 @@
+/*========== Start Global Rules ==========*/
+
+$fontMain: "";
+
+@if $direction==ltr {
+  $fontMain: $fontMainLtr;
+} @else if $direction==rtl {
+  $fontMain: $fontMainRtl;
+}
+// Start placeholder classes Area
+%add-line {
+  //this placeholder makes a littel line used whatever you want to seprate content
+  display: block;
+  position: relative;
+  width: 5rem;
+  height: 4px;
+  background: $clr-main;
+  border-radius: 1rem;
+}
+
+%pre-title {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: #{$start-direction};
+  text-transform: uppercase;
+  display: block;
+  width: max-content;
+  margin-bottom: 0;
+  padding-#{$start-direction}: 10px;
+  padding-#{$end-direction}: 10px;
+  color: $clr-main;
+  z-index: 5;
+
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 6px;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
+    top: 50%;
+    translate: 0 -50%;
+    background-color: $clr-main;
+  }
+
+  &::before {
+    #{$start-direction}: 0;
+    #{$end-direction}: auto;
+  }
+
+  &::after {
+    #{$start-direction}: auto;
+    #{$end-direction}: 0;
+  }
+}
+
+%add-overlay {
+  position: absolute;
+  #{$start-direction}: 0;
+  #{$end-direction}: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  @include ma-transition;
+}
+html {
+  scroll-behavior: unset !important;
+}
+// End placeholder classes Area
+body {
+  font-family: $fontMain;
+  //the direction defined according to the dirction captured from the config-file used in top of the RTL-main.scss OR RTL-main.scss
+  direction: $direction;
+  //the direction definedleft OR right according to the dirction captured from the config-file used in top of the RTL-main.scss OR RTL-main.scss
+  text-align: $start-direction;
+  position: relative;
+  color: $clr-dark-blue;
+  background: $clr-white;
+  overflow-x: hidden;
+  scroll-behavior: unset;
+  @include ma-transition(all, 0.25s);
+}
+section {
+  // overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.plain-section {
+  overflow: visible;
+  padding: 0;
+}
+
+.mega-section {
+  padding: 5rem 0;
+
+  @include screen-sm {
+    padding: 2.5rem 0;
+  }
+}
+
+.elf-section {
+  padding: 4rem 0;
+
+  @include screen-sm {
+    padding: 3rem 0;
+  }
+}
+
+// particles section-bg
+.particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  #{$start-direction}: 0;
+  z-index: -1;
+}
+
+// .hollow-text {
+//   // inherit the stroke color from the element color
+//   // -webkit-text-stroke-color: inherit;
+//   // -webkit-text-stroke-width: 1.5px;
+//   // -webkit-text-fill-color: transparent;
+
+//   // @include screen-md {
+//   //   -webkit-text-stroke-width: 1px;
+//   // }
+// }
+
+$g-colors: red, blue, green;
+.text-linear-gradient {
+  @include linear-gradient-text(45, $g-colors);
+}
+
+.featured-text {
+  color: $clr-main;
+  position: relative;
+
+  svg {
+    position: absolute;
+    #{$start-direction}: 50%;
+    top: 50%;
+    width: calc(100% + 10px);
+    height: calc(100% + 40px);
+    transform: translate(-50%, -50%);
+    path {
+      stroke: $clr-main;
+      stroke-width: 0.5rem;
+      fill: transparent;
+    }
+  }
+}
+
+.init-text {
+  position: relative;
+  z-index: 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.85;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  padding: 0.5rem 0;
+  padding-#{$start-direction}: 2rem;
+  border-#{$start-direction}: 4px solid $clr-secondary;
+  @include ma-transition(all, 0.3s);
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: $clr-secondary;
+    border-top-#{$end-direction}-radius: 0.25rem;
+    border-bottom-#{$end-direction}-radius: 0.25rem;
+    transform: scaleX(0);
+    transform-origin: #{$start-direction};
+    @include ma-transition(transform, 0.3s);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+    color: $clr-white;
+    opacity: 1;
+  }
+}
+
+.pre-title {
+  @extend %pre-title;
+}
+
+.line {
+  @extend %add-line;
+}
+
+.line-on-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.line-on-side {
+  @extend %add-line;
+  margin-#{$start-direction}: 0;
+  margin-#{$end-direction}: auto;
+
+  &:before {
+    #{$start-direction}: 1rem;
+  }
+
+  &:after {
+    #{$start-direction}: 2rem;
+  }
+}
+
+.sec-heading {
+  position: relative;
+  text-align: #{$start-direction};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  @include screen-md {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-area {
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+
+    @include screen-md {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  .title {
+    // This placeholder class defines the global rules that used for heading elments it self of any section
+    position: relative;
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    display: inline-block;
+    z-index: 0;
+    @include screen-sm {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subtitle {
+    margin: 0 auto;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    opacity: 0.75;
+
+    @include screen-md {
+    }
+
+    @include screen-sm {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+
+  .bottom-line {
+    @extend %add-line;
+  }
+
+  &.light-title {
+    .title {
+      font-size: 3rem;
+      font-weight: 500;
+
+      @include screen-md {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &.centered {
+    display: block;
+    text-align: center;
+
+    .content-area {
+      max-width: 100%;
+    }
+
+    .pre-title {
+      margin-#{$start-direction}: auto;
+      margin-#{$end-direction}: auto;
+    }
+
+    .cta-area {
+      display: none;
+    }
+
+    .bottom-line {
+      @extend %add-line;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.has-dark-bg {
+  background-color: $clr-dark-blue;
+  .sec-heading {
+    .title,
+    .subtitle {
+      color: $clr-white;
+    }
+
+    .bottom-line {
+      background-color: $clr-white;
+    }
+  }
+}
+
+.parallax {
+  background-attachment: fixed !important;
+}
+
+.overlay-color {
+  @extend %add-overlay;
+  background: $clr-dark-blue;
+  opacity: 0.65;
+}
+
+.overlay-gradient-color {
+  @extend %add-overlay;
+
+  $g-colors: red, blue, green;
+  @include linear-gradient-bg(45, $g-colors);
+}
+
+.overlay-pattern-image-bg {
+  @extend %add-overlay;
+  opacity: 0.05;
+  /*add  background-image value wherever you use this class to choose the custom image  */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.overlay-shape-image-bg {
+  @extend %add-overlay;
+  /*add  background-image value wherever you use this class to choose the custom image  */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+}
+
+.overlay-photo-image-bg {
+  @extend %add-overlay;
+  /*add  background-image value wherever you use this class to choose the custom image  */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+}
+
+.section-video-bg {
+  .video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    #{$start-direction}: 0;
+    #{$end-direction}: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+  }
+}
+
+.see-more-area {
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+
+  &.btn-on-start-align {
+    text-align: #{$start-direction};
+  }
+}
+
+.no-borders {
+  border: none;
+  outline: none;
+}
+
+.no-box-shadow {
+  box-shadow: none !important;
+}
+
+.section-shape-divider-bottom {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    path {
+      fill: $clr-secondary;
+    }
+  }
+}
+
+.rating-stars {
+  @include screen-sm {
+    padding: 0 1rem;
+  }
+
+  .star-icon {
+    color: $clr-main;
+    font-size: 0.85rem;
+    cursor: pointer;
+    @include ma-transition(color, 0.3s);
+
+    &:not(:last-child) {
+      margin-#{$end-direction}: 0.5rem;
+    }
+
+    &.off {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-color: $clr-main;
+      -webkit-text-stroke-width: 1px;
+
+      &:hover {
+        -webkit-text-fill-color: $clr-main;
+      }
+    }
+  }
+}
+
+.skills {
+  .skill {
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+
+    .skill-name {
+      text-transform: capitalize;
+    }
+  }
+
+  .skill-bar {
+    width: 100%;
+    height: 0.25rem;
+    opacity: 0.75;
+    background-color: $clr-semi-dark;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    .bar {
+      width: 0;
+      background-color: $clr-main;
+      height: inherit;
+      border-radius: inherit;
+      @include ma-transition(width, 1s, ease-in-out);
+    }
+  }
+}
+
+.ma-pagination {
+  margin: 2rem 0;
+
+  .pagination {
+    .deactive-page-item {
+      pointer-events: none;
+      background-color: $clr-grey !important;
+      border-color: $clr-dark-blue !important;
+      opacity: 0.5;
+
+      .ma-page-link {
+        color: $clr-dark-blue !important;
+        opacity: 0.5;
+      }
+    }
+
+    .ma-page-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      color: $clr-main;
+      border: 1px solid;
+      border-color: $clr-main;
+      border-radius: 0.25rem;
+
+      @include ma-transition(all, 0.3s, ease);
+
+      &:not(:last-child) {
+        margin-#{$end-direction}: 0.5rem;
+      }
+
+      &:hover,
+      &.active {
+        background-color: $clr-main;
+        color: $clr-white;
+
+        .ma-page-link {
+          color: $clr-white;
+        }
+      }
+
+      &.active {
+        pointer-events: none;
+      }
+    }
+
+    .ma-page-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-shadow: none !important;
+      color: $clr-main;
+      text-decoration: none;
+    }
+  }
+}
+
+.info-items-list {
+  .menu-items {
+    margin: 0;
+    padding: 2rem 0;
+    list-style: none;
+  }
+
+  .info-item {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+
+    @include screen-sm {
+      margin-bottom: 2rem;
+      flex-direction: column;
+    }
+
+    &:hover {
+      .info-icon,
+      .info-img-icon {
+        transform: translateY(-5px);
+        background-color: rgba($clr-main-rgb, 1);
+        color: $clr-white;
+      }
+    }
+  }
+
+  .info-title {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+  }
+
+  .info-text {
+    font-size: 1.1;
+    opacity: 0.75;
+  }
+  .info-number {
+    display: flex;
+    margin-#{$end-direction}: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 0.8;
+    color: $clr-main;
+  }
+  .info-icon {
+    display: flex;
+    margin-#{$end-direction}: 1.25rem;
+    margin-bottom: 1rem;
+    color: $clr-main;
+    font-size: 2rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    background-color: rgba($clr-main-rgb, 0.15);
+    @include ma-transition(all, 0.3s);
+  }
+
+  .info-img-icon {
+    margin-#{$end-direction}: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    @include ma-transition(transform, 0.3s);
+  }
+}
+
+* {
+  &::selection {
+    background: $clr-main;
+    color: $clr-white;
+  }
+}
+
+/********* Start Design Elements ****************/
+
+.design-element {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.25;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  transform: translate(-25%, -25%);
+
+  &.rounded-shape {
+    border-radius: 50%;
+  }
+
+  &.stripes {
+    background-image: repeating-linear-gradient(
+      -55deg,
+      transparent 0.9px,
+      $clr-main 1.25px,
+      $clr-main 3px,
+      transparent 4px,
+      transparent 8px
+    );
+  }
+
+  &.dots {
+    background-image: radial-gradient($clr-main 2px, transparent 2.5px);
+    background-size: 0.75rem 0.75rem;
+  }
+}
+
+/********* End Design Elements ****************/
+
+/*========== End Global Rules ==========*/
