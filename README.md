@@ -68,7 +68,7 @@ Let AiProf redefine your AI experience and unlock new horizons of possibilities!
 
 ## 🚀 You can check the Live Demo here<a name="live-demo"></a>
 
-[AiProf Live Demo](https://prof-70zvsgbip-ibugithub.vercel.app/) 
+[AiProf Live Demo](https://play2helpworld-com.github.io/AiProf/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
