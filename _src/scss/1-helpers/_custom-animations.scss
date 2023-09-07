@@ -1,0 +1,19 @@
+/* Start video button animation*/
+@keyframes anim-pulses {
+  0% {
+    transform: scale3d(0.9, 0.9, 1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale3d(1.2, 1.2, 1);
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: scale3d(1.4, 1.4, 1);
+    opacity: 0;
+  }
+}
+
+/* End video button animation*/

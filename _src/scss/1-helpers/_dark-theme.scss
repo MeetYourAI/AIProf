@@ -1,0 +1,122 @@
+body {
+  &.dark-theme {
+    color: $clr-white;
+    background: $clr-dark-blue;
+
+    //Globals
+
+    // header
+    .header-basic {
+      .header-logo {
+        .logo-img {
+          &.light-logo {
+            display: block;
+          }
+
+          &.dark-logo {
+            display: none;
+          }
+        }
+      }
+
+      .controls-box {
+        .header-search-btn {
+          color: $clr-white;
+        }
+      }
+
+      &.inner-page-header {
+        .header-logo {
+          .logo-img {
+            &.light-logo {
+              display: block;
+            }
+
+            &.dark-logo {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .page-hero {
+      .hero-social-icons {
+        .sc-list .sc-item .sc-link {
+          color: $clr-white;
+        }
+      }
+    }
+    //benefits
+
+    //blog
+
+    //Custom Form
+
+    .custom-form-area {
+      input[type="email"],
+      input[type="text"],
+      input[type="password"],
+      input[type="url"],
+      input[type="search"],
+      input[type="number"],
+      select,
+      textarea {
+        border: 1px solid rgba($clr-white-rgb, 0.25);
+        background: $clr-dark-blue;
+        color: $clr-white;
+      }
+
+      &.input-under-lined {
+        input[type="email"],
+        input[type="text"],
+        input[type="password"],
+        input[type="url"],
+        input[type="search"],
+        input[type="number"],
+        select,
+        textarea {
+          border: none;
+          border-bottom: 1px solid rgba($clr-main-rgb, 0.35);
+        }
+      }
+    }
+
+    //FAQ
+
+    // our-team
+
+    .team-member {
+      .profile {
+        background-color: $clr-semi-dark-blue;
+      }
+    }
+
+    //services
+
+    //Portfolio
+
+    //Pricing
+
+    //project Details
+
+    /* about section */
+
+    .about {
+      .cta-area .signature .signature-img {
+        background-image: url("../assets/images/about/signature-light.png");
+      }
+
+      .stats-counter {
+        &.stats-cards {
+          .stat-box {
+            background: $clr-semi-dark-blue;
+          }
+        }
+      }
+    }
+
+    //My-Account
+
+    //Shop
+  }
+}

@@ -1,0 +1,175 @@
+%pricing {
+  overflow: hidden;
+  position: relative;
+
+  .plan {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba($clr-main-rgb, 0.35);
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 2rem 1rem;
+    text-transform: capitalize;
+    @include ma-transition(all, 0.3s);
+    @include ma-box-shadow(1, 1, 10, 0, rgba($clr-dark-blue-rgb, 0.15));
+
+    @include screen-lg {
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .plan-head {
+      position: relative;
+      text-align: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        #{$start-direction}: 50%;
+        transform: translateX(-50% * $x-axe-direction);
+        width: 50%;
+        height: 3px;
+        background-color: $clr-main;
+      }
+
+      .plan-icon {
+        display: block;
+        font-size: 4rem;
+        opacity: 0.75;
+        color: $clr-main;
+      }
+
+      .plane-name {
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin: 0;
+        margin-bottom: 1.25rem;
+      }
+
+      .plan-price {
+        display: inline-block;
+        margin: 0;
+        margin-bottom: 1.5rem;
+        padding: 0;
+
+        .price {
+          position: relative;
+          font-size: 4rem;
+          font-weight: 600;
+          line-height: 1;
+        }
+        .currency-symbol {
+          position: absolute;
+          font-size: 1.5rem;
+          font-weight: 500;
+          top: 1rem;
+          #{$start-direction}: -1rem;
+          line-height: 0;
+          vertical-align: baseline;
+          display: inline-block;
+          color: $clr-main;
+        }
+
+        .per {
+          font-size: 1.1rem;
+          font-style: italic;
+          opacity: 0.75;
+          padding: 0.25rem;
+        }
+      }
+
+      .plan-desc {
+        font-size: 0.9rem;
+        opacity: 0.75;
+      }
+    }
+
+    .plan-list {
+      list-style: none;
+      margin: 0;
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+
+      .plan-feat {
+        position: relative;
+        padding: 0.75rem 0;
+        font-size: 1rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .feat-icon {
+          color: $clr-main;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .plan-cta {
+      .cta-btn {
+        width: 100%;
+      }
+    }
+
+    &.featured {
+      background-color: $clr-main;
+      &:before {
+        content: "most poupular";
+        display: inline-block;
+        padding: 0.25rem 5rem;
+        color: $clr-main;
+        background-color: $clr-white;
+        top: 3rem;
+        #{$end-direction}: -4rem;
+        #{$start-direction}: auto;
+        position: absolute;
+        font-weight: 800;
+        font-size: 0.85rem;
+        transform: rotate($x-axe-direction * 45deg);
+      }
+
+      .plan-head {
+        &::before {
+          background-color: $clr-white;
+        }
+
+        .plan-icon,
+        .plane-name,
+        .plan-desc {
+          color: $clr-white;
+        }
+
+        .plan-price {
+          .price,
+          .currency-symbol,
+          .per {
+            color: $clr-white;
+          }
+        }
+      }
+
+      .plan-list {
+        .plan-feat,
+        .feat-icon {
+          color: $clr-white;
+        }
+      }
+
+      .plan-cta {
+        .cta-btn {
+          color: $clr-white;
+          border-color: $clr-white;
+          &:hover {
+            color: $clr-main;
+            background-color: $clr-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pricing {
+  @extend %pricing;
+}

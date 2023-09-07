@@ -1,0 +1,490 @@
+/* Start buttons global rules*/
+// placeholder class  for extend in other classes
+%base-btn {
+  // global rules for any btn link
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none !important;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  border-bottom-#{$start-direction}-radius: 1rem;
+  border-top-#{$end-direction}-radius: 1rem;
+  padding: 0.75rem 2.25rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  @include ma-box-shadow(0, 3, 10, -5, rgba($clr-dark-blue-rgb, 0.15));
+  @include ma-transition(all, 0.3s);
+  cursor: pointer;
+  z-index: 0;
+
+  .icon {
+    display: flex;
+    margin-#{$start-direction}: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    @include ma-transition(transform, 0.3s);
+  }
+
+  &:hover {
+    .icon {
+      transform: translatex($x-axe-direction * 5px);
+    }
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &.btn-medium {
+    padding: 0.625rem 2rem;
+  }
+
+  &.btn-small {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  @include screen-xs {
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+%play-btn {
+  display: inline-block;
+
+  .play-video-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      .play-btn {
+        background-color: $clr-white;
+        .icon {
+          color: $clr-main;
+        }
+        &::before,
+        &::after {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+
+  .play-btn {
+    position: relative;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    background-color: $clr-main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    transform-origin: center;
+    @include ma-box-shadow(1, 1, 10, 5, rgba($clr-dark-blue-rgb, 0.25));
+    @include ma-transition(all, 0.3s);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background-color: inherit;
+      animation: anim-pulses infinite 2s linear;
+      z-index: -1;
+      // @include ma-transition(all, 0.3s);
+    }
+
+    &::after {
+      animation-delay: 0.75s;
+    }
+
+    .icon {
+      color: $clr-white;
+      // @include ma-transition(all, 0.3s);
+    }
+
+    img.play-icon {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &.inverted-colors {
+    .play-btn {
+      background-color: $clr-main;
+    }
+
+    &:hover {
+      .play-btn {
+        background-color: $clr-secondary;
+      }
+    }
+  }
+
+  .play-btn-text {
+    position: relative;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: $clr-white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      #{$start-direction}: 0;
+      height: 0.25rem;
+      width: 100%;
+      border-radius: 0.25rem;
+      transform: scaleX(0);
+      transform-origin: center;
+      @include ma-transition($duration: 0.3s);
+      background-color: ($clr-white);
+    }
+  }
+}
+
+.btn-solid {
+  // extend the basic style of a btn
+  @extend %base-btn;
+  color: $clr-white;
+  background-color: $clr-main;
+  border-color: $clr-main;
+
+  &:hover {
+    color: $clr-main;
+    background-color: transparent;
+  }
+}
+
+.btn-outline {
+  // extend the basic style of a btn
+  @extend %base-btn;
+  /**/
+  // adding custom styles to this kind of btns
+  border: 2px solid;
+  color: $clr-main;
+  border-color: $clr-main;
+  background-color: transparent;
+
+  &:hover {
+    color: $clr-white;
+    background-color: $clr-main;
+  }
+}
+
+.play-btn-col-dir {
+  @extend %play-btn;
+  .play-video-btn {
+    flex-direction: column;
+  }
+
+  .play-btn-text {
+    margin-top: 0.75rem;
+  }
+}
+
+.play-btn-row-dir {
+  @extend %play-btn;
+
+  .play-video-btn {
+    flex-direction: row;
+  }
+
+  .play-btn-text {
+    margin-#{$start-direction}: 0.75rem;
+  }
+}
+
+/* Start Social icons list rules */
+%sc-list {
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  list-style: none;
+
+  .sc-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $clr-white;
+    background-color: $clr-main;
+    border-radius: 0.25rem;
+    @include ma-transition(transform, 0.3s);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background-color: $clr-white;
+      @include ma-box-shadow(0, 3, 15, 0, rgba($clr-dark-blue-rgb, 0.25));
+
+      .sc-icon {
+        color: $clr-main;
+      }
+    }
+  }
+
+  .sc-link {
+    //to center the icon inside the a tag verticaly
+    display: flex;
+    line-height: 1;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  .sc-icon {
+    @include ma-transition(color, 0.3s);
+  }
+}
+
+.sc-wrapper {
+  .sc-list {
+    @extend %sc-list;
+  }
+  &.dir-row {
+    padding: 0.75rem 0;
+
+    .sc-list {
+      .sc-item {
+        margin-#{$end-direction}: 10px;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+
+  &.dir-col {
+    padding: 0 0.75rem;
+    .sc-list {
+      flex-direction: column;
+      .sc-item {
+        margin-bottom: 10px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        &:hover {
+          transform: translateX(5px * $x-axe-direction);
+        }
+      }
+    }
+  }
+
+  &.sc-flat {
+    .sc-list {
+      .sc-item {
+        font-size: 1.1rem;
+        border-radius: 0;
+        color: inherit;
+        background-color: transparent;
+        margin-#{$end-direction}: 1.5rem;
+        &:last-child {
+          margin-#{$end-direction}: 0;
+        }
+        &:hover {
+          background-color: transparent;
+          box-shadow: none;
+
+          .sc-icon {
+            color: $clr-main;
+          }
+        }
+      }
+    }
+  }
+  // classes for social icons different sizes
+  &.sc-size-16 {
+    .sc-item {
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+    }
+  }
+  &.sc-size-24 {
+    .sc-item {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+  }
+  &.sc-size-32 {
+    .sc-item {
+      width: 32px;
+      height: 32px;
+      font-size: 0.85rem;
+    }
+  }
+  &.sc-size-40 {
+    .sc-item {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+  &.sc-size-50 {
+    .sc-item {
+      width: 50px;
+      height: 50px;
+      font-size: 1.25rem;
+
+      @include screen-xs {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* End Social icons list rules */
+
+.back-to-top {
+  @include adding-arrows-styling;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  position: fixed;
+  bottom: -100px;
+  right: 30px;
+  z-index: 20;
+  @include ma-box-shadow(0, 3, 15, 0, rgba($clr-dark-blue-rgb, 0.25));
+
+  &.show {
+    bottom: 30px;
+  }
+}
+
+.mode-switcher {
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  @include ma-transition(all, 0.3s);
+
+  &.dark-theme {
+    background-color: $clr-white;
+
+    .icon {
+      color: $clr-dark-blue;
+    }
+    .go-light {
+      visibility: visible;
+      opacity: 1;
+    }
+    .go-dark {
+      visibility: hidden;
+      opacity: 1;
+    }
+  }
+
+  &.light-theme {
+    background-color: $clr-dark-blue;
+
+    .icon {
+      color: $clr-white;
+    }
+
+    .go-light {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .go-dark {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .switch-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .icon {
+    display: flex;
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
+  }
+}
+
+body {
+  &.rounded-btns {
+    .btn-solid,
+    .btn-outline,
+    .portfolio-btn,
+    .subscripe-btn,
+    .sc-item,
+    .back-to-top,
+    .field-group .text-input,
+    .swiper-button-prev,
+    .swiper-button-next,
+    .read-more {
+      border-radius: 5rem;
+    }
+  }
+}
+
+.btn-squared {
+  border-radius: 0 !important;
+}
+
+.btn-rounded {
+  border-radius: 5rem !important;
+}
+
+.read-more {
+  text-transform: capitalize;
+  color: $clr-main;
+  font-weight: 600;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  @include ma-transition(all, 0.3s);
+
+  &:hover {
+    color: $clr-main;
+    text-decoration: none;
+    border-color: rgba(var(--clr-main-rgb), 1);
+
+    .icon {
+      transform: translateX($x-axe-direction * 5px);
+    }
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-#{$start-direction}: 0.5rem;
+
+    @include ma-transition(transform, 0.3s);
+  }
+}
+
+/* End buttons global rules*/

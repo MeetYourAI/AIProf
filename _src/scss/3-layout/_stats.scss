@@ -1,0 +1,64 @@
+.stats {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  background-color: $clr-dark-blue;
+
+  .section-heading {
+    .line-solid-color {
+      background: $clr-white;
+    }
+  }
+
+  .stat-box {
+    position: relative;
+    text-align: center;
+
+    @include screen-md {
+      margin-bottom: 2rem;
+    }
+    @include screen-sm {
+      padding: 1rem 3rem;
+    }
+  }
+  .stat-box-inner {
+    text-align: center;
+    position: relative;
+    padding: 2rem;
+    color: $clr-white;
+    background-color: rgba($clr-dark-blue-rgb, 0.25);
+    border: 1px solid rgba($clr-main-rgb, 0.35);
+    border-top: 0.25rem solid rgba($clr-main-rgb, 1);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+  .stat-icon {
+    font-size: 3rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $clr-main;
+    opacity: 0.65;
+    @include ma-transition(all, 0.2s);
+  }
+
+  .stat-num {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 0;
+
+    @include screen-sm {
+      font-size: 2rem;
+    }
+  }
+
+  .stat-desc {
+    font-size: 1.25rem;
+    font-weight: 400;
+    display: block;
+    text-transform: capitalize;
+  }
+}

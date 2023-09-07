@@ -1,0 +1,58 @@
+.our-clients {
+  background-color: $clr-main;
+
+  .sec-heading {
+    .title {
+      font-size: 1.75rem;
+      opacity: 0.35;
+      color: $clr-white;
+    }
+  }
+
+  .clients-logos {
+    text-align: center;
+  }
+  .client-logo {
+    background: $clr-white;
+    border-radius: 0.5rem;
+  }
+  .logo {
+    max-height: 125px;
+    border-radius: 0.25rem;
+    filter: grayscale(1);
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+
+  &-blocks {
+    background: $clr-semi-dark-blue;
+
+    .section-heading {
+      .section-title {
+        color: $clr-grey;
+      }
+    }
+
+    .blocks-row {
+      margin-bottom: -30px;
+    }
+
+    .client-block {
+      padding: 1.25rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      @include ma-transition();
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      @include screen-sm {
+        padding: 2rem;
+      }
+    }
+  }
+}

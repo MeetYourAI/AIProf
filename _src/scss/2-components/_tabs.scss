@@ -1,0 +1,171 @@
+/* Start ma-tabs rules */
+.ma-tabs {
+  .tabs-links-list {
+    position: relative;
+    padding: 0.5rem 0rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba($clr-main-rgb, 0.25);
+
+    @include screen-xs {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .b-line {
+    position: absolute;
+    #{$start-direction}: 0;
+    border-radius: 1rem;
+    bottom: 0;
+    height: 2px;
+    background-color: $clr-main;
+    will-change: left, width;
+    @include ma-transition(all, 0.3s);
+  }
+
+  .tab-link {
+    padding: 0.5rem 0;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-#{$end-direction}: 1.5rem;
+
+    border-radius: 5rem;
+    cursor: pointer;
+    @include ma-transition(all, 0.3s);
+
+    &:last-child {
+      margin-#{$end-direction}: 0;
+    }
+
+    &.active,
+    &:hover {
+      color: $clr-main;
+      opacity: 1;
+    }
+
+    // @include screen-md {
+    //   font-size: 1rem;
+    //   margin-#{$end-direction}: 0;
+    // }
+
+    // @include screen-xs {
+    //   font-size: .85rem;
+    //   margin-#{$end-direction}: 0;
+    // }
+  }
+
+  .switch {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .switch-btns-list {
+      padding: 0.5rem;
+      margin: 0;
+      margin-bottom: 1rem;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      border-radius: 5rem;
+
+      .switch-btn {
+        position: relative;
+        padding: 0.75rem 1rem;
+        display: inline-block;
+        min-width: 100px;
+        color: rgba($clr-semi-dark-rgb, 0.65);
+        border: 2px solid rgba($clr-semi-dark-rgb, 0.65);
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: capitalize;
+        cursor: pointer;
+        @include ma-transition(all, 0.3s, ease-in);
+
+        &:first-child {
+          border-#{$end-direction}: none;
+        }
+
+        &:last-child {
+          border-#{$start-direction}: none;
+        }
+
+        &:hover {
+          border-color: $clr-main;
+          color: $clr-main;
+        }
+
+        &.active {
+          color: $clr-white;
+          background-color: $clr-main;
+          border-color: $clr-main;
+        }
+      }
+    }
+
+    .toggle-btn {
+      width: 80px;
+      height: 30px;
+      display: inline-block;
+      position: relative;
+      background-color: $clr-main;
+      border-radius: 2rem;
+      z-index: 0;
+      -webkit-appearance: none;
+      outline: none;
+      left: 0;
+      right: 0;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      cursor: pointer;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        #{$start-direction}: 0;
+
+        top: 0;
+        border: 0.25rem solid $clr-main;
+        background-color: $clr-white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        z-index: -1;
+        @include ma-transition(all, 0.3s);
+      }
+
+      &:checked {
+        &::before {
+          #{$start-direction}: 100%;
+          transform: translateX(-100% * $x-axe-direction);
+        }
+      }
+    }
+  }
+
+  .tabs {
+    overflow: hidden;
+
+    .tab-content {
+      display: none;
+      padding: 2rem 0;
+    }
+
+    .visibale-tab {
+      display: block;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+  }
+}
+
+/* End ma-tabs rules */
