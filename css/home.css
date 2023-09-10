@@ -4,7 +4,6 @@
 
 .askContainer {
     max-width: 28rem;
-    margin-top: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding-bottom: 1.5rem;
 }
@@ -40,4 +39,8 @@
 
 #response {
     margin-top: 1.5rem;
+}
+
+#title {
+    margin-top: 0;
 }
