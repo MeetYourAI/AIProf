@@ -48,3 +48,14 @@
 #ask-social {
     margin-top: -40px;
 }
+
+#mic-container {
+    text-align: center;
+}
+
+#mic, #muteMic {
+    width: 50px;
+}
+#mic {
+    display: none;
+}
