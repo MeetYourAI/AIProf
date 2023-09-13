@@ -157,33 +157,46 @@
 					<div class="col-12   ">
 						<div class="hero-social-icons mb-3 ">
 							<div class="sc-wrapper dir-row sc-flat">
-								<p class="">Tell your friends</p>
+								<h4 class="">Tell your friends:</h4>
 								<ul class="sc-list">
-									<li class="sc-item " title="Facebook"><a class="sc-link" href="#0"
-											title="social media icon"><i class="fab fa-facebook-f sc-icon"></i></a></li>
-									<li class="sc-item " title="youtube"><a class="sc-link" href="#0"
-											title="social media icon"><i class="fab fa-youtube sc-icon"></i></a>
+									<li class="sc-item " title="Facebook">
+										<a class="sc-link" id="facebookShareLink" href="#0"
+											title="social media icon">
+											<i class="fab fa-facebook-f sc-icon"></i>
+										</a>
 									</li>
-									<li class="sc-item " title="instagram"><a class="sc-link" href="#0"
-											title="social media icon"><i class="fab fa-instagram sc-icon"></i></a></li>
-									<li class="sc-item " title="twitter"><a class="sc-link" href="#0"
-											title="social media icon"><i class="fab fa-twitter sc-icon"></i></a>
+									<li class="sc-item " title="twitter">
+										<a class="sc-link" href="#0" id="twitterShareLink" title="Twitter" alt="Twitter social media">
+											<i class="fab fa-twitter sc-icon"></i>
+										</a>
 									</li>
+									<li class="sc-item " title="Whatsapp">
+										<a class="sc-link" href="#0" id="whatsappShareLink" title="Whatsapp share icon">
+											<i class="fab fa-whatsapp sc-icon"></i>
+										</a>
+									</li>
+									<li class="sc-item " title="youtube">
+										<a class="sc-link" href="https://www.youtube.com/@MarktgInnovation2Day/featured"
+											title="youtube channel" target="_blank">
+											<i class="fab fa-youtube sc-icon"></i>
+										</a>
+									</li>
+
 								</ul>
 							</div>
 						</div>
 					</div>
-					<div class="col-12   ">
+					<!-- <div class="col-12   ">
 						<div class="cta-links-area "><a class=" btn-outline cta-link cta-link-primary " href="#0">start
 								now</a>
-							<div class="play-btn-row-dir ">
+							<div class="play-btn-row-dir "> -->
 								<!-- <a class="video-link" href="#" role="button" title="play" data-fancybox="data-fancybox"> -->
-								<div class="play-video-btn">
+								<!--<div class="play-video-btn">
 									<div class="play-btn"> <i class="fas fa-play icon"></i></div>
 								</div></a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 
 			</div>
@@ -916,27 +929,37 @@
 					<h2 class=" footer-col-title">contact information</h2>
 					<div class="footer-col-content-wrapper">
 						<div class="contact-info-card"><i class="bi bi-envelope icon"></i><a
-								class="text-lowercase  info" href="mailto:example@support.com">example@support.com</a>
+								class="text-lowercase  info" href="mailto:meetyouraisup@gmail.com">meetyouraisup@gmail.com</a>
 						</div>
-						<div class="contact-info-card"><i class="bi bi-geo-alt icon"></i><span class="info">AI2BC
-								Organization</span></div>
+						<div class="contact-info-card"><i class="bi bi-geo-alt icon"></i>
+							<span class="info">AI2BC Organization</span></div>
 						<div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info"
 								href="tel:+20123456789">+20123456789 </a></div>
 						<div class="contact-info-card">
 							<div class="social-icons">
 								<div class="sc-wrapper dir-row sc-size-32">
 									<ul class="sc-list">
-										<li class="sc-item " title="Facebook"><a class="sc-link" href="#0"
-												title="social media icon"><i class="fab fa-facebook-f sc-icon"></i></a>
+										<li class="sc-item " title="Facebook">
+											<a class="sc-link" id="facebookShareLink" href="#0"
+												title="social media icon">
+												<i class="fab fa-facebook-f sc-icon"></i>
+											</a>
 										</li>
-										<li class="sc-item " title="youtube"><a class="sc-link" href="#0"
-												title="social media icon"><i class="fab fa-youtube sc-icon"></i></a>
+										<li class="sc-item " title="twitter">
+											<a class="sc-link" href="#0" id="twitterShareLink" title="Twitter" alt="Twitter social media">
+												<i class="fab fa-twitter sc-icon"></i>
+											</a>
 										</li>
-										<li class="sc-item " title="instagram"><a class="sc-link" href="#0"
-												title="social media icon"><i class="fab fa-instagram sc-icon"></i></a>
+										<li class="sc-item " title="Whatsapp">
+											<a class="sc-link" href="#0" id="whatsappShareLink" title="Whatsapp share icon">
+												<i class="fab fa-whatsapp sc-icon"></i>
+											</a>
 										</li>
-										<li class="sc-item " title="twitter"><a class="sc-link" href="#0"
-												title="social media icon"><i class="fab fa-twitter sc-icon"></i></a>
+										<li class="sc-item " title="youtube">
+											<a class="sc-link" href="https://www.youtube.com/@MarktgInnovation2Day/featured"
+												title="youtube channel" target="_blank">
+												<i class="fab fa-youtube sc-icon"></i>
+											</a>
 										</li>
 									</ul>
 								</div>
@@ -999,8 +1022,70 @@
 	<script src="js/vendors/jquery.fancybox.min.js"></script>
 	<!--     main     -->
 	<script src="js/main.js"></script>
+	<!--for chatbot -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<script src="js/askMe.js"></script>"
+	<script src="js/askMe.js"></script>
+	<!-- social media post redirect -->
+	<script>
+		// Add an event listener when user clicks facebook link and prevent default
+        document.getElementById('facebookShareLink').addEventListener('click', function (e) {
+            e.preventDefault();
+			// call the function that will redirect the users to share to their facebook
+            shareOnFacebook();
+        });
+
+        function shareOnFacebook() {
+            // Set website url to be shared and Message
+            var urlToShare = 'https://meetyourai.github.io/AIProf/';
+            var shareMessage = 'Check out this amazing website! Learning made easy with Artificial Intelligence';
+
+            // Construct the Facebook share URL
+            var facebookShareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(urlToShare) + '&quote=' + encodeURIComponent(shareMessage);
+
+            // Open the Facebook share dialog in a new window
+            window.open(facebookShareUrl, 'Share on Facebook', 'width=600,height=400');
+        }
+
+		// Add an event listener when user clicks Twitter/X link and prevent default
+        document.getElementById('twitterShareLink').addEventListener('click', function (e) {
+            e.preventDefault();
+			// call the function that will redirect the users to share to their Twitter Profile
+            shareOnTwitter();
+        });
+
+        function shareOnTwitter() {
+            // Set website url to be shared and Message
+            var urlToShare = 'https://meetyourai.github.io/AIProf/';
+            var tweetMessage = 'Check out this awesome website! Learning made easy with Artificial Intelligence';
+
+            // Construct the Twitter share URL
+            var twitterShareUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(urlToShare) + '&text=' + encodeURIComponent(tweetMessage);
+
+            // Open the Twitter share dialog in a new window
+            window.open(twitterShareUrl, 'Share on Twitter', 'width=600,height=400');
+        }
+
+		// Add an event listener when user clicks Whatsapp icon link and prevent default
+		document.getElementById('whatsappShareLink').addEventListener('click', function (e) {
+            e.preventDefault();
+			// call the function that will redirect the users to share to their Twitter Profile
+            shareOnWhatsApp();
+        });
+
+        function shareOnWhatsApp() {
+            // Set website url to be shared and Message
+            var urlToShare = 'https://meetyourai.github.io/AIProf/';
+            var message = 'Learning made easy with AI: Check out this website: ' + urlToShare;
+
+            // Create a WhatsApp share link
+            var whatsappShareUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(message);
+
+            // Redirect the user to the WhatsApp share link
+            window.location.href = whatsappShareUrl;
+        }
+
+    </script>
+
 </body>
 
 </html>
