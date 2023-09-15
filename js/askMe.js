@@ -174,7 +174,6 @@ const synth = window.speechSynthesis;
 const inputForm = document.querySelector("form");
 const inputTxt = document.querySelector("#response");
 const voiceSelect = document.querySelector("select");
-const play = document.querySelector("#play");
 const speaker_container = document.querySelector("#speaker-container");
 const speaker = document.createElement("img");
 speaker.alt = "This is a speaker";
@@ -269,4 +268,3 @@ const toogle = () => {
   }
 }
 speaker.addEventListener('click', toogle)
-play.addEventListener('click', toogle)
