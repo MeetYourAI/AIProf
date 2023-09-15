@@ -59,3 +59,17 @@
 #mic {
     display: none;
 }
+
+#speaker-container img
+{
+    width: 30px;
+}
+
+.speech-control  select {
+    width: 100px;
+}
+
+.speech-control {
+    display: flex;
+    gap: 1rem;
+}
