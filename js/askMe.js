@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const ans = response.data.GPT.replace(regex, '<br>');
             setResponse(ans);
             setIsLoading(false)
-            toogle()
+            speaker.src = "assets/images/spaker/speaker.svg";
+            speaker_container.appendChild(speaker);
           })
           .catch((error) => {
             console.error(error);
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   askButton.onclick = handleAsk
-});
+
 
 
 // ...........mic Related js (Speech Recognition)............
@@ -171,7 +172,6 @@ mutedMic.addEventListener('click', startUsingMicrophone)
 
 // ............Text to speech...........
 const synth = window.speechSynthesis;
-const inputForm = document.querySelector("form");
 const inputTxt = document.querySelector("#response");
 const voiceSelect = document.querySelector("select");
 const speaker_container = document.querySelector("#speaker-container");
@@ -268,3 +268,4 @@ const toogle = () => {
   }
 }
 speaker.addEventListener('click', toogle)
+});
