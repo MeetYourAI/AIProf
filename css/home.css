@@ -39,6 +39,8 @@
 
 #response {
     margin-top: 1.5rem;
+    overflow-y: scroll;
+    height: 300px;
 }
 
 #title {
