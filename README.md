@@ -68,7 +68,7 @@ Let AiProf redefine your AI experience and unlock new horizons of possibilities!
 
 ## 🚀 You can check the Live Demo here<a name="live-demo"></a>
 
-[AiProf Live Demo](https://play2helpworld-com.github.io/AiProf/) 
+[AiProf Live Demo](https://meetyourai.github.io/AiProf/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,6 +123,12 @@ You can deploy this project using:
 - GitHub: [@githubhandle](https://github.com/ibugithub)
 - Twitter: [@twitterhandle](https://twitter.com/mdibrahimibuu)
 - LinkedIn [LinkedIn](https://linkedin.com/in/ibuu)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+**Anaïs Gilbert**
+- GitHub: [@githubhandle](https://github.com/yoshinodev)
+- LinkedIn [LinkedIn](https://linkedin.com/in/agilbert6)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
