@@ -87,8 +87,8 @@ Example commands:
   
   ```
     cd my-folder 
-    git clone https://github.com/Play2HelpWorld-com/AiProf
-    cd AiProf
+    git clone https://github.com/MeetYourAI/AIProf
+    cd AIProf
   ```
 
 
