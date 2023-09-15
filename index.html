@@ -7,7 +7,7 @@
 	<title>AiProf</title>
 	<meta name="description"
 		content="Unlock the future of learning with AiProf. Elevate your educational experience and discover how AI is reshaping the way you learn and teach" />
-	<meta name="keywords" content="Ai, free learning, Artificial Intelligence, education, AIProf, teaching, free lessons, math, history, sports">
+	<meta name="keywords" content="Ai, free learning, Artificial Intelligence, education, Ai Prof, teaching, free lessons, math, history, sports">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	 <!-- for Facebook -->
@@ -116,17 +116,19 @@
 	<!--End Page Header-->
 	<!-- Start  Page hero-->
 	<section class="page-hero  d-flex align-items-center" id="page-hero">
-		<div class="overlay-photo-image-bg" data-bg-img="assets/images/sections-bg-images/pattern-bg-1.jpg"
+		<div class="overlay-photo-image-bg" data-bg-img="assets/images/sections-bg-images/classroomScenario.jpg"
 			data-bg-opacity=".2"></div>
+			<!-- <div class="overlay-photo-image-bg" data-bg-img="assets/images/sections-bg-images/pattern-bg-1.jpg"
+			data-bg-opacity=".2"></div> -->
 		<div class="particles-js  dots" id="particles-js"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-lg-6 pt-5">
+				<div class="col-12 col-lg-6 pt-5 mt-5">
 					<!--Start of .hero-text-area-->
-					<div id="title" class="hero-text-area   ">
+					<div id="title" class="hero-text-area mt-5">
 						<div class="row">
-							<div class="col-12 ">
-								<h1 class="hero-title  ">Meet Your Ai <span class="featured-text"> Teacher
+							<div class="col-12 text-center"> 
+								<h1 class="hero-title">Meet Your Ai <span class="featured-text"> Teacher
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150"
 											preserveAspectRatio="none">
 											<path
@@ -134,94 +136,82 @@
 											</path>
 										</svg> </span><span class="design-element rounded-shape stripes"></span>
 								</h1>
+							
+								<div class="hero-social-icons mb-3 mt-5">
+									<div class="sc-wrapper dir-row sc-flat text-center">
+										<h4>Tell your friends:</h4>
+										<ul class="sc-list">
+											<li class="sc-item " title="Facebook">
+												<a class="sc-link" id="facebookShareLink" href="#0"
+													title="social media icon">
+													<i class="fab fa-facebook-f sc-icon"></i>
+												</a>
+											</li>
+											<li class="sc-item " title="twitter">
+												<a class="sc-link" href="#0" id="twitterShareLink" title="Twitter" alt="Twitter social media">
+													<i class="fab fa-twitter sc-icon"></i>
+												</a>
+											</li>
+											<li class="sc-item " title="Whatsapp">
+												<a class="sc-link" href="#0" id="whatsappShareLink" title="Whatsapp share icon">
+													<i class="fab fa-whatsapp sc-icon"></i>
+												</a>
+											</li>
+											<li class="sc-item " title="youtube">
+												<a class="sc-link" href="https://www.youtube.com/@MarktgInnovation2Day/featured"
+													title="youtube channel" target="_blank">
+													<i class="fab fa-youtube sc-icon"></i>
+												</a>
+											</li>
+		
+										</ul>
+									</div>
+								</div>
+								<div id="showVideoButton" class="cta-links-area d-flex justify-content-center">
+									<a class=" btn-outline cta-link cta-link-primary" href="#0">
+										Demo Video
+									</a>
+								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
 				<!--start of image-area -->
-				<div class="col-12 mx-md-auto col-lg-6 text-center " data-tilt>
+				<div class="col-12 mx-md-auto col-lg-6 text-center mt-5">
 					<div class="hero-image-area mb-5 mb-lg-0">
 						<div class="hero-img-wraper"><img class="img-fluid " src="assets/images/hero/tempModel.png"
 								alt="" draggable="false">
 						</div>
 					</div>
+					<div id="ask-social">
+						<div class="col-sm-8 mx-auto">
+							<h4 >
+								Ask me anything about learning
+							</h4>
+						</div>
+	
+						<div class="askContainer">
+							<div class="askflex-container">
+								<input type="text" id="question" placeholder="Enter your question..." aria-label="chatbot"/>
+								<button id="ask">
+									Ask
+								</button>
+								<div id="mic-container">
+									<img id="mic" src="assets/images/mic/mic.svg" alt="">
+									<img id="muteMic" src="assets/images/mic/muteMic.svg" alt="">
+								</div>
+							</div>
+							<div id="loading-image"></div>
+							<div id="response"> </div>
+							<div class="speech-control">
+								<div id="speaker-container">
+								</div>
+	
+								<select style="display: none;"></select>
+							</div>
+						</div>
+					</div>
 				</div>
-
-				<div id="ask-social">
-					<div class="col-10       ">
-						<h4 class="clr-main">
-							Ask me anything
-						</h4>
-					</div>
-
-					<div class="askContainer">
-						<div class="askflex-container">
-							<input type="text" id="question" placeholder="Enter your question..." />
-							<button id="ask">
-								Ask
-							</button>
-							<div id="mic-container">
-								<img id="mic" src="assets/images/mic/mic.svg" alt="">
-								<img id="muteMic" src="assets/images/mic/muteMic.svg" alt="">
-							</div>
-						</div>
-						<div id="loading-image"></div>
-						<div id="response"> </div>
-						
-						<div class="speech-control">
-							<div id="speaker-container">
-							</div>
-
-							<select style="display: none;"></select>
-						</div>
-					</div>
-
-					<div class="col-12   ">
-						<div class="hero-social-icons mb-3 ">
-							<div class="sc-wrapper dir-row sc-flat">
-								<h4 class="">Tell your friends:</h4>
-								<ul class="sc-list">
-									<li class="sc-item " title="Facebook">
-										<a class="sc-link" id="facebookShareLink" href="#0"
-											title="social media icon">
-											<i class="fab fa-facebook-f sc-icon"></i>
-										</a>
-									</li>
-									<li class="sc-item " title="twitter">
-										<a class="sc-link" href="#0" id="twitterShareLink" title="Twitter" alt="Twitter social media">
-											<i class="fab fa-twitter sc-icon"></i>
-										</a>
-									</li>
-									<li class="sc-item " title="Whatsapp">
-										<a class="sc-link" href="#0" id="whatsappShareLink" title="Whatsapp share icon">
-											<i class="fab fa-whatsapp sc-icon"></i>
-										</a>
-									</li>
-									<li class="sc-item " title="youtube">
-										<a class="sc-link" href="https://www.youtube.com/@MarktgInnovation2Day/featured"
-											title="youtube channel" target="_blank">
-											<i class="fab fa-youtube sc-icon"></i>
-										</a>
-									</li>
-
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- <div class="col-12   ">
-						<div class="cta-links-area "><a class=" btn-outline cta-link cta-link-primary " href="#0">start
-								now</a>
-							<div class="play-btn-row-dir "> -->
-								<!-- <a class="video-link" href="#" role="button" title="play" data-fancybox="data-fancybox"> -->
-								<!--<div class="play-video-btn">
-									<div class="play-btn"> <i class="fas fa-play icon"></i></div>
-								</div></a>
-							</div>
-						</div>
-					</div> -->
-				</div>
-
 			</div>
 		</div>
 	</section>
@@ -235,12 +225,12 @@
 				<div class="content-area">
 					<h2 class="title wow fadeInUp" data-wow-delay=".2s">Our Features</h2>
 					<p class="subtitle wow fadeInUp " data-wow-delay=".4s">
-						Elevate Your Learning Experience: Unleash the Power of AI for Seamless Education and Personal
-						Growth.
+						Contact us if you want to know more about our services
 					</p>
 				</div>
-				<div class=" cta-area wow fadeInUp" data-wow-delay=".6s"><a class="cta-btn btn-solid    ">see all
-						services <i class="bi bi-arrow-right icon "></i></a></div>
+				<div class=" cta-area wow fadeInUp" data-wow-delay=".6s">
+					<a class="cta-btn btn-solid">Demo Video <i class="bi bi-arrow-right icon "></i></a>
+				</div>
 			</div>
 			<div class="row gx-4 gy-4 services-row ">
 				<div class="col-12 col-md-6  col-lg-4 mx-auto ">
@@ -251,10 +241,10 @@
 						<div class="service-content">
 							<h3 class="service-title">Expert Educators</h3>
 							<p class="service-text">
-								Our AI-driven platform is complemented by a team of experienced educators, subjectmatter
+								Our AI-driven platform is complemented by a team of experienced educators, subject matter
 								experts, and technologists who are passionate about enhancing your learning journey.
 							</p>
-						</div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "> </i></a>
+						</div>
 					</div>
 					<!-- End First service box   -->
 				</div>
@@ -266,11 +256,11 @@
 						<div class="service-content">
 							<h3 class="service-title">Limitless Subjects</h3>
 							<p class="service-text">
-								mathematics, literature, history, science, or any other subject under the sun, AiProf
-								has you covered. Our comprehensive library of courses spans a multitude of disciplines,
+								Looking for a particular subject? AiProf has you covered. 
+								Our comprehensive library provides diversification,
 								giving you the freedom to explore and master the subjects that intrigue you.
 							</p>
-						</div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "> </i></a>
+						</div>
 					</div>
 					<!-- End Second service box-->
 				</div>
@@ -282,12 +272,12 @@
 						<div class="service-content">
 							<h3 class="service-title">AI-Driven Learning</h3>
 							<p class="service-text">
-								Say goodbye to one-size-fits-all education. AiProf harnesses the capabilities of AI to
-								deliver personalized learning experiences. Our advanced algorithms adapt to your pace,
+								Say goodbye to one-size-fits-all education. AiProf deliver personalized learning experiences. 
+								Adapting to your pace,
 								learning style, and progress, ensuring you grasp even the most complex concepts with
 								ease.
 							</p>
-						</div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "> </i></a>
+						</div>
 					</div>
 					<!-- End Third service box-->
 				</div>
@@ -299,11 +289,11 @@
 						<div class="service-content">
 							<h3 class="service-title">Instant Evaluation</h3>
 							<p class="service-text">
-								No more waiting for days to receive feedback on your assignments. With AiProf's
-								AI-powered assessment, your assignments are evaluated instantly and accurately. This
+								No more waiting for days to receive feedback on your assignments.
+								 With AiProf's your assignments are evaluated instantly and accurately. This
 								means you can learn from your mistakes in real-time and make continuous improvements.
 							</p>
-						</div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "> </i></a>
+						</div>
 					</div>
 					<!-- End fourth service box   -->
 				</div>
@@ -319,7 +309,7 @@
 								platform is accessible on desktops, laptops, tablets, and smartphones, allowing you to
 								learn whenever and wherever you're comfortable
 							</p>
-						</div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "> </i></a>
+						</div>
 					</div>
 					<!-- End 5th service box-->
 				</div>
@@ -335,7 +325,7 @@
 								of the subject matter. AiProf fosters critical thinking, problem-solving skills, and a
 								genuine passion for learning that goes beyond the classroom.
 							</p>
-						</div><a class="read-more" href="#0">read more<i class="bi bi-arrow-right icon "> </i></a>
+						</div>
 					</div>
 					<!-- End 6th service box-->
 				</div>
@@ -366,15 +356,11 @@
 							</div>
 							<p class="about-text">
 
-								Welcome to AiProf, where innovation meets education. Our AI-driven platform transforms
-								learning, offering personalized experiences for academic success. Elevate your learning
+								Welcome to your AiProf, where innovation meets education. 
+								Our students receive instant help with our AI chatbot support. 
+								We also offer personalized experiences for academic success. Elevate your learning
 								journey with data-driven strategies. More 'me-time' awaits you!
 
-							</p>
-							<p class="about-text">
-								Top-tier AI chatbot support for instant help, enhancing your learning. Revolutionize
-								your studies with customized plans and predictive analytics. Join us to set new
-								standards in AI-powered education. Start your AiProf journey now
 							</p>
 							<div class="info-items-list ">
 								<div class="row ">
@@ -382,9 +368,9 @@
 										<div class="info-item"><i class="flaticon-medal  info-icon"></i>
 											<div class="info-content">
 												<h5 class="info-title">personalized learning</h5>
-												<p class="info-text">Our AI tailors learning to your pace and
+												<!-- <p class="info-text">Our AI tailors learning to your pace and
 													preferences. Experience education anew with personalized learning at
-													AiProf</p>
+													AiProf</p> -->
 											</div>
 										</div>
 									</div>
@@ -392,8 +378,8 @@
 										<div class="info-item"><i class="flaticon-game-console info-icon"></i>
 											<div class="info-content">
 												<h5 class="info-title">instant feedback </h5>
-												<p class="info-text">Real-time feedback fuels your success at AiProf.
-													Get immediate insights for dynamic learning.</p>
+												<!-- <p class="info-text">Real-time feedback fuels your success at AiProf.
+													Get immediate insights for dynamic learning.</p> -->
 											</div>
 										</div>
 									</div>
@@ -401,8 +387,8 @@
 										<div class="info-item"><i class="flaticon-map info-icon"></i>
 											<div class="info-content">
 												<h5 class="info-title">global community </h5>
-												<p class="info-text">Join our global community at AiProf. Connect,
-													collaborate, and expand your knowledge together.</p>
+												<!-- <p class="info-text">Join our global community at AiProf. Connect,
+													collaborate, and expand your knowledge together.</p> -->
 											</div>
 										</div>
 									</div>
@@ -410,22 +396,25 @@
 										<div class="info-item"><i class="flaticon-technical-support-1  info-icon"></i>
 											<div class="info-content">
 												<h5 class="info-title">Flexible Schedule</h5>
-												<p class="info-text">Learn on your terms with AiProf. Flexibility meets
-													education, anytime, anywhere.</p>
+												<!-- <p class="info-text">Learn on your terms with AiProf. Flexibility meets
+													education, anytime, anywhere.</p> -->
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="cta-area"><a class=" btn-solid reveal-start" href="#0">Get in touch</a>
+							<div class="cta-area"><a class=" btn-solid reveal-start" href="#contact-us">Get in touch</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-12 col-lg-6 d-flex align-items-center order-0 order-lg-1 about-col  wow fadeInUp"
 						data-wow-delay="0.2s">
 						<div class="img-area  " data-tilt>
-							<div class="image   "><img class="about-img img-fluid " loading="lazy"
-									src="assets/images/about/3.png" alt="Our vision"></div>
+							<div class="image"><img class="about-img img-fluid " loading="lazy"
+								src="assets/images/about/3dOnlineStudents.jpg"style="border-radius: 8px;" alt="Our vision"></div>
+							<!-- Image before
+								<div class="image   "><img class="about-img img-fluid " loading="lazy"
+									src="assets/images/about/3.png" alt="Our vision"></div> -->
 						</div>
 					</div>
 				</div>
@@ -448,8 +437,7 @@
 							<div class="sec-heading  light-title ">
 								<div class="content-area">
 									<h2 class=" title    wow fadeInUp" data-wow-delay=".4s">
-										Why <span class='hollow-text'> Students</span> choose <span
-											class='featured-text'>AiProf
+										Why <span class='hollow-text'> Students</span> choose <span class='featured-text'>AIProf
 											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150"
 												preserveAspectRatio="none">
 												<path
@@ -461,7 +449,7 @@
 								</div>
 							</div>
 							<p class=" about-text">
-								Unlocking Success: Elevate Education with AI-Powered Excellence
+								Get your answers in seconds. Bringing fun and knowledge together!
 							</p>
 							<div class="info-items-list">
 								<div class="row ">
@@ -469,10 +457,10 @@
 										<div class="info-item"><span class="info-number ">01.</span>
 											<div class="info-content">
 												<h5 class="info-title">Transformational Advancements in Education </h5>
-												<p class="info-text">
+												<!-- <p class="info-text">
 													Powered by AI innovation, our platform revolutionizes education,
 													enhancing learning experiences and boosting knowledge retention.
-												</p>
+												</p> -->
 											</div>
 										</div>
 									</div>
@@ -480,11 +468,11 @@
 										<div class="info-item"><span class="info-number ">02.</span>
 											<div class="info-content">
 												<h5 class="info-title">Data-Enhanced Learning Strategies</h5>
-												<p class="info-text">
+												<!-- <p class="info-text">
 													With our data-enhanced learning strategies, students witness a
 													remarkable surge in their educational journey, engaging with
 													subjects like never before.
-												</p>
+												</p> -->
 											</div>
 										</div>
 									</div>
@@ -492,8 +480,8 @@
 										<div class="info-item"><span class="info-number ">03.</span>
 											<div class="info-content">
 												<h5 class="info-title">Instant Learning Support</h5>
-												<p class="info-text">Our AI chatbots provide instant learning support,
-													saving valuable study time and elevating academic success.</p>
+												<!-- <p class="info-text">Our AI chatbots provide instant learning support,
+													saving valuable study time and elevating academic success.</p> -->
 											</div>
 										</div>
 									</div>
@@ -501,14 +489,14 @@
 										<div class="info-item"><span class="info-number ">04.</span>
 											<div class="info-content">
 												<h5 class="info-title">Learning Efficiency Redefined</h5>
-												<p class="info-text">Through personalized study plans and predictive
-													performance analytics, we redefine learning efficiency.</p>
+												<!-- <p class="info-text">Through personalized study plans and predictive
+													performance analytics, we redefine learning efficiency.</p> -->
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="cta-area "><a class=" btn-solid " href="#0">get in touch</a></div>
+							<div class="cta-area "><a class=" btn-solid " href="#0">Demo Video Soon</a></div>
 						</div>
 					</div>
 				</div>
@@ -527,10 +515,9 @@
 				<div class="content-area">
 					<h2 class=" title    wow fadeInUp" data-wow-delay=".2s"><span class='hollow-text'>affordable</span>
 						pricing plans</h2>
-					<p class="subtitle   wow fadeInUp " data-wow-delay=".4s">The best deals in the market:</p>
 				</div>
 				<div class=" cta-area   wow fadeInUp" data-wow-delay=".6s"><a class="cta-btn btn-solid    "
-						href="#0">see all plans<i class="bi bi-arrow-right icon "></i></a></div>
+						href="#contact-us">Get in touch<i class="bi bi-arrow-right icon "></i></a></div>
 			</div>
 			<div class="row">
 				<!--First Plan-->
@@ -538,16 +525,22 @@
 					<div class="plan    wow fadeInUp  " data-wow-delay=".1s ">
 						<div class="plan-head"><i class="flaticon-nft-1 plan-icon"></i>
 							<h4 class="plane-name">Open Plan</h4>
+							<div class="plan-price">
+								<h3 class="price">Free Trial</h3>
+							</div>
 						</div>
 
 						<div class="plan-details">
 							<ul class="plan-list">
-								<li class="plan-feat "> <span class="feat-text">Alwayes Free</span></li>
-								<li class="plan-feat "> <span class="feat-text">Some tools may have restriction</span>
+								<li class="plan-feat">
+									<span class="feat-text">Ask Me Anything About Your Social Media.</span>
+								</li>
+								<li class="plan-feat">
+									<span class="feat-text">Note: Restrictions Apply From Time To Time.</span>
 								</li>
 							</ul>
 						</div>
-						<div class="plan-cta"><a class="cta-btn btn-outline " href="#0">select plan </a></div>
+						<div class="plan-cta"><a class="cta-btn btn-outline " href="#0">Find Out More</a></div>
 					</div>
 				</div>
 				<!--Second-plan-->
@@ -563,14 +556,16 @@
 
 						<div class="plan-details">
 							<ul class="plan-list">
-								<li class="plan-feat "> <span class="feat-text">Group Discount Available
-									</span></li>
-								<li class="plan-feat "> <span class="feat-text">Charity, School like Orgs can access at
-										lower cost</span></li>
-								<li class="plan-feat "> <span class="feat-text">Conditions Apply</span></li>
+								<li class="plan-feat">
+									<span class="feat-text">Tailor Your AI Helper To Your Preferences.</span>
+								</li>
+								
+								<li class="plan-feat">
+									<span class="feat-text">Note: Charities/Schools/Other Worthy Organizations Can Access At A Lower Price.</span>
+									</li>
 							</ul>
 						</div>
-						<div class="plan-cta"><a class="cta-btn btn-outline " href="#0">select plan </a></div>
+						<div class="plan-cta"><a class="cta-btn btn-outline " href="#0">Find Out More</a></div>
 					</div>
 				</div>
 				<!--Third-plan-->
@@ -579,15 +574,21 @@
 						<div class="plan-head"><i class="flaticon-box plan-icon"></i>
 							<h4 class="plane-name">Customized Plan</h4>
 						</div>
-
 						<div class="plan-details">
 							<ul class="plan-list">
-								<li class="plan-feat "> <span class="feat-text"> Please get in touch
+								<li class="plan-feat">
+									<span class="feat-text">Tell Us What You Need & We Will Customize.</span>
+								</li>
+								<li class="plan-feat">
+									<span class="feat-text">Be part of any beta development</span>
+								</li>
+								<li class="plan-feat">
+									<span class="feat-text">Group Discount Available</span>
 								</li>
 							</ul>
 						</div>
 
-						<div class="plan-cta"><a class="cta-btn btn-outline " href="#0">select plan </a></div>
+						<div class="plan-cta"><a class="cta-btn btn-outline " href="#contact-us">Get your quote</a></div>
 					</div>
 				</div>
 			</div>
@@ -716,14 +717,18 @@
 							<div class="card-header " id="heading-1">
 								<h5 class="mb-0 faq-title">
 									<button class="btn btn-link  faq-btn  collapsed" data-bs-toggle="collapse"
-										data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">are
-										your service easy to use?</button>
+										data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">What is AI Prof?</button>
 								</h5>
 							</div>
 							<div class="collapse " id="collapse-1" aria-labelledby="collapse-1"
 								data-bs-parent="#accordion">
 								<div class="card-body">
-									<p class="faq-answer">FAQ COMING SOON</p>
+									<p class="faq-answer">Powered by AI innovation, our platform revolutionizes education,
+										enhancing learning experiences and boosting knowledge retention.
+										With our data-enhanced learning strategies, students witness a
+										remarkable surge in their educational journey, engaging with
+										subjects like never before. And the best part? Instant support provided.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -732,13 +737,16 @@
 								<h5 class="mb-0 faq-title">
 									<button class="btn btn-link  faq-btn  collapsed " data-bs-toggle="collapse"
 										data-bs-target="#collapse-2" aria-expanded="true"
-										aria-controls="collapse-2">will i receive future updates?</button>
+										aria-controls="collapse-2">Is AI Prof free?</button>
 								</h5>
 							</div>
 							<div class="collapse " id="collapse-2" aria-labelledby="collapse-2"
 								data-bs-parent="#accordion">
 								<div class="card-body">
-									<p class="faq-answer">FAQ COMING SOON</p>
+									<p class="faq-answer">
+										We have a free version which has the meet your AI Prof chatbot for you to get quick answers easily.
+										We also have 2 subscription plans so you can have the personalization which better satisfies your needs!
+									</p>
 								</div>
 							</div>
 						</div>
@@ -746,14 +754,18 @@
 							<div class="card-header " id="heading-3">
 								<h5 class="mb-0 faq-title">
 									<button class="btn btn-link  faq-btn  collapsed " data-bs-toggle="collapse"
-										data-bs-target="#collapse-3" aria-expanded="true" aria-controls="collapse-3">is
-										this services work in my country?</button>
+										data-bs-target="#collapse-3" aria-expanded="true" aria-controls="collapse-3">
+										Can I upgrade from the Open Plan to the Tailored Plan
+										later?</button>
 								</h5>
 							</div>
 							<div class="collapse " id="collapse-3" aria-labelledby="collapse-3"
 								data-bs-parent="#accordion">
 								<div class="card-body">
-									<p class="faq-answer">FAQ COMING SOON </p>
+									<p class="faq-answer">
+										Yes, you can easily upgrade your plan to unlock additional features such as
+										personalization your AI Teacher/Prof to your needs. Any paid plane will always have all our updates included.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -761,18 +773,40 @@
 							<div class="card-header " id="heading-4">
 								<h5 class="mb-0 faq-title">
 									<button class="btn btn-link  faq-btn  collapsed " data-bs-toggle="collapse"
-										data-bs-target="#collapse-4" aria-expanded="true" aria-controls="collapse-4">How
-										much I will pay?</button>
+										data-bs-target="#collapse-4" aria-expanded="true" aria-controls="collapse-4">How does AIProf handle data
+										security?</button>
 								</h5>
 							</div>
 							<div class="collapse " id="collapse-4" aria-labelledby="collapse-4"
 								data-bs-parent="#accordion">
 								<div class="card-body">
-									<p class="faq-answer">FAQ COMING SOON</p>
+									<p class="faq-answer">We take data security seriously. AIProf employs robust security measures
+										to safeguard your personal and business information, ensuring your data is protected.</p>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-2">
+							<div class="card-header" id="heading-5">
+								<h5 class="mb-0 faq-title">
+									<button class="btn btn-link faq-btn collapsed" data-bs-toggle="collapse"
+										data-bs-target="#collapse-5" aria-expanded="false"
+										aria-controls="collapse-5">What kind of support is available?</button>
+								</h5>
+							</div>
+							<div class="collapse" id="collapse-5" aria-labelledby="heading-5"
+								data-bs-parent="#accordion">
+								<div class="card-body">
+									<p class="faq-answer">
+										AI Prof offers different levels of support depending on your plan,
+										ranging from email support to
+										24/7 priority support, ensuring that your inquiries are promptly addressed.
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
+					<h3 class="mt-5">Have more questions? Feel free to <a href="#contact-us"
+						style="color: var(--clr-main);">contact us</a>. We are here to assist you!</h3>
 				</div>
 			</div>
 		</div>
@@ -846,29 +880,22 @@
 					</div>
 				</div>
 			</section>
-			<section class="locations-section  mega-section ">
-				<div class="sec-heading centered  ">
-					<div class="content-area">
-						<h2 class=" title  wow fadeInUp" data-wow-delay=".4s">Our Contacts</h2>
-					</div>
-				</div>
-				<div class=" contact-info-panel ">
+			<section class="locations-section  mega-section d-flex justify-content-center">
+				<div class=" contact-info-panel justify-content-center">
 					<div class="info-section ">
 						<div class="row">
-							<div class="col-12 col-lg-4">
-								<div class="info-panel  wow fadeInUp" data-wow-delay=".4s ">
-									<h4 class="location-title">Let's have a meeting:</h4>
-									<div class="line-on-side "> </div>
+							<div class="col-12">     
+								<div class="info-panel wow fadeInUp" data-wow-delay=".4s ">
+									<h4 class="location-title">Talk to our friendly customer services team</h4>
+									<div class="line-on-side"> </div>
 									<div class="location-card  "><i class="flaticon-email icon"></i>
 										<div class="card-content">
-											<h6 class="content-title">email:</h6><a class="email link"
-												href="mailto:yourname@example.com">info@example.com</a>
+											<h6 class="content-title">email:</h6><a class="email link" href="mailto:meetyouraisup@gmail.co">meetyouraisup@gmail.com</a>
 										</div>
 									</div>
 									<div class="location-card  "><i class="flaticon-phone-call icon"></i>
 										<div class="card-content">
-											<h6 class="content-title">phone:</h6><a class="tel link"
-												href="tel:0123456789">+29876543210</a>
+											<h6 class="content-title">phone:</h6><a class="tel link" href="tel:+447762293742">+447762293742</a>
 										</div>
 									</div>
 								</div>
@@ -888,7 +915,7 @@
 		<div class="container">
 			<div class="row footer-cols">
 				<div class="col-12 col-md-8 col-lg-4  footer-col ">
-					<img class="img-fluid footer-logo" loading="lazy" src="assets/images/logo/logo-dark.png"
+					<img class="img-fluid footer-logo" loading="lazy" src="assets/images/logo/logo.svg"
 						alt="logo" />
 					<div class="footer-col-content-wrapper">
 						<p class="footer-text-about-us">
@@ -901,7 +928,7 @@
 						<div class="mailchimp-form ">
 							<form class="one-field-form" method="post" action="#0">
 								<div class="field-group ">
-									<label class="email-label" for="email-input"> Subscribe to our newsletter</label>
+									<label class="email-label" for="email-input">Be part of our early program:</label>
 									<input class="email-input " type="email" value="" name="EMAIL" id="email-input"
 										placeholder="Email Address" autocomplete="off" />
 									<div class="cta-area">
@@ -913,37 +940,28 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6 col-lg-2  footer-col ">
-					<h2 class=" footer-col-title    ">useful links</h2>
+				<div class="col-6 col-lg-2  footer-col mt-5">
 					<div class="footer-col-content-wrapper">
 						<ul class="footer-menu ">
-							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
-									class="footer-menu-link" href="#0">Google</a>
+							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#page-hero">Home</a>
 							</li>
-							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
-									class="footer-menu-link" href="#0">Dribbble</a>
+							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#about">About Us</a>
 							</li>
-							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
-									class="footer-menu-link" href="#0">linkedIn</a>
+							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#services">Services</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-6 col-lg-2 footer-col ">
-					<h2 class=" footer-col-title    ">Resources</h2>
+				<div class="col-6 col-lg-2 footer-col mt-5">
 					<div class="footer-col-content-wrapper">
 						<ul class="footer-menu">
-							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
-									class="footer-menu-link" href="#0">support</a>
+							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#pricing">Pricing</a>
 							</li>
-							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
-									class="footer-menu-link" href="#0">dashboard</a>
+							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#faq">Faqs</a>
 							</li>
-							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
-									class="footer-menu-link" href="#0">drivers</a>
+							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#why">Why</a>
 							</li>
-							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
-									class="footer-menu-link" href="#0">projects</a>
+							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a class="footer-menu-link" href="#page-hero">Start asking</a>
 							</li>
 						</ul>
 					</div>
@@ -957,7 +975,7 @@
 						<div class="contact-info-card"><i class="bi bi-geo-alt icon"></i>
 							<span class="info">AI2BC Organization</span></div>
 						<div class="contact-info-card"><i class="bi bi-phone icon"></i><a class="info"
-								href="tel:+20123456789">+20123456789 </a></div>
+								href="tel:+20123456789">+447762293742</a></div>
 						<div class="contact-info-card">
 							<div class="social-icons">
 								<div class="sc-wrapper dir-row sc-size-32">
