@@ -44,8 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const ans = response.data.GPT.replace(regex, '<br>');
             setResponse(ans);
             setIsLoading(false)
-            speaker.src = "assets/images/spaker/speaker.svg";
-            speaker_container.appendChild(speaker);
+            toogle()
           })
           .catch((error) => {
             console.error(error);
