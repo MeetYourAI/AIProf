@@ -1174,7 +1174,7 @@
 		if (response.ok) {
 			document.getElementById("successMessage").style.display = "block";
 			document.getElementById("errorMessage").style.display = "none";
-			form.reset();
+			document.getElementById("contact-us-form").reset();
 		} else {
 			response.json().then(data => {
 			if (Object.hasOwn(data, 'errors')) {
@@ -1193,13 +1193,7 @@
 		}
 
 		form.addEventListener(submitButton, handleSubmit)
-		submitButton.addEventListener("click", function () {
-			//only if the form is valid
-			if (form.checkValidity()) {
-				document.getElementById("contact-us-form").reset();
-			}
-		
-		});
+
 
 	</script>
 
