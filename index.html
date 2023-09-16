@@ -833,26 +833,15 @@
 						<div class="contact-form-panel">
 							<div class="sec-heading centered    ">
 								<div class="content-area">
-									<h2 class=" title wow fadeInUp" data-wow-delay=".4s">Have any questions? Let's
+									<h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Have any questions? Let's
 										answer them</h2>
 								</div>
 							</div>
 							<div class="contact-form-inputs wow fadeInUp" data-wow-delay=".6s">
 								<div class="custom-form-area input-boxed">
-									<div class="alert alert-warning alert-dismissible fade show done-msg" id="successMessage" style="display: none;">
-										Submission successful!
-										<button type="button" id="successClose" class="close" data-dismiss="alert" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										  </button>
-									</div>
-									<div class="alert alert-warning alert-dismissible fade show done-msg" id="errorMessage" style="display: none;">
-										Submission failed. Please try again.
-										<button type="button" id="ErrorClose" class="close" data-dismiss="alert" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										  </button>
-									</div>
 									<!--Form To have user messages-->
-									<form class="main-form" id="contact-us-form" method="POST">
+									<form class="main-form" id="contact-us-form" action="https://formspree.io/f/mwkdqqld" method="POST">
+										<span class="done-msg" id="contactStatus"></span>
 										<div class="row ">
 											<div class="col-12 col-lg-6">
 												<div class="   input-wrapper">
@@ -891,7 +880,7 @@
 												</div>
 											</div>
 											<div class="col-12 submit-wrapper">
-												<button class=" btn-solid" id="submit-btn" type="submit"
+												<button class=" btn-solid" id="submit-btn" type="button"
 													name="UserSubmit">Send your message</button>
 											</div>
 										</div>
@@ -1168,52 +1157,43 @@
     </script>
 
 	<script>
-		
-		document.getElementById("contact-us-form").addEventListener("submit", function (event) {
-		event.preventDefault(); // Prevent the form from actually submitting
-
-		// Get input values
-		const name = document.getElementById("user-name").value;
-		const email = document.getElementById("user-email").value;
-		const subject = document.getElementById("msg-subject").value;
-		const message = document.getElementById("msg-text").value;
-
-		// Create an object with the form data
-		const formData = {
-			name,
-			email,
-			subject,
-			message,
-		};
-
-		// Make an AJAX POST request to Formspree
-		fetch("https://formspree.io/f/mwkdqqld", {
-			method: "POST",
-			headers: {
-			"Content-Type": "application/json",
-			"Access-Control-Allow-Origin": "*", // Required for CORS support to work
-			},
-			body: JSON.stringify(formData),
-		})
-			.then((response) => response.json())
-			.then((data) => {
-			if (data.success) {
-				document.getElementById("successMessage").style.display = "block";
-				document.getElementById("errorMessage").style.display = "none";
-				document.getElementsByTagNameNS("input").value = "";
-				document.getElementsByTagNameNS("textarea").value = "";
-				
+		var form = document.getElementById("contact-us-form");
+		let submitButton = document.getElementById("submit-btn");
+		async function handleSubmit(event) {
+		event.preventDefault();
+		var status = document.getElementById("contactStatus");
+		var data = new FormData(event.target);
+		fetch(event.target.action, {
+		method: form.method,
+		body: data,
+		headers: {
+			'Accept': 'application/json',
+			'Access-Control-Allow-Origin': '*'
+		}
+		}).then(response => {
+		if (response.ok) {
+			document.getElementById("successMessage").style.display = "block";
+			document.getElementById("errorMessage").style.display = "none";
+			document.getElementsByTagNameNS("input").value = " ";
+			document.getElementsByTagNameNS("textarea").value = " ";
+		} else {
+			response.json().then(data => {
+			if (Object.hasOwn(data, 'errors')) {
+			document.getElementById("errorMessage").innerHTML = data["errors"].map(error => error["message"]).join(", ")
 			} else {
 				document.getElementById("successMessage").style.display = "none";
 				document.getElementById("errorMessage").style.display = "block";
 			}
-			})
-			.catch((error) => {
+		})
+		}
+		}).catch(error => {
 			console.error("Error:", error);
 			document.getElementById("successMessage").style.display = "none";
 			document.getElementById("errorMessage").style.display = "block";
-			});
 		});
+		}
+
+		form.addEventListener(submitButton, handleSubmit)
 
 	</script>
 
