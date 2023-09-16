@@ -880,7 +880,7 @@
 												</div>
 											</div>
 											<div class="col-12 submit-wrapper">
-												<button class=" btn-solid" id="submit-btn" type="button"
+												<button class=" btn-solid" id="submit-btn" type="submit"
 													name="UserSubmit">Send your message</button>
 											</div>
 										</div>
@@ -1174,7 +1174,7 @@
 		if (response.ok) {
 			document.getElementById("successMessage").style.display = "block";
 			document.getElementById("errorMessage").style.display = "none";
-			document.getElementById("contact-us-form").reset();
+			
 		} else {
 			response.json().then(data => {
 			if (Object.hasOwn(data, 'errors')) {
@@ -1190,6 +1190,7 @@
 			document.getElementById("successMessage").style.display = "none";
 			document.getElementById("errorMessage").style.display = "block";
 		});
+		document.getElementById("contact-us-form").reset();
 		}
 
 		form.addEventListener(submitButton, handleSubmit)
