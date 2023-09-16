@@ -1669,7 +1669,7 @@ body.rounded-btns .read-more {
   border-bottom: 1px solid transparent;
 }
 .is-sticky.header-basic {
-  background-color: var(--clr-main);
+  background-color: var(--clr-extra-dark-grey);
 }
 .is-sticky.header-basic .menu-link {
   color: var(--clr-white) !important;
@@ -1728,9 +1728,10 @@ body.rounded-btns .read-more {
 .header-basic .controls-box .close-menu span:nth-child(3) {
   transform: rotate(-45deg) translateY(-9px);
 }
+/* navbar */
 @media (max-width: 1199px) {
   .header-basic {
-    background-color: var(--clr-main);
+    background-color: var(--clr-extra-dark-grey);
   }
   .header-basic .controls-box .header-search-btn {
     color: var(--clr-white);

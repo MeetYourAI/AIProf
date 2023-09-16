@@ -1669,8 +1669,9 @@ body.rounded-btns .read-more {
   z-index: 1030;
   border-bottom: 1px solid transparent;
 }
+/* navbar color */
 .is-sticky.header-basic {
-  background-color: var(--clr-main);
+  background-color: var(--clr-extra-dark-grey);
 }
 .is-sticky.header-basic .menu-link {
   color: var(--clr-white) !important;
@@ -1730,8 +1731,9 @@ body.rounded-btns .read-more {
   transform: rotate(-45deg) translateY(-9px);
 }
 @media (max-width: 1199px) {
+  /* navbar */
   .header-basic {
-    background-color: var(--clr-main);
+    background-color: var(--clr-extra-dark-grey);
   }
   .header-basic .controls-box .header-search-btn {
     color: var(--clr-white);
@@ -2702,6 +2704,9 @@ body.rounded-btns .read-more {
   margin-bottom: 3rem;
   opacity: 0.75;
   letter-spacing: 0.5px;
+  text-align: justify;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .about .text-area .about-text::first-letter {
   text-transform: capitalize;
