@@ -1194,8 +1194,13 @@
 
 		form.addEventListener(submitButton, handleSubmit)
 		submitButton.addEventListener("click", function () {
-		document.getElementById("contact-us-form").reset();
+			//only if the form is valid
+			if (form.checkValidity()) {
+				document.getElementById("contact-us-form").reset();
+			}
+		
 		});
+
 	</script>
 
 </body>
