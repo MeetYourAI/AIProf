@@ -841,7 +841,7 @@
 								<div class="custom-form-area input-boxed">
 									<!--Form To have user messages-->
 									<form class="main-form" id="contact-us-form" action="https://formspree.io/f/mwkdqqld" method="POST">
-										<span class="done-msg"></span>
+										<span class="done-msg" id="contactStatus"></span>
 										<div class="row ">
 											<div class="col-12 col-lg-6">
 												<div class="   input-wrapper">
@@ -1160,7 +1160,7 @@
 		var form = document.getElementById("contact-us-form");
 async function handleSubmit(event) {
 event.preventDefault();
-var status = document.getElementById("contact-us-form");
+var status = document.getElementById("contactStatus");
 var data = new FormData(event.target);
 fetch(event.target.action, {
   method: form.method,
@@ -1172,13 +1172,15 @@ fetch(event.target.action, {
 }).then(response => {
   if (response.ok) {
     status.innerHTML = "Thanks for your submission!";
-    form.reset()
+	alert("Thanks for your submission!");
+    form.reset();
   } else {
     response.json().then(data => {
     if (Object.hasOwn(data, 'errors')) {
       status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
     } else {
       status.innerHTML = "Oops! There was a problem submitting your form"
+	  alert("Oops! There was a problem submitting your form");
     }
   })
 }
