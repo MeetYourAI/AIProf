@@ -880,7 +880,7 @@
 												</div>
 											</div>
 											<div class="col-12 submit-wrapper">
-												<button class=" btn-solid" id="submit-btn" type="submit"
+												<button class=" btn-solid" id="submit-btn" type="button"
 													name="UserSubmit">Send your message</button>
 											</div>
 										</div>
@@ -1158,6 +1158,7 @@
 
 	<script>
 		var form = document.getElementById("contact-us-form");
+		let submitButton = document.getElementById("submit-btn");
 async function handleSubmit(event) {
 event.preventDefault();
 var status = document.getElementById("contactStatus");
@@ -1172,7 +1173,6 @@ fetch(event.target.action, {
 }).then(response => {
   if (response.ok) {
     status.innerHTML = "Thanks for your submission!";
-	alert("Thanks for your submission!");
     form.reset();
   } else {
     response.json().then(data => {
@@ -1180,7 +1180,6 @@ fetch(event.target.action, {
       status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
     } else {
       status.innerHTML = "Oops! There was a problem submitting your form"
-	  alert("Oops! There was a problem submitting your form");
     }
   })
 }
@@ -1188,7 +1187,9 @@ fetch(event.target.action, {
   status.innerHTML = "Oops! There was a problem submitting your form"
 });
 }
-form.addEventListener("submit", handleSubmit)
+
+form.addEventListener(submitButton, handleSubmit)
+
 	</script>
 
 </body>
