@@ -77,3 +77,29 @@
     display: flex;
     gap: 1rem;
 }
+
+/* Start of section for quick fixes
+for mobile responsiveness */
+
+
+@media (max-width: 990px) {
+    #about {
+        display: flex;
+        justify-content: center;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .info-items-list .info-item {
+        margin-bottom: 2rem;
+        flex-direction: column;
+        align-items: center !important;
+    }
+    #featuresAbout {
+        display: flex;
+        justify-content: center;
+    }
+    .cta-area {
+        display: flex;
+        justify-content: center !important;
+    }
+}
