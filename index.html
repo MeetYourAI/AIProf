@@ -1168,14 +1168,13 @@
 		body: data,
 		headers: {
 			'Accept': 'application/json',
-			'Access-Control-Allow-Origin': '*'
+			'Access-Control-Allow-Origin': '*',
 		}
 		}).then(response => {
 		if (response.ok) {
 			document.getElementById("successMessage").style.display = "block";
 			document.getElementById("errorMessage").style.display = "none";
-			document.getElementsByTagNameNS("input").value = " ";
-			document.getElementsByTagNameNS("textarea").value = " ";
+			form.reset();
 		} else {
 			response.json().then(data => {
 			if (Object.hasOwn(data, 'errors')) {
@@ -1194,6 +1193,13 @@
 		}
 
 		form.addEventListener(submitButton, handleSubmit)
+		submitButton.addEventListener("click", function () {
+			//only if the form is valid
+			if (form.checkValidity()) {
+				document.getElementById("contact-us-form").reset();
+			}
+		
+		});
 
 	</script>
 
