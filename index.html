@@ -833,7 +833,7 @@
 						<div class="contact-form-panel">
 							<div class="sec-heading centered    ">
 								<div class="content-area">
-									<h2 class=" title    wow fadeInUp" data-wow-delay=".4s">Have any questions? Let's
+									<h2 class=" title wow fadeInUp" data-wow-delay=".4s">Have any questions? Let's
 										answer them</h2>
 								</div>
 							</div>
@@ -1191,16 +1191,18 @@
 			method: "POST",
 			headers: {
 			"Content-Type": "application/json",
-			"Access-Control-Allow-Origin": "*" // Required for CORS support to work
+			"Access-Control-Allow-Origin": "*", // Required for CORS support to work
 			},
 			body: JSON.stringify(formData),
 		})
-			.then((response) => {
-			if (response.ok) {
+			.then((response) => response.json())
+			.then((data) => {
+			if (data.success) {
 				document.getElementById("successMessage").style.display = "block";
 				document.getElementById("errorMessage").style.display = "none";
-				// Clear form inputs
-				document.getElementById("contact-us-form").reset();
+				document.getElementsByTagNameNS("input").value = "";
+				document.getElementsByTagNameNS("textarea").value = "";
+				
 			} else {
 				document.getElementById("successMessage").style.display = "none";
 				document.getElementById("errorMessage").style.display = "block";
