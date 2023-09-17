@@ -431,7 +431,7 @@
 			<div class="content-block">
 				<div class="row">
 					<div id="trafficChart">
-						
+
 					</div>
 				</div>
 			</div>
@@ -1209,8 +1209,9 @@
 	</script>
 	<script>
 		const repoName = 'AIProf'; // repository name
-const accessToken = 'AIProfTraffic'; // access token
-const apiUrl = `https://api.github.com/meetyourai/${repoName}/traffic/views`;
+		//env variable for github access token 
+		const accessToken = process.env.GH_ACCESS_TOKEN; // GitHub access token
+const apiUrl = `https://api.github.com/repos/MeetYourAI/${repoName}/traffic/views`;
 
 // GitHub API headers with your access token
 const headers = {
