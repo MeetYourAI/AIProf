@@ -421,14 +421,20 @@
 			</div>
 			<!--End first about div-->
 			<!-- Start of section about user growth analytics with iframe -->
+			<!-- <div class="content-block">
+				<div class="row">-->
+					<!-- Temp embed analytics Chart -->
+					<!--<iframe width=900 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzXOjwRmkTIpYGxcJsc4IyvLfSJd4BtmBQaMXRhZJmSMk3rdElB0-0NT4vd6FGwtGxBrEKR7tRFHOq/pubhtml?gid=164330882&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+					</div>
+			</div> -->
+
 			<div class="content-block">
 				<div class="row">
-					<!-- Temp embed analytics Chart -->
-					<iframe width=900 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzXOjwRmkTIpYGxcJsc4IyvLfSJd4BtmBQaMXRhZJmSMk3rdElB0-0NT4vd6FGwtGxBrEKR7tRFHOq/pubhtml?gid=164330882&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+					<div id="trafficChart">
+						
 					</div>
+				</div>
 			</div>
-
-
 
 
 			<!-- Start WHY choose us div-->
@@ -1200,6 +1206,68 @@
 		form.addEventListener(submitButton, handleSubmit)
 
 
+	</script>
+	<script>
+		const repoName = 'AIProf'; // repository name
+const accessToken = 'AIProfTraffic'; // access token
+const apiUrl = `https://api.github.com/meetyourai/${repoName}/traffic/views`;
+
+// GitHub API headers with your access token
+const headers = {
+  Authorization: `Bearer ${accessToken}`,
+};
+
+// Fetch traffic data from GitHub API
+fetch(apiUrl, { headers })
+  .then((response) => response.json())
+  .then((data) => {
+    const dates = data.views.map((entry) => new Date(entry.timestamp));
+    const counts = data.views.map((entry) => entry.count);
+
+    // Calculate daily counts
+    const dailyCounts = [];
+    for (let i = 1; i < counts.length; i++) {
+      dailyCounts.push(counts[i] - counts[i - 1]);
+    }
+
+    // Create a chart
+    const ctx = document.getElementById('trafficChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: dates.slice(1),
+        datasets: [
+          {
+            label: 'Daily Visitors/Views',
+            data: dailyCounts,
+            fill: false,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          x: {
+            type: 'time',
+            time: {
+              unit: 'day',
+            },
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Count',
+            },
+          },
+        },
+      },
+    });
+  })
+  .catch((error) => {
+    console.error('Failed to fetch data:', error);
+  });
 	</script>
 
 </body>
