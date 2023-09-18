@@ -581,7 +581,16 @@
 									</li>
 							</ul>
 						</div>
-						<div id="paypal-button-container"></div>
+						<div class="container">
+							<button id="paypal-button" type="button">
+							  <span id="paypal-button-title">
+								Buy now with
+							  </span>
+							  <span id="paypal-logo">
+								<i id="firstPartLogo">Pay</i><i id="secondPartLogo">Pal</i>
+							  </span>
+							</button>
+						  </div>
 					</div>
 				</div>
 				<!--Third-plan-->
@@ -1172,8 +1181,16 @@
             window.location.href = whatsappShareUrl;
         }
     </script>
-	<!-- script start demo for paypal subscription button  -->
 	<script>
+		// event listener for paypal button click to alert user its coming soon
+		document.getElementById('paypal-button').addEventListener('click', function (e) {
+			e.preventDefault();
+			// call the function that will redirect the users to share to their Twitter Profile
+			alert("Paypal subscription is coming soon!");
+		});
+	</script>
+	<!-- script start demo for paypal subscription button  -->
+	<!-- <script>
 		paypal.Buttons({
 		 createSubscription: function(data, actions) {
 		   return actions.subscription.create({
@@ -1184,7 +1201,7 @@
 			alert('You have successfully subscribed to ' + data.subscriptionID); // Optional message given to subscriber
 		  }
 		}).render('#paypal-button-container'); // Renders the PayPal button
-	   </script>
+	   </script> -->
 	   <!-- paypal dev docs: https://developer.paypal.com/docs/subscriptions/integrate/ -->
 </body>
 
