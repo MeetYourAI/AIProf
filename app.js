@@ -1,37 +1,32 @@
 //test for github traffic github api
 const repoName = 'AIProf'; // repository name
 //env variable for github access token 
-const accessToken = process.env.GH_ACCESS_TOKEN; // GitHub access token
-const apiUrl = `https://api.github.com/MeetYourAI/${repoName}/traffic/views`;
+const accessToken = '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'; // GitHub access token
+const apiUrl = `https://api.github.com/repos/MeetYourAI/${repoName}/traffic/views`;
 
 // GitHub API headers with your access token
 const headers = {
-Authorization: `Bearer ${accessToken}`,
+  Accept: 'application/vnd.github.v3+json',
+  Authorization:'Basic ' + btoa('MeetYourAI' + ':' + accessToken),
 };
 
 // Fetch traffic data from GitHub API
 fetch(apiUrl, { headers })
 .then((response) => response.json())
 .then((data) => {
-const dates = data.views.map((entry) => new Date(entry.timestamp));
+const dates = data.views.map((entry) => new Date(entry.timestamp).getDate() + " / " + (new Date(entry.timestamp).getMonth() + 1) + " / " + new Date(entry.timestamp).getFullYear());
 const counts = data.views.map((entry) => entry.count);
-
-// Calculate daily counts
-const dailyCounts = [];
-for (let i = 1; i < counts.length; i++) {
-dailyCounts.push(counts[i] - counts[i - 1]);
-}
 
 // Create a chart
 const ctx = document.getElementById('trafficChart').getContext('2d');
 new Chart(ctx, {
 type: 'line',
 data: {
-labels: dates.slice(1),
+labels: dates,
 datasets: [
   {
     label: 'Daily Visitors/Views',
-    data: dailyCounts,
+    data: counts,
     fill: false,
     borderColor: 'rgba(75, 192, 192, 1)',
     borderWidth: 2,
@@ -39,21 +34,20 @@ datasets: [
 ],
 },
 options: {
-scales: {
-  x: {
-    type: 'time',
-    time: {
-      unit: 'day',
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: 'Dates'
+      },
+    },
+    y: {
+      title: {
+        display: true,
+        text: 'Counts'
+      },
     },
   },
-  y: {
-    beginAtZero: true,
-    title: {
-      display: true,
-      text: 'Count',
-    },
-  },
-},
 },
 });
 })

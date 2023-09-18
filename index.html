@@ -424,15 +424,15 @@
 			<div class="content-block">
 				<div class="row">
 					<!-- Temp embed analytics Chart -->
-					<iframe width=600 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzXOjwRmkTIpYGxcJsc4IyvLfSJd4BtmBQaMXRhZJmSMk3rdElB0-0NT4vd6FGwtGxBrEKR7tRFHOq/pubhtml?gid=164330882&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+					<!-- <iframe width=600 height=500 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzXOjwRmkTIpYGxcJsc4IyvLfSJd4BtmBQaMXRhZJmSMk3rdElB0-0NT4vd6FGwtGxBrEKR7tRFHOq/pubhtml?gid=164330882&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
 					</div>
 			</div>
 
 			<div class="content-block">
 				<div class="row">
-					<div id="trafficChart">
+					<canvas id="trafficChart">
 
-					</div>
+					</canvas>
 				</div>
 			</div>
 
@@ -1094,6 +1094,8 @@
 	<!--     main     -->
 	<script src="js/main.js"></script>
 	<!-- for js testing codes -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<!-- add chart js -->
 	<script src="app.js"></script>
 	<!--for chatbot -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
