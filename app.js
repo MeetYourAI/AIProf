@@ -1,7 +1,7 @@
 //test for github traffic github api
 const repoName = 'AIProf'; // repository name
 //env variable for github access token 
-const accessToken = "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"; // GitHub access token
+const accessToken = secrets.GH_ACCESS_TOKEN; // GitHub access token
 const apiUrl = `https://api.github.com/repos/MeetYourAI/${repoName}/traffic/views`;
 
 // GitHub API headers with your access token
