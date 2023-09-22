@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         'AnswersofAIweaknesses20230901.md',
         'AdventuresWithAIonEducation20230901.md',
         'BestAIImageGeneratorForFree20230909.md',
+        'RecruitingsenioradvisorsAiprof20230922.md',
       // Add other markdown files here
     ];
   
