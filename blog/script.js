@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const blogPostsContainer = document.getElementById('blogPosts');
     const markdownFiles = [
+      'InprovingAIBot20230924.md',
       'VertexAIimggen20230924.md',
       'RecruitingsenioradvisorsAiprof20230922.md',
       'ChatGptWeaknessOnEducation20230901.md',
-        'AnswersofAIweaknesses20230901.md',
-        'AdventuresWithAIonEducation20230901.md',
-        'BestAIImageGeneratorForFree20230909.md',
+      'AnswersofAIweaknesses20230901.md',
+      'AdventuresWithAIonEducation20230901.md',
+      'BestAIImageGeneratorForFree20230909.md',
       // Add other markdown files here
     ];
   
