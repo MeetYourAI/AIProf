@@ -132,6 +132,10 @@ You can deploy this project using:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+ **John Eme**
+- GitHub: [@githubhandle](https://github.com/Jazzijay11)
+- LinkedIn [LinkedIn](https://www.linkedin.com/in/eme-john-b1a1b3225)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🔭 Future Features <a name="future-features"></a>
