@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageForm = document.getElementById("imageForm");
     const inputText = document.getElementById("inputText");
     const generatedImage = document.getElementById("generatedImage");
+    const Api = "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"
+
 
     imageForm.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -20,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "Bearer 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"
+                        "Authorization": `Bearer ${Api}`
                     },
                     body: JSON.stringify({ inputs: text }),
                 }

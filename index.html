@@ -74,6 +74,10 @@
 			y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
 		})(window, document, "clarity", "script", "is15henpdz");
 	</script>
+
+	<script src="jquery.js"></script>
+	<script src="mediaelement-and-player.min.js"></script>
+	<link rel="stylesheet" href="mediaelementplayer.css" />
 </head>
 
 <body class=" dark-theme  landing-page-demo">
@@ -697,9 +701,8 @@
 			<div class="row testimonial-slick" style="justify-content: center;">
 				<div class="col-md-6 text-center">
 					<div class="testimonial-inner red-left">
-						<video width="500" controls>
-							<source src="/assets/Videos/Aiprofbenefit.mp4" type="video/mp4">
-						</video>
+						<iframe width="550" height="350" src="https://www.youtube.com/embed/6xKQ2Yx2MTg">
+						</iframe>
 					</div>
 				</div>
 			</div>
@@ -1219,6 +1222,9 @@
 	   </script> -->
 	<!-- paypal dev docs: https://developer.paypal.com/docs/subscriptions/integrate/ -->
 	<script src="js/Video.js"></script>
+	<script>
+		var player = new MediaElementPlayer('#player1');
+	</script>
 </body>
 
 </html>
