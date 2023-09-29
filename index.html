@@ -32,6 +32,8 @@
 
 	<!-- bootstarp -->
 	<link rel="stylesheet" href="css/vendors/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 
 	<!-- animate.css file -->
 	<link rel="stylesheet" href="css/vendors/animate.css">
@@ -190,13 +192,44 @@
 				<!--start of image-area -->
 				<div class="col-12 mx-md-auto col-lg-6 text-center mt-5">
 					<div class="hero-image-area mb-5 mb-lg-0">
-						<div class="hero-img-wraper"><img class="img-fluid " src="assets/images/hero/tempModel.png"
+						<!-- <div class="hero-img-wraper">
+							<img class="img-fluid " src="assets/images/hero/tempModel.png"
 								alt="" draggable="false">
+						</div> -->
+						<div class="hero-img-wraper">
+							<img id="generatedImage" class="img-fluid">
 						</div>
 					</div>
+									<!--Start of Image Generation-->
+					<div class="container mt-5">
+						<div class="text-center">
+							<button onclick="toggleInput()" type="submit" class="cta-btn btn-solid">Choose Your Teacher/Change Teacher</button>
+						</div>
+						<form id="imageForm">
+						<div class="mt-3 text-center" id="input-container" style="display: none;">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">👩‍🏫</span>
+								</div>
+								<input type="text" class="form-control" id="inputText" placeholder="Enter Teacher's Name" style="height:55px;">
+								<div class="input-group-append">
+									<button type="submit" class="cta-btn btn-solid" onclick="changeTeacher()">Submit</button>
+								</div>
+							</div>
+						</div>
+						</form>
+						<div class="mt-3 text-center">
+							<img id="avatar" src="placeholder_avatar.png" alt="Teacher Avatar" style="display: none;">
+						</div>
+					</div>
+					<script src="js/Teacher.js"></script>
+					<script src="js/GenImage.js"></script>
+					
+									<!--End of Image Generation-->
+
 					<div id="ask-social">
 						<div class="col-sm-8 mx-auto">
-							<h4>
+							<h4 style="width:max-content">
 								Ask me anything about learning
 							</h4>
 						</div>
@@ -225,7 +258,7 @@
 					</div>
 				</div>
 				<!--Start of Image Generation-->
-				<div class="container mt-5">
+				<!-- <div class="container mt-5">
 					<div class="row">
 						<div class="col-md-6">
 							<h1>Generate your Image</h1>
@@ -244,7 +277,7 @@
 						</div>
 					</div>
 				</div>
-				<script src="js/GenImage.js"></script>
+				<script src="js/GenImage.js"></script> -->
 				<!--End of Image Generation-->
 			</div>
 		</div>
