@@ -6,63 +6,86 @@ const responseDiv = document.getElementById("response");
 let forVoice = " ";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const handleAsk = async () => {
-    const question = questionInput.value;
-    questionInput.innerHTML = " "
-    if (question) {
+  let access_token = null;
+  let refresh_token = null;
+  console.log('the access token is 1st', access_token);
+  console.log('the refresh token is 1st', refresh_token);
+  
+  const handleAsk = () => {
+      const question = questionInput.value;
+      questionInput.innerHTML = " "
+      if (question) {
       askButton.innerHTML = '<img id="loading-img" src="assets/images/loading2.svg" width="110" height="20" alt="Loading" />';
       setResponse('Please wait! Response is coming....')
       setIsLoading(true)
-      try {
-        const url = 'https://open-ai21.p.rapidapi.com/conversationgpt';
-        const options = {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': '40d33ba524msh231cad64d36679ep120df2jsn041e8eea61b1',
-            'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
-          },
-          body: JSON.stringify({
-            messages: [
-              {
-                role: 'user',
-                content: question
-              }
-            ]
-          })
-        };
-        axios
-          .request({
-            url,
-            method: options.method,
-            headers: options.headers,
-            data: options.body
+
+      if (access_token) {
+          const headers = {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${access_token}`,
+          };
+          const api_url = "https://awesome-terra-400014.lm.r.appspot.com/chat/";
+          const data = { "user_input": question };
+  
+          fetch(api_url, {
+              method: "POST",
+              headers: headers,
+              body: JSON.stringify(data),
           })
           .then((response) => {
-            const regex = /\\n/g;
-            forVoice = response.data.GPT.replace(regex, ' ');
-            const ans = response.data.GPT.replace(regex, '<br>');
+              if (response.status === 401) {
+                  refreshAccessToken(refresh_token, makeApiRequest);
+              } else {
+                  return response.json();
+              }
+          })
+          .then((result) => {
+            forVoice = result.chatbot_response;
+            const ans = result.chatbot_response;
             setResponse(ans);
             setIsLoading(false)
-            toogle()
+            console.log('the result is', result);
+            // toogle()
           })
           .catch((error) => {
-            console.error(error);
+            responseDiv.textContent = "Request failed with an error.";
             setIsLoading(false)
             setResponse('Something went wrong. Please try again')
           });
-      } catch (error) {
-        console.error(error);
+      } else {
         setIsLoading(false)
-        setResponse('Something went wrong. Please try again')
+        setResponse('No access token found.')
       }
-    }
+  }};
+  
+  const refreshAccessToken = (refreshToken, onSuccess) => {
+      console.log('Refresh token')
+      fetch("https://awesome-terra-400014.lm.r.appspot.com/api/token/refresh/", {
+          method: "POST",
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ refresh: refreshToken }),
+      })
+      .then((response) => response.json())
+      .then((result) => {
+          if (result.access) {
+              access_token = result.access;
+              onSuccess();
+          } else {
+            responseDiv.textContent = "Failed to refresh access token.";
+          }
+      })
+      .catch((error) => {
+        responseDiv.textContent = "Failed to refresh access token.";
+      });
   };
-
+  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1OTk5NDk0LCJpYXQiOjE2OTU2Mzk0OTQsImp0aSI6IjA5MDViMjkxNDllNDQ4NmQ4YzJkMTViMTcyYWNiMWYxIiwidXNlcl9pZCI6MX0.-wRGonq-iMRkVREm_QkiC1fTrfmaGfzx0ralzn-wFrU';
+  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NTcyNTg5NCwiaWF0IjoxNjk1NjM5NDk0LCJqdGkiOiI0MWJlOTBhYTcyMzU0MDZhOTBkODk4YWZjZDA5YWE4YyIsInVzZXJfaWQiOjF9.Q16jXxjFoC0JoHzGftIjW_0I4jvUk8nXgzlJP-WdWJ';
+  
   const setResponse = (text) => {
     responseDiv.innerHTML = text;
   };
-
   const setIsLoading = (isLoading) => {
     console.log("i'm in setIsLoading", isLoading)
     askButton.disabled = isLoading;
@@ -74,9 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       askButton.style.cursor = 'pointer';
     }
   };
-
   askButton.onclick = handleAsk
-
 
 
 // ...........mic Related js (Speech Recognition)............
