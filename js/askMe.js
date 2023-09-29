@@ -8,9 +8,6 @@ let forVoice = " ";
 document.addEventListener("DOMContentLoaded", () => {
   let access_token = null;
   let refresh_token = null;
-  console.log('the access token is 1st', access_token);
-  console.log('the refresh token is 1st', refresh_token);
-  
   const handleAsk = () => {
       const question = questionInput.value;
       questionInput.innerHTML = " "
@@ -34,8 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
           })
           .then((response) => {
               if (response.status === 401) {
+                  console.log("I'm in refresh mode", response);
                   refreshAccessToken(refresh_token, makeApiRequest);
               } else {
+                  console.log("I'm not in response mode", response);
                   return response.json();
               }
           })
@@ -71,17 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((result) => {
           if (result.access) {
               access_token = result.access;
+              console.log('Access token is', access_token)
               onSuccess();
           } else {
             responseDiv.textContent = "Failed to refresh access token.";
+            console.log('Cannot refresh access')
           }
       })
       .catch((error) => {
         responseDiv.textContent = "Failed to refresh access token.";
+        console.log('Cannot refresh access')
       });
   };
-  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1OTk5NDk0LCJpYXQiOjE2OTU2Mzk0OTQsImp0aSI6IjA5MDViMjkxNDllNDQ4NmQ4YzJkMTViMTcyYWNiMWYxIiwidXNlcl9pZCI6MX0.-wRGonq-iMRkVREm_QkiC1fTrfmaGfzx0ralzn-wFrU';
-  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NTcyNTg5NCwiaWF0IjoxNjk1NjM5NDk0LCJqdGkiOiI0MWJlOTBhYTcyMzU0MDZhOTBkODk4YWZjZDA5YWE4YyIsInVzZXJfaWQiOjF9.Q16jXxjFoC0JoHzGftIjW_0I4jvUk8nXgzlJP-WdWJ';
+  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2Mzc3MzI0LCJpYXQiOjE2OTYwMTczMjQsImp0aSI6IjYyNzgzMjkxYzJmYTQ5NzE5MjkzMTdhZDQzYjQ2OGNlIiwidXNlcl9pZCI6MX0.EwFuTCLUf6J7sGvHNScieiAEHNEXZi3piwqHFOEKcto';
+  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NjEwMzcyNCwiaWF0IjoxNjk2MDE3MzI0LCJqdGkiOiIzZWIxNWVhZDc2ZTY0YzllOWFiZWM2ODUwMTg5YzM0NiIsInVzZXJfaWQiOjF9.0WgBBs5gszgzgWm_1iM51pCYNqLV3dpmC5GyobhpnNE';
   
   const setResponse = (text) => {
     responseDiv.innerHTML = text;
