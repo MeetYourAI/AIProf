@@ -68,6 +68,7 @@
 
 	<!-- new-stylesheet -->
 	<link rel="stylesheet" href="css/home.css">
+
 	<!-- Microsoft ga alternative -->
 	<script type="text/javascript">
 		(function (c, l, a, r, i, t, y) {
@@ -77,6 +78,7 @@
 		})(window, document, "clarity", "script", "is15henpdz");
 	</script>
 	<meta name="monetag" content="e150f715c43b4db76079b1b3d7975e91">
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body class=" dark-theme  landing-page-demo">
@@ -178,7 +180,7 @@
 									</div>
 								</div>
                                 <div class="cta-links-area d-flex justify-content-center">
-                                    <a id="toggleButton1" class=" btn-outline cta-link cta-link-primary">
+                                    <a id="toggleButton1" class="btn-outline cta-link cta-link-primary">
                                         Demo Video
                                     </a>
                                 </div>
@@ -193,17 +195,14 @@
 				<div class="col-12 mx-md-auto col-lg-6 text-center mt-5">
 					<div class="hero-image-area mb-5 mb-lg-0">
 						<div class="hero-img-wraper">
-							<img class="img-fluid " src="assets/images/hero/tempModel.png"
+							<img class="img-fluid" style="border-radius: 18px;" src="assets/images/hero/3D_Animation_Style_Einstein_front.png"
 								alt="" draggable="false" id="generatedImage">
 						</div>
-						<!-- <div class="hero-img-wraper">
-							<img id="generatedImage" class="img-fluid">
-						</div> -->
 					</div>
-									<!--Start of Image Generation-->
+					<!--Start of Image Generation-->
 					<div class="container mt-5">
 						<div class="text-center">
-							<button onclick="toggleInput()" type="submit" class="cta-btn btn-solid" id="chooseTeacherBtn">Choose/Change Your Teacher</button>
+							<button onclick="toggleInput()" type="submit" class="btn-outline cta-link cta-link-primary" id="chooseTeacherBtn">Choose Your Teacher</button>
 						</div>
 						<form id="imageForm">
 						<div class="mt-3 text-center" id="input-container" style="display: none;">
@@ -211,7 +210,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text">👩‍🏫</span>
 								</div>
-								<input type="text" class="form-control" id="inputText" placeholder="Enter Teacher's Name" style="height:55px;">
+								<input type="text" class="form-control mx-2" id="inputText" placeholder="Enter Teacher's Name" style="height:55px;">
 								<div class="input-group-append">
 									<button type="submit" class="cta-btn btn-solid" onclick="changeTeacher()">Submit</button>
 								</div>
@@ -222,10 +221,7 @@
 							<img id="avatar" src="placeholder_avatar.png" alt="Teacher Avatar" style="display: none;">
 						</div>
 					</div>
-					<script src="js/Teacher.js"></script>
-					<script src="js/GenImage.js"></script>
-					
-									<!--End of Image Generation-->
+					<!--End of Image Generation-->
 
 					<div id="ask-social">
 						<div class="col-sm-8 mx-auto">
@@ -257,28 +253,6 @@
 						</div>
 					</div>
 				</div>
-				<!--Start of Image Generation-->
-				<!-- <div class="container mt-5">
-					<div class="row">
-						<div class="col-md-6">
-							<h1>Generate your Image</h1>
-							<form id="imageForm">
-								<div class="mb-3">
-									<input type="text" id="inputText" class="form-control"
-										placeholder="Write your prompt here...." required>
-								</div>
-								<button type="submit" class="cta-btn btn-solid">Generate</button>
-							</form>
-						</div>
-						<div class="col-md-6">
-							<div class="image-container">
-								<img id="generatedImage" class="img-fluid">
-							</div>
-						</div>
-					</div>
-				</div>
-				<script src="js/GenImage.js"></script> -->
-				<!--End of Image Generation-->
 			</div>
 		</div>
 	</section>
@@ -320,9 +294,9 @@
 	</div>
 
 	<!-- Start  services Section-->
-	<section class="services services-boxed mega-section  " id="services">
+	<section class="services services-boxed mega-section  text-center" id="services">
 		<div class="container">
-			<div class="sec-heading ">
+			<div class="sec-heading">
 				<div class="content-area">
 					<h2 class="title wow fadeInUp" data-wow-delay=".2s">Our Offerings</h2>
 					<p class="subtitle wow fadeInUp " data-wow-delay=".4s">
@@ -341,13 +315,10 @@
 				<div class="col-12 col-md-6  col-lg-4 mx-auto ">
 					<!--Start First service box-->
 					<div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".1s">
-						<div class="service-icon"><i class="flaticon-web-development font-icon"></i></div><span
+						<div class="service-icon"><i class="flaticon-calendar font-icon"></i></div><span
 							class="service-num hollow-text">1 </span>
 						<div class="service-content">
-							<h3 class="service-title">Skilled Teachers</h3>
-							<!-- <p class="service-text">	
-								
-							</p> -->
+							<h3 class="service-title">Customized learning</h3>
 						</div>
 					</div>
 					<!-- End First service box   -->
@@ -355,41 +326,32 @@
 				<div class="col-12 col-md-6  col-lg-4 mx-auto ">
 					<!--Start Second service box-->
 					<div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".2s">
-						<div class="service-icon"><i class="flaticon-nanotechnology font-icon"></i></div><span
+						<div class="service-icon"><i class="flaticon-book font-icon"></i></div><span
 							class="service-num hollow-text">2 </span>
 						<div class="service-content">
 							<h3 class="service-title">Infinite Topics</h3>
-							<!-- <p class="service-text">	
-								
-							</p> -->
 						</div>
 					</div>
 					<!-- End Second service box-->
 				</div>
-				<div class="col-12 col-md-6  col-lg-4 mx-auto  ">
+				<div class="col-12 col-md-6  col-lg-4 mx-auto">
 					<!--Start Third service box-->
 					<div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".3s">
-						<div class="service-icon"><i class="flaticon-web-domain font-icon"></i></div><span
+						<div class="service-icon"><i class="flaticon-nanotechnology font-icon"></i></div><span
 							class="service-num hollow-text">3 </span>
 						<div class="service-content">
-							<h3 class="service-title">AI-Driven Learning</h3>
-							<!-- <p class="service-text">	
-								
-							</p> -->
+							<h3 class="service-title">AI-Driven Solutions</h3>
 						</div>
 					</div>
 					<!-- End Third service box-->
 				</div>
-				<div class="col-12 col-md-6  col-lg-4 mx-auto  ">
+				<div class="col-12 col-md-6 col-lg-4 mx-auto">
 					<!--Start fourth service box-->
 					<div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".4s">
-						<div class="service-icon"><i class="flaticon-profile font-icon"></i></div><span
+						<div class="service-icon"><i class="flaticon-clipboard font-icon"></i></div><span
 							class="service-num hollow-text">4 </span>
 						<div class="service-content">
 							<h3 class="service-title">Immediate Assessment</h3>
-							<!-- <p class="service-text">	
-								
-							</p> -->
 						</div>
 					</div>
 					<!-- End fourth service box   -->
@@ -397,13 +359,10 @@
 				<div class="col-12 col-md-6  col-lg-4 mx-auto  ">
 					<!--Start 5th service box-->
 					<div class="box service-box  wow fadeInUp reveal-start" data-wow-offset="0" data-wow-delay=".5s">
-						<div class="service-icon"><i class="flaticon-search font-icon"></i></div><span
+						<div class="service-icon"><i class="flaticon-medal font-icon"></i></div><span
 							class="service-num hollow-text">5 </span>
 						<div class="service-content">
 							<h3 class="service-title">Available 24/7</h3>
-							<!-- <p class="service-text">	
-								
-							</p> -->
 						</div>
 					</div>
 					<!-- End 5th service box-->
@@ -411,13 +370,10 @@
 				<div class="col-12 col-md-6  col-lg-4 mx-auto  ">
 					<!--Start 6th service box-->
 					<div class="box service-box  wow fadeInUp  reveal-start" data-wow-offset="0" data-wow-delay=".6s">
-						<div class="service-icon"><i class="flaticon-strategy font-icon"></i></div><span
+						<div class="service-icon"><i class="flaticon-growth font-icon"></i></div><span
 							class="service-num hollow-text">6 </span>
 						<div class="service-content">
-							<h3 class="service-title">Unlock Your Potential</h3>
-							<!-- <p class="service-text">	
-								
-							</p> -->
+							<h3 class="service-title">Productivity</h3>
 						</div>
 					</div>
 					<!-- End 6th service box-->
@@ -436,10 +392,10 @@
 					<div class="col-12 col-lg-6 d-flex align-items-center order-1 order-lg-0 about-col pad-end  wow fadeInUp"
 						data-wow-delay="0.6s">
 						<div class="text-area">
-							<div class="sec-heading  light-title">
+							<div class="sec-heading light-title mb-5">
 								<div class="content-area">
-									<h2 class=" title wow fadeInUp" data-wow-delay=".4s"> <span class='featured-text'>
-											About Us <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150"
+									<h2 class="title wow fadeInUp text-center" data-wow-delay=".4s"> <span class='featured-text'>
+											About AIProf <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150"
 												preserveAspectRatio="none">
 												<path
 													d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7">
@@ -453,39 +409,31 @@
 							<div class="info-items-list">
 								<div class="row" id="featuresAbout">
 									<div class="col-9 col-xl-6">
-										<div class="info-item"><i class="flaticon-medal info-icon"></i>
-											<div class="info-content">
-												<h5 class="info-title">Customized learning</h5>
-												<!-- <p class="info-text">Our AI tailors learning to your pace and
-													preferences. Experience education anew with personalized learning at
-													AiProf</p> -->
+										<div class="info-item"><i class="fas fa-universal-access info-icon"></i>
+											<div class="info-content text-center">
+												<h5 class="info-title">Dedicated to accessibility</h5>
 											</div>
 										</div>
 									</div>
 									<div class="col-9 col-xl-6">
-										<div class="info-item"><i class="flaticon-game-console info-icon"></i>
-											<div class="info-content">
-												<h5 class="info-title">Provide Instant Feedback</h5>
-												<!-- <p class="info-text">Real-time feedback fuels your success at AiProf.
-													Get immediate insights for dynamic learning.</p> -->
+										<div class="info-item"><i class="fas fa-user-graduate info-icon"></i>
+											<div class="info-content text-center">
+												<h5 class="info-title">Personalized education</h5>
 											</div>
 										</div>
 									</div>
 									<div class="col-9 col-xl-6">
-										<div class="info-item"><i class="flaticon-map info-icon"></i>
-											<div class="info-content">
-												<h5 class="info-title">global community</h5>
-												<!-- <p class="info-text">Join our global community at AiProf. Connect,
-													collaborate, and expand your knowledge together.</p> -->
+										<div class="info-item"><i class="far fa-lightbulb info-icon"></i>
+											<div class="info-content text-center">
+												<h5 class="info-title">Creative Innovation</h5>
 											</div>
 										</div>
 									</div>
 									<div class="col-9 col-xl-6">
-										<div class="info-item"><i class="flaticon-technical-support-1  info-icon"></i>
-											<div class="info-content">
-												<h5 class="info-title">Suggests Adaptable Timetable</h5>
-												<!-- <p class="info-text">Learn on your terms with AiProf. Flexibility meets
-													education, anytime, anywhere.</p> -->
+										<div class="info-item"><i class="fas fa-users info-icon"></i>
+											<div class="info-content text-center">
+												<h5 class="info-title">Building a learning community</h5>
+
 											</div>
 										</div>
 									</div>
@@ -501,9 +449,7 @@
 							<div class="image"><img class="about-img img-fluid " loading="lazy"
 									src="assets/images/about/3dOnlineStudents.jpg" style="border-radius: 8px;"
 									alt="Our vision"></div>
-							<!-- Image before
-								<div class="image   "><img class="about-img img-fluid " loading="lazy"
-									src="assets/images/about/3.png" alt="Our vision"></div> -->
+
 						</div>
 					</div>
 				</div>
@@ -626,7 +572,7 @@
 		<div class="container">
 			<div class="sec-heading  ">
 				<div class="content-area">
-					<h2 class=" title    wow fadeInUp" data-wow-delay=".2s"><span class='hollow-text'>affordable</span>
+					<h2 class=" title wow fadeInUp text-center" data-wow-delay=".2s"><span class='hollow-text'>affordable</span>
 						pricing plans</h2>
 				</div>
 				<div class=" cta-area   wow fadeInUp" data-wow-delay=".6s"><a class="cta-btn btn-solid    "
@@ -643,15 +589,14 @@
 							</div>
 						</div>
 
-						<div class="plan-details">
+						<div class="plan-details" style="margin-top: 30px;">
 							<ul class="plan-list">
 								<li class="plan-feat">
 									<span class="feat-text">Ask Me Anything About Learning</span>
 								</li>
-								
 							</ul>
 						</div>
-						<div class="plan-cta"><a class="cta-btn btn-outline " href="#ask-social">Try Now</a></div>
+						<div class="plan-cta" style="margin-top: 60px;"><a class="cta-btn btn-outline " href="#ask-social">Try Now</a></div>
 					</div>
 				</div>
 				<!--Second-plan-->
@@ -772,9 +717,9 @@
 							loading="lazy" src="assets/images/faq/faqpromptnew.png" style="border-radius: 8px;" alt=""></div>
 				</div>
 				<div class="col-12 col-lg-7 ">
-					<div class="sec-heading  ">
+					<div class="sec-heading">
 						<div class="content-area">
-							<h2 class=" title    wow fadeInUp" data-wow-delay=".2s"><span class='hollow-text'>frequently
+							<h2 class="title wow fadeInUp text-center" data-wow-delay=".2s"><span class='hollow-text'>frequently
 								</span> asked questions </h2>
 						</div>
 					</div>
@@ -949,7 +894,7 @@
 	<!-- End  faq Section-->
 
 	<!-- Start Form Section-->
-	<section class="contact-us  mega-section  pb-0" id="contact-us">
+	<section class="contact-us pb-0" id="contact-us">
 		<div class="container">
 		
 			<section class="locations-section  mega-section d-flex justify-content-center">
@@ -988,7 +933,7 @@
 			data-bg-opacity=".25"></div>
 		<div class="container">
 			<div class="row footer-cols">
-				<div class="col-12 col-md-8 col-lg-4  footer-col ">
+				<div class="col-12 col-md-8 col-lg-4  footer-col">
 					<img class="img-fluid footer-logo" loading="lazy" src="assets/images/logo/logo.svg" alt="logo" />
 					<div class="footer-col-content-wrapper">
 						<p class="footer-text-about-us">
@@ -997,7 +942,7 @@
 							education.
 						</p>
 					</div>
-					<div class="form-area ">
+					<!-- <div class="form-area ">
 						<div class="mailchimp-form ">
 							<form class="one-field-form" method="post" action="#0">
 								<div class="field-group ">
@@ -1011,9 +956,9 @@
 								</div><span class="email-notice">*we will not share your personal info</span>
 							</form>
 						</div>
-					</div>
+					</div> -->
 				</div>
-				<div class="col-6 col-lg-2  footer-col mt-5">
+				<div class="col-6 col-lg-2  footer-col mt-2 text-center">
 					<div class="footer-col-content-wrapper">
 						<ul class="footer-menu ">
 							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
@@ -1028,7 +973,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-6 col-lg-2 footer-col mt-5">
+				<div class="col-6 col-lg-2 footer-col mt-2 text-center">
 					<div class="footer-col-content-wrapper">
 						<ul class="footer-menu">
 							<li class="footer-menu-item"><i class="bi bi-arrow-right icon "></i><a
@@ -1047,7 +992,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-12 col-lg-4 footer-col ">
+				<div class="col-12 col-lg-4 footer-col text-center">
 					<h2 class=" footer-col-title">contact information</h2>
 					<div class="footer-col-content-wrapper">
 						<div class="contact-info-card"><i class="bi bi-envelope icon"></i><a
@@ -1100,7 +1045,7 @@
 		<div class="copyrights ">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 col-md-6 d-flex justify-content-start">
+					<div class="col-12 col-md-6 d-flex justify-content-start mb-3">
 						<p class="credits">
 							&copy; 2023
 							All rights reserved to
@@ -1108,8 +1053,8 @@
 						</p>
 					</div>
 					<div class="col-12 col-md-6 d-flex justify-content-end">
-						<div class="terms-links"><a href="rules (1).html">Terms of Use </a>
-							| <a href="privacy-policy (1).html">Privacy Policy</a>
+						<div class="terms-links"><a href="rules.html">Terms of Use </a>
+							| <a href="privacy-policy.html">Privacy Policy</a>
 						</div>
 					</div>
 				</div>
@@ -1157,112 +1102,11 @@
 	<!--for chatbot -->
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="js/askMe.js"></script>
-	<!-- for paypal integration -->
-	<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&vault=true&intent=subscription">
-	</script> <!-- Add your client_id -->
-
-	<!-- social media post redirect -->
-	<script>
-		// Add an event listener when user clicks navbar facebook link and prevent default
-		document.getElementById('facebookShareLink').addEventListener('click', function (e) {
-			e.preventDefault();
-			// call the function that will redirect the users to share to their facebook
-			shareOnFacebook();
-		});
-		// Add an event listener when user clicks footer facebook link and prevent default
-		document.getElementById('facebookShareLink2').addEventListener('click', function (e) {
-			e.preventDefault();
-			// call the function that will redirect the users to share to their facebook
-			shareOnFacebook();
-		});
-
-		function shareOnFacebook() {
-			// Set website url to be shared and Message
-			var urlToShare = 'https://meetyourai.github.io/AIProf/';
-			var shareMessage = 'Check out this amazing website! Learning made easy with Artificial Intelligence';
-
-			// Construct the Facebook share URL
-			var facebookShareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(urlToShare) + '&quote=' + encodeURIComponent(shareMessage);
-
-			// Open the Facebook share dialog in a new window
-			window.open(facebookShareUrl, 'Share on Facebook', 'width=600,height=400');
-		}
-
-		// Add an event listener when user clicks Twitter/X link and prevent default
-		document.getElementById('twitterShareLink').addEventListener('click', function (e) {
-			e.preventDefault();
-			// call the function that will redirect the users to share to their Twitter Profile
-			shareOnTwitter();
-		});
-
-		// Add an event listener when user clicks footer Twitter/X link and prevent default
-		document.getElementById('twitterShareLink2').addEventListener('click', function (e) {
-			e.preventDefault();
-			// call the function that will redirect the users to share to their Twitter Profile
-			shareOnTwitter();
-		});
-
-		function shareOnTwitter() {
-			// Set website url to be shared and Message
-			var urlToShare = 'https://meetyourai.github.io/AIProf/';
-			var tweetMessage = 'Check out this awesome website! Learning made easy with Artificial Intelligence';
-
-			// Construct the Twitter share URL
-			var twitterShareUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(urlToShare) + '&text=' + encodeURIComponent(tweetMessage);
-
-			// Open the Twitter share dialog in a new window
-			window.open(twitterShareUrl, 'Share on Twitter', 'width=600,height=400');
-		}
-
-		// Add an event listener when user clicks Whatsapp icon link and prevent default
-		document.getElementById('whatsappShareLink').addEventListener('click', function (e) {
-			e.preventDefault();
-			// call the function that will redirect the users to share to their Twitter Profile
-			shareOnWhatsApp();
-		});
-
-		// Add an event listener when user clicks footer Whatsapp icon link and prevent default
-		document.getElementById('whatsappShareLink2').addEventListener('click', function (e) {
-			e.preventDefault();
-			// call the function that will redirect the users to share to their Twitter Profile
-			shareOnWhatsApp();
-		});
-
-		function shareOnWhatsApp() {
-			// Set website url to be shared and Message
-			var urlToShare = 'https://meetyourai.github.io/AIProf/';
-			var message = 'Learning made easy with AI: Check out this website: ' + urlToShare;
-
-			// Create a WhatsApp share link
-			var whatsappShareUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(message);
-
-			// Redirect the user to the WhatsApp share link
-			window.location.href = whatsappShareUrl;
-		}
-	</script>
-	<script>
-		// event listener for paypal button click to alert user its coming soon
-		document.getElementById('paypal-button').addEventListener('click', function (e) {
-			e.preventDefault();
-			// call the function that will redirect the users to share to their Twitter Profile
-			alert("Paypal subscription is coming soon!");
-		});
-	</script>
-	<!-- script start demo for paypal subscription button  -->
-	<!-- <script>
-		paypal.Buttons({
-		 createSubscription: function(data, actions) {
-		   return actions.subscription.create({
-			'plan_id': 'YOUR_PLAN_ID' // Creates the subscription
-			});
-		  },
-		  onApprove: function(data, actions) {
-			alert('You have successfully subscribed to ' + data.subscriptionID); // Optional message given to subscriber
-		  }
-		}).render('#paypal-button-container'); // Renders the PayPal button
-	   </script> -->
-	<!-- paypal dev docs: https://developer.paypal.com/docs/subscriptions/integrate/ -->
+	<!-- for video functionality -->
 	<script src="js/Video.js"></script>
+	<!-- For img gen -->
+	<script src="js/Teacher.js"></script>
+	<script src="js/GenImage.js"></script>
 </body>
 
 </html>

@@ -1,59 +1,59 @@
-//test for github traffic github api
-const repoName = 'AIProf'; // repository name
-//env variable for github access token 
- //const accessToken = GH_ACCESS_TOKEN; GitHub access token
-const apiUrl = `https://api.github.com/repos/MeetYourAI/${repoName}/traffic/views`;
+// //test for github traffic github api
+// const repoName = 'AIProf'; // repository name
+// //env variable for github access token 
+//  //const accessToken = GH_ACCESS_TOKEN; GitHub access token
+// const apiUrl = `https://api.github.com/repos/MeetYourAI/${repoName}/traffic/views`;
 
-// GitHub API headers with your access token
-const headers = {
-  Accept: 'application/vnd.github.v3+json',
-  Authorization:'Basic ' + btoa('MeetYourAI' + ':' + accessToken),
-};
+// // GitHub API headers with your access token
+// const headers = {
+//   Accept: 'application/vnd.github.v3+json',
+//   Authorization:'Basic ' + btoa('MeetYourAI' + ':' + accessToken),
+// };
 
-// Fetch traffic data from GitHub API
-fetch(apiUrl, { headers })
-.then((response) => response.json())
-.then((data) => {
-const dates = data.views.map((entry) => new Date(entry.timestamp).getDate() + " / " + (new Date(entry.timestamp).getMonth() + 1) + " / " + new Date(entry.timestamp).getFullYear());
-const counts = data.views.map((entry) => entry.count);
+// // Fetch traffic data from GitHub API
+// fetch(apiUrl, { headers })
+// .then((response) => response.json())
+// .then((data) => {
+// const dates = data.views.map((entry) => new Date(entry.timestamp).getDate() + " / " + (new Date(entry.timestamp).getMonth() + 1) + " / " + new Date(entry.timestamp).getFullYear());
+// const counts = data.views.map((entry) => entry.count);
 
-// Create a chart
-const ctx = document.getElementById('trafficChart').getContext('2d');
-new Chart(ctx, {
-type: 'line',
-data: {
-labels: dates,
-datasets: [
-  {
-    label: 'Daily Visitors/Views',
-    data: counts,
-    fill: false,
-    borderColor: 'rgba(75, 192, 192, 1)',
-    borderWidth: 2,
-  },
-],
-},
-options: {
-  scales: {
-    x: {
-      title: {
-        display: true,
-        text: 'Dates'
-      },
-    },
-    y: {
-      title: {
-        display: true,
-        text: 'Counts'
-      },
-    },
-  },
-},
-});
-})
-.catch((error) => {
-console.error('Failed to fetch data:', error);
-});
+// // Create a chart
+// const ctx = document.getElementById('trafficChart').getContext('2d');
+// new Chart(ctx, {
+// type: 'line',
+// data: {
+// labels: dates,
+// datasets: [
+//   {
+//     label: 'Daily Visitors/Views',
+//     data: counts,
+//     fill: false,
+//     borderColor: 'rgba(75, 192, 192, 1)',
+//     borderWidth: 2,
+//   },
+// ],
+// },
+// options: {
+//   scales: {
+//     x: {
+//       title: {
+//         display: true,
+//         text: 'Dates'
+//       },
+//     },
+//     y: {
+//       title: {
+//         display: true,
+//         text: 'Counts'
+//       },
+//     },
+//   },
+// },
+// });
+// })
+// .catch((error) => {
+// console.error('Failed to fetch data:', error);
+// });
 
 
 // for contact form post
@@ -94,3 +94,5 @@ if (response.ok) {
 }
 
 form.addEventListener(submitButton, handleSubmit);
+
+

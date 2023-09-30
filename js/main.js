@@ -723,3 +723,108 @@ $(function () {
     End Vendors plugins options Area 
      ******************************** */
 });
+
+/***************** social media post redirect ********************/
+
+  // Add an event listener when user clicks navbar facebook link and prevent default 
+  document.getElementById('facebookShareLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    // call the function that will redirect the users to share to their facebook
+    shareOnFacebook();
+  });
+  // Add an event listener when user clicks footer facebook link and prevent default
+  document.getElementById('facebookShareLink2').addEventListener('click', function (e) {
+    e.preventDefault();
+    // call the function that will redirect the users to share to their facebook
+    shareOnFacebook();
+  });
+
+  function shareOnFacebook() {
+    // Set website url to be shared and Message
+    var urlToShare = 'https://meetyourai.github.io/AIProf/';
+    var shareMessage = 'Check out this amazing website! Learning made easy with Artificial Intelligence';
+
+    // Construct the Facebook share URL
+    var facebookShareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(urlToShare) + '&quote=' + encodeURIComponent(shareMessage);
+
+    // Open the Facebook share dialog in a new window
+    window.open(facebookShareUrl, 'Share on Facebook', 'width=600,height=400');
+  }
+
+  // Add an event listener when user clicks Twitter/X link and prevent default
+  document.getElementById('twitterShareLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    // call the function that will redirect the users to share to their Twitter Profile
+    shareOnTwitter();
+  });
+
+  // Add an event listener when user clicks footer Twitter/X link and prevent default
+  document.getElementById('twitterShareLink2').addEventListener('click', function (e) {
+    e.preventDefault();
+    // call the function that will redirect the users to share to their Twitter Profile
+    shareOnTwitter();
+  });
+
+  function shareOnTwitter() {
+    // Set website url to be shared and Message
+    var urlToShare = 'https://meetyourai.github.io/AIProf/';
+    var tweetMessage = 'Check out this awesome website! Learning made easy with Artificial Intelligence';
+
+    // Construct the Twitter share URL
+    var twitterShareUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(urlToShare) + '&text=' + encodeURIComponent(tweetMessage);
+
+    // Open the Twitter share dialog in a new window
+    window.open(twitterShareUrl, 'Share on Twitter', 'width=600,height=400');
+  }
+
+  // Add an event listener when user clicks Whatsapp icon link and prevent default
+  document.getElementById('whatsappShareLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    // call the function that will redirect the users to share to their Twitter Profile
+    shareOnWhatsApp();
+  });
+
+  // Add an event listener when user clicks footer Whatsapp icon link and prevent default
+  document.getElementById('whatsappShareLink2').addEventListener('click', function (e) {
+    e.preventDefault();
+    // call the function that will redirect the users to share to their Twitter Profile
+    shareOnWhatsApp();
+  });
+
+  function shareOnWhatsApp() {
+    // Set website url to be shared and Message
+    var urlToShare = 'https://meetyourai.github.io/AIProf/';
+    var message = 'Learning made easy with AI: Check out this website: ' + urlToShare;
+
+    // Create a WhatsApp share link
+    var whatsappShareUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(message);
+
+    // Redirect the user to the WhatsApp share link
+    window.location.href = whatsappShareUrl;
+  }
+
+  // event listener for paypal button click to alert user its coming soon
+  document.getElementById('paypal-button').addEventListener('click', function (e) {
+    e.preventDefault();
+    // call the function that will redirect the users to share to their Twitter Profile
+    alert("Paypal subscription is coming soon!");
+  });
+
+	/* for paypal integration
+	<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&vault=true&intent=subscription">
+	</script> Add your client_id */
+
+/* script start demo for paypal subscription button
+ <script>
+		paypal.Buttons({
+		 createSubscription: function(data, actions) {
+		   return actions.subscription.create({
+			'plan_id': 'YOUR_PLAN_ID' // Creates the subscription
+			});
+		  },
+		  onApprove: function(data, actions) {
+			alert('You have successfully subscribed to ' + data.subscriptionID); // Optional message given to subscriber
+		  }
+		}).render('#paypal-button-container'); // Renders the PayPal button
+	   </script> -->
+	<!-- paypal dev docs: https://developer.paypal.com/docs/subscriptions/integrate/ */
