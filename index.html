@@ -81,7 +81,7 @@
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
-<body class=" dark-theme  landing-page-demo">
+<body class="dark-theme  landing-page-demo">
 	<!--Start Page Header-->
 	<header class=" header-basic" id="page-header">
 		<div class="container">
@@ -456,14 +456,47 @@
 			</div>
 			<!--End first about div-->
 			<!-- Start of section about user growth analytics with iframe -->
-			<div class="content-block">
-				<div class="row">
-					<!-- Temp embed analytics Chart -->
-					<h2>Today's Users Time spent<h2>
-							<p>2.9 Minutes Active Time and 7.4 Minutes Inactive Time
-							<p>
+    <!-- Start  stats Section-->
+    <section class="stats js-stats-counter mega-section">
+		<div class="overlay-photo-image-bg" data-bg-img="assets/images/sections-bg-images/pattern-bg-3.jpg" data-bg-opacity=".2"></div>
+		<h2 class="text-center text-light mb-5">Our Progress so far</h2>
+		<div class="container">
+		  <div class="stats-inner">
+			<div class="row ">
+			  <!--Info One-->
+			  <div class="col-12 col-md-6 col-lg-3 stat-box ">
+				<div class="stat-box-inner" data-tilt="data-tilt"><i class="flaticon-project-management stat-icon"></i>
+				  <p class="stat-num">
+					<span class="counter" data-from="5" data-to="330" data-speed="3000" data-refresh-interval="50"></span></p>
+					<span class="stat-desc">Total Users</span>
 				</div>
+			  </div>
+			  <!--Info Two-->
+			  <div class="col-12 col-md-6 col-lg-3 stat-box ">
+				<div class="stat-box-inner  " data-tilt="data-tilt"><i class="flaticon-content-management stat-icon"></i>
+				  	<p class="stat-num "><span class="counter" data-from="0" data-to="227" data-speed="3000" data-refresh-interval="50"></span></p>
+					<span class="stat-desc">Teacher Interactions</span>
+				</div>
+			  </div>
+			  <!-- Avg Daily Time Spent-->
+			  <div class="col-12 col-md-6 col-lg-3 stat-box ">
+				<div class="stat-box-inner  " data-tilt="data-tilt"><i class="flaticon-user stat-icon"></i>
+				  	<p class="stat-num "><span class="counter" data-from="0" data-to="3" data-speed="3000" data-refresh-interval="50"></span></p>
+					<span class="stat-desc">Daily Minutes spent</span>
+				</div>
+			  </div>
+			  <!--Info Four-->
+			  <div class="col-12 col-md-6 col-lg-3 stat-box ">
+				<div class="stat-box-inner  " data-tilt="data-tilt"><i class="flaticon-aim stat-icon"></i>
+				  <p class="stat-num "><span class="counter" data-from="0" data-to="19" data-speed="3000" data-refresh-interval="50"></span></p>
+				  <span class="stat-desc">Total Countries</span>
+				</div>
+			  </div>
 			</div>
+		  </div>
+		</div>
+	  </section>
+	  <!-- End  stats Section-->
 
 			<!-- <div class="content-block">
 				<div class="row">
@@ -475,7 +508,7 @@
 
 
 			<!-- Start WHY choose us div-->
-			<div class="content-block" id="why">
+			<div class="content-block mt-5" id="why">
 				<div class="row">
 					<div class="col-12 col-lg-6 d-flex align-items-center about-col  wow fadeInUp"
 						data-wow-delay="0.2s">
@@ -503,19 +536,12 @@
 									</h2>
 								</div>
 							</div>
-							<!-- <p class="about-text">
-								Get your answers in seconds. Bringing fun and knowledge together!
-							</p> -->
 							<div class="info-items-list">
 								<div class="row">
 									<div class="col-12 ">
 										<div class="info-item"><span class="info-number ">01.</span>
 											<div class="info-content">
 												<h5 class="info-title">Revolutionizing Education</h5>
-												<!-- <p class="info-text">
-													Powered by AI innovation, our platform revolutionizes education,
-													enhancing learning experiences and boosting knowledge retention.
-												</p> -->
 											</div>
 										</div>
 									</div>
@@ -523,11 +549,6 @@
 										<div class="info-item"><span class="info-number ">02.</span>
 											<div class="info-content">
 												<h5 class="info-title">Data-Driven Learning Methods</h5>
-												<!-- <p class="info-text">
-													With our data-enhanced learning strategies, students witness a
-													remarkable surge in their educational journey, engaging with
-													subjects like never before.
-												</p> -->
 											</div>
 										</div>
 									</div>
@@ -535,8 +556,6 @@
 										<div class="info-item"><span class="info-number ">03.</span>
 											<div class="info-content">
 												<h5 class="info-title">Instant Learning Support</h5>
-												<!-- <p class="info-text">Our AI chatbots provide instant learning support,
-													saving valuable study time and elevating academic success.</p> -->
 											</div>
 										</div>
 									</div>
@@ -544,8 +563,6 @@
 										<div class="info-item"><span class="info-number ">04.</span>
 											<div class="info-content">
 												<h5 class="info-title">Redefining Learning Efficiency</h5>
-												<!-- <p class="info-text">Through personalized study plans and predictive
-													performance analytics, we redefine learning efficiency.</p> -->
 											</div>
 								</div>
 							</div>
@@ -615,11 +632,9 @@
 								<li class="plan-feat">
 									<span class="feat-text">Our Teacher.</span>
 								</li>
-								
 								<li class="plan-feat">
 									<span class="feat-text">Tailored To Your Needs</span>
 								</li>
-
 								<li class="plan-feat">
 									<span class="feat-text">Not For Profit Discounts</span>
 								</li>
@@ -942,21 +957,6 @@
 							education.
 						</p>
 					</div>
-					<!-- <div class="form-area ">
-						<div class="mailchimp-form ">
-							<form class="one-field-form" method="post" action="#0">
-								<div class="field-group ">
-									<label class="email-label" for="email-input">Be part of our early program:</label>
-									<input class="email-input " type="email" value="" name="EMAIL" id="email-input"
-										placeholder="Email Address" autocomplete="off" />
-									<div class="cta-area">
-										<input class="btn-solid subscribe-btn" type="submit" value="Subscribe"
-											name="subscribe" />
-									</div>
-								</div><span class="email-notice">*we will not share your personal info</span>
-							</form>
-						</div>
-					</div> -->
 				</div>
 				<div class="col-6 col-lg-2  footer-col mt-2 text-center">
 					<div class="footer-col-content-wrapper">
@@ -1062,12 +1062,6 @@
 		</div>
 	</footer>
 	<!-- End  page-footer Section-->
-
-	<!-- Start loading-screen Component-->
-	<!-- <div class="loading-screen" id="loading-screen"><span class="bar top-bar"></span>
-		<span class="bar down-bar"></span><span class="progress-line"></span><span class="loading-counter"> </span>
-	</div> -->
-	<!-- End loading-screen Component-->
 
 	<!-- Start back-to-top Component-->
 	<div class="back-to-top" id="back-to-top"><i class="bi bi-arrow-up icon "></i>
