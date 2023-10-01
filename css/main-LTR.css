@@ -1,12 +1,6 @@
 @charset "UTF-8";
 /**/
-/*===================================================
-Project: SmartLet
-Auther: aminThemes
-Version: 1.0
-Last change: 30 November 2022
-Template Description: IT Solutions & Business Services Responsive HTML5 Bootstrap5  landing-page Template 
-====================================================*/
+
 /*==
 - global-rules and helper classes
 - page-header
@@ -31,9 +25,9 @@ Template Description: IT Solutions & Business Services Responsive HTML5 Bootstra
 /* start global, helper classes , Components Rules*/
 :root {
   /*Colors CSS Varibales*/
-  /*================  main-color values */
-  --clr-main: #3499c4;
-  --clr-main-rgb: 9, 175, 244;
+  /*================  main-color values last one: to test later: #7EFCF4*/
+  --clr-main: #4ecddb;
+  --clr-main-rgb: 78, 205, 219;
   /*================  accent-color values */
   --clr-accent: #0d1857;
   --clr-accent-rgb: 13, 24, 87;

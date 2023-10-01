@@ -1,6 +1,5 @@
 /*===================================================
 Project: AI2BC SmartLet Property Managament
-Inspired by: AminThemes
 ====================================================*/
 
 //GLOBAL VARIBALES
@@ -16,8 +15,8 @@ const main_window = $(window),
   toTopBtn = $(".back-to-top"),
   heroVegasSlider = $(".page-hero.hero-vegas-slider"),
   textInput = $("form.main-form .text-input"),
-  tabLink = $(".ma-tabs .tabs-links .tab-link"),
-  portfolioGroup = $(".portfolio .portfolio-group");
+  tabLink = $(".ma-tabs .tabs-links .tab-link");
+  // portfolioGroup = $(".portfolio .portfolio-group");
 
 $(function () {
   ("use strict");
@@ -38,52 +37,46 @@ $(function () {
   }
 
   // Start open/close navbar search box
-  $(".header-search-box form").on("click", function (e) {
-    e.stopPropagation();
-  });
+  // $(".header-search-box form").on("click", function (e) {
+  //   e.stopPropagation();
+  // });
 
-  $(".header-search-btn").on("click", function () {
-    $(".header-search-box").addClass("show");
+  // $(".header-search-btn").on("click", function () {
+  //   $(".header-search-box").addClass("show");
 
-    setTimeout(function () {
-      $(".search-input").focus();
-    }, 1000);
-  });
+  //   setTimeout(function () {
+  //     $(".search-input").focus();
+  //   }, 1000);
+  // });
 
   /* ********* Start dark mode switcher ***********/
 
-  const modeSwitcher = $(".mode-switcher");
+  // const modeSwitcher = $(".mode-switcher");
   const themeStoredKey = "ThemeColor";
   const darkTheme_class = "dark-theme";
-  const lightTheme_class = "light-theme";
+  // const lightTheme_class = "light-theme";
   const themeStoredItem = localStorage.getItem(themeStoredKey);
 
   /*********  Custom functions Area *********/
 
-  function setThemeMode(themeColor) {
-    if (themeColor === darkTheme_class) {
-      pageBody.addClass(darkTheme_class);
-      modeSwitcher.addClass(darkTheme_class).removeClass(lightTheme_class);
-      localStorage.setItem(themeStoredKey, darkTheme_class);
-      localStorage.removeItem(lightTheme_class);
-    }
-    if (themeColor === lightTheme_class) {
-      pageBody.removeClass(darkTheme_class);
-      modeSwitcher.addClass(lightTheme_class).removeClass(darkTheme_class);
-      localStorage.setItem(themeStoredKey, lightTheme_class);
-      localStorage.removeItem(darkTheme_class);
-    }
-  }
+   function setThemeMode(themeColor) {
+     if (themeColor !== darkTheme_class) {
+       pageBody.addClass(darkTheme_class);
+      //  modeSwitcher.addClass(darkTheme_class).removeClass(lightTheme_class);
+       localStorage.setItem(themeStoredKey, darkTheme_class);
+       localStorage.removeItem(lightTheme_class);
+     }
+   }
 
   /* *******  Set the theme according to the local storage value ********/
-  // if local storge not set or the body has class value of .dark-theme THEN default theme is dark
-  if (!themeStoredItem && !pageBody.hasClass(darkTheme_class)) {
-    setThemeMode(darkTheme_class);
-  }
+   //if local storge not set or the body has class value of .dark-theme THEN default theme is dark
+   if (!themeStoredItem && !pageBody.hasClass(darkTheme_class)) {
+     setThemeMode(darkTheme_class);
+   }
   // the only case to be light mode is when the local storge has he value of light-theme
-  if (themeStoredItem === lightTheme_class) {
-    setThemeMode(lightTheme_class);
-  }
+  // if (themeStoredItem === lightTheme_class) {
+  //   setThemeMode(lightTheme_class);
+  // }
 
   // if local storge or the body has class value of .dark-theme
   if (
@@ -93,23 +86,23 @@ $(function () {
     setThemeMode(darkTheme_class);
   }
 
-  /* ******* Set the theme by clicking the theme switcher ********/
-  $(modeSwitcher).on("click", function () {
-    if ($(this).is("." + darkTheme_class)) {
-      setThemeMode(lightTheme_class);
-    } else if ($(this).is("." + lightTheme_class)) {
-      setThemeMode(darkTheme_class);
-    }
-  });
+  // /* ******* Set the theme by clicking the theme switcher ********/
+  // $(modeSwitcher).on("click", function () {
+  //   if ($(this).is("." + darkTheme_class)) {
+  //     setThemeMode(lightTheme_class);
+  //   } else if ($(this).is("." + lightTheme_class)) {
+  //     setThemeMode(darkTheme_class);
+  //   }
+  // });
 
   /********************************
    *  START #page-header js rules
    *********************************/
 
   /* *******  start open/close navbar search box   ********/
-  $(".header-search-box .close-search , .header-search-box").on("click", () => {
-    $(".header-search-box").removeClass("show");
-  });
+  // $(".header-search-box .close-search , .header-search-box").on("click", () => {
+  //   $(".header-search-box").removeClass("show");
+  // });
 
   if (navMain) {
     $(bdyOnePage).scrollspy({
@@ -224,19 +217,19 @@ $(function () {
   // End Smooth Scrolling To Window Top When Clicking on Back To Top Button
 
   /* Start Portfolio btns  */
-  if ($(".portfolio .portfolio-btn").length) {
-    $(".portfolio .portfolio-btn").on("click", function () {
-      $(this).addClass("active").siblings().removeClass("active");
+  // if ($(".portfolio .portfolio-btn").length) {
+  //   $(".portfolio .portfolio-btn").on("click", function () {
+  //     $(this).addClass("active").siblings().removeClass("active");
 
-      const $filterValue = $(this).attr("data-filter");
-      portfolioGroup.isotope({
-        filter: $filterValue,
-      });
-    });
-  }
+  //     const $filterValue = $(this).attr("data-filter");
+  //     portfolioGroup.isotope({
+  //       filter: $filterValue,
+  //     });
+  //   });
+  // }
 
   /* *******   initialize Counter plugin ********/
-  fireCounter();
+   fireCounter();
 
   /* ********* set the Background Image path and opacity for elements that has the  a vlaue for data-bg-img attribute***********/
   const bg_img = $("*");
@@ -264,38 +257,38 @@ $(function () {
   });
 
   /* ******* Start Percentage loading screen interactions ********/
-  let percentage = 0;
-  let LoadingCounter = setInterval(function () {
-    if (percentage <= 100) {
-      // $('#loading-screen ').css('opacity', (100 - percentage));
-      $("#loading-screen .loading-counter").text(percentage + "%");
-      $("#loading-screen .bar").css("width", (100 - percentage) / 2 + "%");
-      $("#loading-screen .progress-line").css(
-        "transform",
-        "scale(" + percentage / 100 + ")"
-      );
-      percentage++;
-    } else {
-      $("#loading-screen").fadeOut(500);
-      setTimeout(() => {
-        $("#loading-screen").remove();
-      }, 1500);
-      clearInterval(LoadingCounter);
-    }
-  }, 10);
+  // let percentage = 0;
+  // let LoadingCounter = setInterval(function () {
+  //   if (percentage <= 100) {
+  //     // $('#loading-screen ').css('opacity', (100 - percentage));
+  //     $("#loading-screen .loading-counter").text(percentage + "%");
+  //     $("#loading-screen .bar").css("width", (100 - percentage) / 2 + "%");
+  //     $("#loading-screen .progress-line").css(
+  //       "transform",
+  //       "scale(" + percentage / 100 + ")"
+  //     );
+  //     percentage++;
+  //   } else {
+  //     $("#loading-screen").fadeOut(500);
+  //     setTimeout(() => {
+  //       $("#loading-screen").remove();
+  //     }, 1500);
+  //     clearInterval(LoadingCounter);
+  //   }
+  // }, 10);
 
-  main_window.on("scroll", function () {
-    if ($(this).scrollTop() > 50) {
-      //show back to top btn
-      toTopBtn.addClass("show");
-    } else {
-      //hide back to top btn
-      toTopBtn.removeClass("show");
-    }
-
+   main_window.on("scroll", function () {
+     if ($(this).scrollTop() > 50) {
+       //show back to top btn
+       toTopBtn.addClass("show");
+     } else {
+       //hide back to top btn
+       toTopBtn.removeClass("show");
+     }
+    
     // to make sure the counter will start counting while its section apear on the screen
-    fireCounter();
-  });
+     fireCounter();
+   });
 
   /*************Start Contact Form Functionality************/
 
@@ -499,56 +492,56 @@ $(function () {
   }
 
   //initialize swiper [portfolio-slider]
-  if ($(".portfolio-slider .swiper-container").length) {
-    const swiperPortfolioSlider = new Swiper(
-      ".portfolio-slider .swiper-container",
-      {
-        speed: 600,
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        autoplay: {
-          delay: 5000,
-        },
-        breakpoints: {
-          991: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-        },
-        navigation: {
-          nextEl: ".portfolio-slider .swiper-button-next",
-          prevEl: ".portfolio-slider .swiper-button-prev",
-        },
-      }
-    );
-  }
+  // if ($(".portfolio-slider .swiper-container").length) {
+  //   const swiperPortfolioSlider = new Swiper(
+  //     ".portfolio-slider .swiper-container",
+  //     {
+  //       speed: 600,
+  //       loop: true,
+  //       centeredSlides: true,
+  //       slidesPerView: 1,
+  //       spaceBetween: 30,
+  //       autoplay: {
+  //         delay: 5000,
+  //       },
+  //       breakpoints: {
+  //         991: {
+  //           slidesPerView: 2,
+  //           spaceBetween: 30,
+  //         },
+  //       },
+  //       navigation: {
+  //         nextEl: ".portfolio-slider .swiper-button-next",
+  //         prevEl: ".portfolio-slider .swiper-button-prev",
+  //       },
+  //     }
+  //   );
+  // }
 
   //initialize swiper [portfolio-single]
-  if (
-    $(".portfolio-single .portfolio-single-slider .swiper-container").length
-  ) {
-    const swiperPortfolioSingleSlider = new Swiper(
-      ".portfolio-single .portfolio-single-slider .swiper-container",
-      {
-        spaceBetween: 10,
-        grabCursor: true,
-        reverseDirection: true,
-        loop: true,
-        slidesPerView: 1,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: true,
-        },
+  // if (
+  //   $(".portfolio-single .portfolio-single-slider .swiper-container").length
+  // ) {
+  //   const swiperPortfolioSingleSlider = new Swiper(
+  //     ".portfolio-single .portfolio-single-slider .swiper-container",
+  //     {
+  //       spaceBetween: 10,
+  //       grabCursor: true,
+  //       reverseDirection: true,
+  //       loop: true,
+  //       slidesPerView: 1,
+  //       autoplay: {
+  //         delay: 5000,
+  //         disableOnInteraction: true,
+  //       },
 
-        navigation: {
-          nextEl: ".portfolio-single-slider .swiper-button-next",
-          prevEl: ".portfolio-single-slider .swiper-button-prev",
-        },
-      }
-    );
-  }
+  //       navigation: {
+  //         nextEl: ".portfolio-single-slider .swiper-button-next",
+  //         prevEl: ".portfolio-single-slider .swiper-button-prev",
+  //       },
+  //     }
+  //   );
+  // }
 
   /* *******  loading  wow.js  Options ********/
   const wow = new WOW({
@@ -567,24 +560,24 @@ $(function () {
   }
 
   /* *******  loading tilt.js library ********/
-  if (jQuery().tilt) {
-    $("[data-tilt]").tilt({
-      perspective: 1000,
-    });
-  }
+  // if (jQuery().tilt) {
+  //   $("[data-tilt]").tilt({
+  //     perspective: 1000,
+  //   });
+  // }
 
   /* *******  Loading the isotope plugin ********/
-  if (jQuery().isotope) {
-    portfolioGroup.isotope({
-      // options
-      itemSelector: ".portfolio-item",
-      layoutMode: "fitRows",
-      percentPosition: true,
-      filter: "*",
-      stagger: 30,
-      containerStyle: null,
-    });
-  }
+  // if (jQuery().isotope) {
+  //   portfolioGroup.isotope({
+  //     // options
+  //     itemSelector: ".portfolio-item",
+  //     layoutMode: "fitRows",
+  //     percentPosition: true,
+  //     filter: "*",
+  //     stagger: 30,
+  //     containerStyle: null,
+  //   });
+  // }
 
   /* *******  Start particles.js ********/
   if ($(".particles-js.dots").length) {
