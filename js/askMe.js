@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const ans = result.chatbot_response;
             setResponse(ans);
             setIsLoading(false)
-            console.log('the result is', result);
             // toogle()
           })
           .catch((error) => {
@@ -72,20 +71,17 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((result) => {
           if (result.access) {
               access_token = result.access;
-              console.log('Access token is', access_token)
               onSuccess();
           } else {
             responseDiv.textContent = "Failed to refresh access token.";
-            console.log('Cannot refresh access')
           }
       })
       .catch((error) => {
         responseDiv.textContent = "Failed to refresh access token.";
-        console.log('Cannot refresh access')
       });
   };
-  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2Mzc3MzI0LCJpYXQiOjE2OTYwMTczMjQsImp0aSI6IjYyNzgzMjkxYzJmYTQ5NzE5MjkzMTdhZDQzYjQ2OGNlIiwidXNlcl9pZCI6MX0.EwFuTCLUf6J7sGvHNScieiAEHNEXZi3piwqHFOEKcto';
-  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NjEwMzcyNCwiaWF0IjoxNjk2MDE3MzI0LCJqdGkiOiIzZWIxNWVhZDc2ZTY0YzllOWFiZWM2ODUwMTg5YzM0NiIsInVzZXJfaWQiOjF9.0WgBBs5gszgzgWm_1iM51pCYNqLV3dpmC5GyobhpnNE';
+  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NjMzOTE3LCJpYXQiOjE2OTYyNzM5MTcsImp0aSI6ImQ3MDdjMTI5ZDQwZjRhMjZhMTA4ZjkzODgwOTU1ZGM1IiwidXNlcl9pZCI6MX0.Us98nSq9AWIdcV-6pCAOzaIRYMVhmkYXAxAyorxwUHs';
+  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NjM2MDMxNywiaWF0IjoxNjk2MjczOTE3LCJqdGkiOiJjMWYxMTE2M2Q4Mzg0OGU4OTI2YmQ2NzVjYTY5MjljYSIsInVzZXJfaWQiOjF9.AqCI67puLcsYiWh4_InIwRkgCkOGNdgkunZFMmIIfro';
   
   const setResponse = (text) => {
     responseDiv.style.display = "block";
