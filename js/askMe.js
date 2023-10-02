@@ -5,11 +5,11 @@ const askButton = document.getElementById("ask");
 const responseDiv = document.getElementById("response");
 let forVoice = " ";
 
-responseDiv.style.display = "none";
 
 document.addEventListener("DOMContentLoaded", () => {
   let access_token = null;
   let refresh_token = null;
+  responseDiv.style.display = "none";
   const handleAsk = () => {
       const question = questionInput.value;
       questionInput.innerHTML = " "
