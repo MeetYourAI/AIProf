@@ -5,6 +5,8 @@ const askButton = document.getElementById("ask");
 const responseDiv = document.getElementById("response");
 let forVoice = " ";
 
+responseDiv.style.display = "none";
+
 document.addEventListener("DOMContentLoaded", () => {
   let access_token = null;
   let refresh_token = null;
@@ -86,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NjEwMzcyNCwiaWF0IjoxNjk2MDE3MzI0LCJqdGkiOiIzZWIxNWVhZDc2ZTY0YzllOWFiZWM2ODUwMTg5YzM0NiIsInVzZXJfaWQiOjF9.0WgBBs5gszgzgWm_1iM51pCYNqLV3dpmC5GyobhpnNE';
   
   const setResponse = (text) => {
+    responseDiv.style.display = "block";
     responseDiv.innerHTML = text;
   };
   const setIsLoading = (isLoading) => {
