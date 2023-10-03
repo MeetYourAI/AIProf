@@ -103,54 +103,95 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ...........mic Related js (Speech Recognition)............
+  
+
+  // ...........mic Related js (Speech Recognition)............
   const mic = document.querySelector('#mic')
   const mutedMic = document.querySelector('#muteMic')
+  let socket;
+  let mediaRecorder;
+  let lastUserActivityTime;
+  let activityTimer;
+  
+  const startUsingMicrophone = () => {
+    openMic();
+    lastUserActivityTime = Date.now()
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+      if (!MediaRecorder.isTypeSupported('audio/webm')) {
+        muteMic();
+        return alert('Browser not supported')
+      }
+      console.log('In  navigator');
+      mediaRecorder = new MediaRecorder(stream, {
+        mimeType: 'audio/webm',
+      })
+      socket = new WebSocket('wss://api.deepgram.com/v1/listen', [
+        'token',
+        'd39b4e9d55390e5e8065a9b69966ff361a3db22d',
+      ])
+      socket.onopen = () => {
+        mediaRecorder.addEventListener('dataavailable', async (event) => {
+          if (event.data.size > 0 && socket.readyState == 1) {
+            socket.send(event.data)
+          }
+        })
+        mediaRecorder.start(1000)
+      }
+  
+      socket.onmessage = (message) => {
+        const received = JSON.parse(message.data)
+        const transcript = received.channel.alternatives[0].transcript
+        if (transcript && received.is_final) {
+          lastUserActivityTime = Date.now()
+          questionInput.value +=
+            transcript + ' '
+        }
+      }
+  
+      socket.onclose = () => {
+        console.log({ event: 'onclose' })
+      }
+  
+      socket.onerror = (error) => {
+        questionInput.value = 'Somethign went worng'
+        muteMic()
+        console.log({ event: 'onerror', error })
+      }
+  
+      startActivityTimer()
+    })
+  }
+  
   const openMic = () => {
     mic.style.display = 'inline-block';
     mutedMic.style.display = 'none'
   }
-
+  
   const muteMic = () => {
     mic.style.display = 'none';
     mutedMic.style.display = 'inline-block'
   }
-
-  let recognition = new webkitSpeechRecognition();
-  recognition.continuous = true;
-  recognition.interimResults = true;
-  let recognizedWords = [];
-
-  const startUsingMicrophone = () => {
-    openMic();
-    recognition.start();
-    recognizedWords = [];
-  }
-
+  
   const closeSocket = () => {
-    muteMic()
-    recognition.stop();
-  }
-
-  recognition.onresult = function (event) {
-    for (let i = event.resultIndex; i < event.results.length; i++) {
-      if (event.results[i].isFinal) {
-        recognizedWords.push(event.results[i][0].transcript);
+    muteMic();
+    socket.close();
+    mediaRecorder.stop();
+    clearInterval(activityTimer);
+  };
+  
+  const startActivityTimer = () => {
+    activityTimer = setInterval(() => {
+      const currentTime = Date.now();
+      const inactivityTime = currentTime - lastUserActivityTime;
+      if (inactivityTime > 10000) {
+        closeSocket();
       }
-    }
-    questionInput.value = recognizedWords.join(' ');
+    }, 1000);
   };
-
-  recognition.onend = function () {
-    muteMic()
-  };
-
-  recognition.onerror = function (event) {
-    muteMic()
-    questionInput.value = 'Error occurred in recognition';
-  }
+  
   mic.addEventListener('click', closeSocket)
   mutedMic.addEventListener('click', startUsingMicrophone)
+
 
 
 
