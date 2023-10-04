@@ -725,12 +725,6 @@ $(function () {
     // call the function that will redirect the users to share to their facebook
     shareOnFacebook();
   });
-  // Add an event listener when user clicks footer facebook link and prevent default
-  document.getElementById('facebookShareLink2').addEventListener('click', function (e) {
-    e.preventDefault();
-    // call the function that will redirect the users to share to their facebook
-    shareOnFacebook();
-  });
 
   function shareOnFacebook() {
     // Set website url to be shared and Message
@@ -751,13 +745,6 @@ $(function () {
     shareOnTwitter();
   });
 
-  // Add an event listener when user clicks footer Twitter/X link and prevent default
-  document.getElementById('twitterShareLink2').addEventListener('click', function (e) {
-    e.preventDefault();
-    // call the function that will redirect the users to share to their Twitter Profile
-    shareOnTwitter();
-  });
-
   function shareOnTwitter() {
     // Set website url to be shared and Message
     var urlToShare = 'https://meetyourai.github.io/AIProf/';
@@ -772,13 +759,6 @@ $(function () {
 
   // Add an event listener when user clicks Whatsapp icon link and prevent default
   document.getElementById('whatsappShareLink').addEventListener('click', function (e) {
-    e.preventDefault();
-    // call the function that will redirect the users to share to their Twitter Profile
-    shareOnWhatsApp();
-  });
-
-  // Add an event listener when user clicks footer Whatsapp icon link and prevent default
-  document.getElementById('whatsappShareLink2').addEventListener('click', function (e) {
     e.preventDefault();
     // call the function that will redirect the users to share to their Twitter Profile
     shareOnWhatsApp();
