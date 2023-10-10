@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
         responseDiv.textContent = "Failed to refresh access token.";
       });
   };
-  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NjMzOTE3LCJpYXQiOjE2OTYyNzM5MTcsImp0aSI6ImQ3MDdjMTI5ZDQwZjRhMjZhMTA4ZjkzODgwOTU1ZGM1IiwidXNlcl9pZCI6MX0.Us98nSq9AWIdcV-6pCAOzaIRYMVhmkYXAxAyorxwUHs';
-  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NjM2MDMxNywiaWF0IjoxNjk2MjczOTE3LCJqdGkiOiJjMWYxMTE2M2Q4Mzg0OGU4OTI2YmQ2NzVjYTY5MjljYSIsInVzZXJfaWQiOjF9.AqCI67puLcsYiWh4_InIwRkgCkOGNdgkunZFMmIIfro';
+  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk3MzAyNzcxLCJpYXQiOjE2OTY5NDI3NzEsImp0aSI6IjBjN2JiODY4ZDA3YjRjNTk4YWI5YWZlMzU4YzA0ZGVkIiwidXNlcl9pZCI6MX0.fsi3Hjnl-xUj2mvWo0sDcMQPSeq8EnuOee-KkwGWhFg';
+  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NzAyOTE3MSwiaWF0IjoxNjk2OTQyNzcxLCJqdGkiOiI1NWZkMWQ4ZmM2Nzc0NTgwYTBjYzBiMzFiYzljODI0OSIsInVzZXJfaWQiOjF9.5Ab927wtrPpUU4sgOxgOcYBhqzBOJtFVPo9T9whOkzo';
   
   const setResponse = (text) => {
     responseDiv.style.display = "block";
