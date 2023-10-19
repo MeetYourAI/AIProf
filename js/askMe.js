@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
       setResponse('Please wait! Response is coming....')
       setIsLoading(true)
 
-      if (access_token) {
+      // if (access_token) {
           const headers = {
               'Content-Type': 'application/json',
               // 'Authorization': `Bearer ${access_token}`,
           };
-          const api_url = "http://127.0.0.1:8000/chat/";
+          const api_url = "https://awesome-terra-400014.lm.r.appspot.com/chat/";
           const data = { "user_input": question };
   
           fetch(api_url, {
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
           })
           .then((response) => {
               if (response.status === 401) {
-                  console.log("I'm in refresh mode", response);
                   refreshAccessToken(refresh_token, makeApiRequest);
               } else {
                   console.log("I'm not in response mode", response);
@@ -52,36 +51,36 @@ document.addEventListener("DOMContentLoaded", () => {
             setIsLoading(false)
             setResponse('Something went wrong. Please try again')
           });
-      } else {
-        setIsLoading(false)
-        setResponse('No access token found.')
-      }
+      // } else {
+      //   setIsLoading(false)
+      //   setResponse('No access token found.')
+      // }
   }};
   
-  const refreshAccessToken = (refreshToken, onSuccess) => {
-      console.log('Refresh token')
-      fetch("http://127.0.0.1:8000/api/token/refresh/", {
-          method: "POST",
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ refresh: refreshToken }),
-      })
-      .then((response) => response.json())
-      .then((result) => {
-          if (result.access) {
-              access_token = result.access;
-              onSuccess();
-          } else {
-            responseDiv.textContent = "Failed to refresh access token.";
-          }
-      })
-      .catch((error) => {
-        responseDiv.textContent = "Failed to refresh access token.";
-      });
-  };
-  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MDU4NTgzLCJpYXQiOjE2OTc2OTg1ODMsImp0aSI6IjllZmUzNWNkZDU3OTQwMTliZWE2M2VjNWI4OTllOTI5IiwidXNlcl9pZCI6MX0.ELiAdSUa42HHTj97dYTa3BAuJj3GQQtd-axwFZoQA8g';
-  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5Nzc4NDk4MywiaWF0IjoxNjk3Njk4NTgzLCJqdGkiOiJmN2ExNjNhZjk5NDM0NTBkYmUyYzZiMDk5MWI4ZDllNCIsInVzZXJfaWQiOjF9.YPQRLyRTQe8sQSxg9OuhbS26DVYIQDoWXB4DM-RVf2o';
+  // const refreshAccessToken = (refreshToken, onSuccess) => {
+  //     console.log('Refresh token')
+  //     fetch("https://awesome-terra-400014.lm.r.appspot.com/api/token/refresh/", {
+  //         method: "POST",
+  //         headers: {
+  //             'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify({ refresh: refreshToken }),
+  //     })
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //         if (result.access) {
+  //             access_token = result.access;
+  //             onSuccess();
+  //         } else {
+  //           responseDiv.textContent = "Failed to refresh access token.";
+  //         }
+  //     })
+  //     .catch((error) => {
+  //       responseDiv.textContent = "Failed to refresh access token.";
+  //     });
+  // };
+  // access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MDU4NTgzLCJpYXQiOjE2OTc2OTg1ODMsImp0aSI6IjllZmUzNWNkZDU3OTQwMTliZWE2M2VjNWI4OTllOTI5IiwidXNlcl9pZCI6MX0.ELiAdSUa42HHTj97dYTa3BAuJj3GQQtd-axwFZoQA8g';
+  // refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5Nzc4NDk4MywiaWF0IjoxNjk3Njk4NTgzLCJqdGkiOiJmN2ExNjNhZjk5NDM0NTBkYmUyYzZiMDk5MWI4ZDllNCIsInVzZXJfaWQiOjF9.YPQRLyRTQe8sQSxg9OuhbS26DVYIQDoWXB4DM-RVf2o';
   
   const setResponse = (text) => {
     responseDiv.style.display = "block";
