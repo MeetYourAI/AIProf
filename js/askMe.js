@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (access_token) {
           const headers = {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${access_token}`,
+              // 'Authorization': `Bearer ${access_token}`,
           };
-          const api_url = "https://awesome-terra-400014.lm.r.appspot.com/chat/";
+          const api_url = "http://127.0.0.1:8000/chat/";
           const data = { "user_input": question };
   
           fetch(api_url, {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const refreshAccessToken = (refreshToken, onSuccess) => {
       console.log('Refresh token')
-      fetch("https://awesome-terra-400014.lm.r.appspot.com/api/token/refresh/", {
+      fetch("http://127.0.0.1:8000/api/token/refresh/", {
           method: "POST",
           headers: {
               'Content-Type': 'application/json',
@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
         responseDiv.textContent = "Failed to refresh access token.";
       });
   };
-  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk3MzAyNzcxLCJpYXQiOjE2OTY5NDI3NzEsImp0aSI6IjBjN2JiODY4ZDA3YjRjNTk4YWI5YWZlMzU4YzA0ZGVkIiwidXNlcl9pZCI6MX0.fsi3Hjnl-xUj2mvWo0sDcMQPSeq8EnuOee-KkwGWhFg';
-  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NzAyOTE3MSwiaWF0IjoxNjk2OTQyNzcxLCJqdGkiOiI1NWZkMWQ4ZmM2Nzc0NTgwYTBjYzBiMzFiYzljODI0OSIsInVzZXJfaWQiOjF9.5Ab927wtrPpUU4sgOxgOcYBhqzBOJtFVPo9T9whOkzo';
+  access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4MDU4NTgzLCJpYXQiOjE2OTc2OTg1ODMsImp0aSI6IjllZmUzNWNkZDU3OTQwMTliZWE2M2VjNWI4OTllOTI5IiwidXNlcl9pZCI6MX0.ELiAdSUa42HHTj97dYTa3BAuJj3GQQtd-axwFZoQA8g';
+  refresh_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5Nzc4NDk4MywiaWF0IjoxNjk3Njk4NTgzLCJqdGkiOiJmN2ExNjNhZjk5NDM0NTBkYmUyYzZiMDk5MWI4ZDllNCIsInVzZXJfaWQiOjF9.YPQRLyRTQe8sQSxg9OuhbS26DVYIQDoWXB4DM-RVf2o';
   
   const setResponse = (text) => {
     responseDiv.style.display = "block";
