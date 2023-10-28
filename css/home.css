@@ -43,6 +43,7 @@
     margin-top: 1.5rem;
     overflow-y: scroll;
     height: 300px;
+    resize: both;
 }
 
 #title {
@@ -57,19 +58,20 @@
     text-align: center;
 }
 
-#mic, #muteMic {
+#mic,
+#muteMic {
     width: 50px;
 }
+
 #mic {
     display: none;
 }
 
-#speaker-container img
-{
+#speaker-container img {
     width: 30px;
 }
 
-.speech-control  select {
+.speech-control select {
     width: 100px;
 }
 
@@ -89,15 +91,18 @@ for mobile responsiveness */
         margin-left: 5px;
         margin-right: 5px;
     }
+
     .info-items-list .info-item {
         margin-bottom: 2rem;
         flex-direction: column;
         align-items: center !important;
     }
+
     #featuresAbout {
         display: flex;
         justify-content: center;
     }
+
     .cta-area {
         display: flex;
         justify-content: center !important;
@@ -105,47 +110,46 @@ for mobile responsiveness */
 }
 
 /* for paypal button */
-    #paypal-logo {
-      font-family: Verdana, Tahoma;
-      font-weight: bold;
-      font-size: 26px;
-    }
-      #firstPartLogo {
-        color: #253b80;
-      }
-  
-      #secondPartLogo {
-        color: #179bd7;
-      }
-   
-    
-    #paypal-button {
-      padding: 15px 30px;
-      border: 1px solid #FF9933;
-      border-radius: 5px;
-      background-image: linear-gradient(#FFF0A8, #F9B421);
-      margin: 0 auto;
-      display: block;
-      min-width: 138px;
-      position: relative;
-    }
-      
-      #paypal-button-title {
-        font-size: 14px;
-        color: #505050;
-        vertical-align: baseline;
-        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
-      }
-      
-      #paypal-logo {
-        display: inline-block;
-        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
-        font-size: 20px;
-      }
+#paypal-logo {
+    font-family: Verdana, Tahoma;
+    font-weight: bold;
+    font-size: 26px;
+}
 
-      video {
-        width: 100%;
-        height: auto;
-      }
-  
-  
+#firstPartLogo {
+    color: #253b80;
+}
+
+#secondPartLogo {
+    color: #179bd7;
+}
+
+
+#paypal-button {
+    padding: 15px 30px;
+    border: 1px solid #FF9933;
+    border-radius: 5px;
+    background-image: linear-gradient(#FFF0A8, #F9B421);
+    margin: 0 auto;
+    display: block;
+    min-width: 138px;
+    position: relative;
+}
+
+#paypal-button-title {
+    font-size: 14px;
+    color: #505050;
+    vertical-align: baseline;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+}
+
+#paypal-logo {
+    display: inline-block;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
