@@ -43,7 +43,15 @@
     margin-top: 1.5rem;
     overflow-y: scroll;
     height: 300px;
+    background-color: #282c34; /* Dark background */
+    color: #ffffff; /* Light text color */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    padding: 1rem; /* Padding for spacing */
+    border: 1px solid #444; /* Optional border for definition */
+    border-radius: 5px; /* Optional rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
 }
+
 
 #title {
     margin-top: 0;

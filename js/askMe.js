@@ -10,52 +10,65 @@ document.addEventListener("DOMContentLoaded", () => {
   let access_token = null;
   let refresh_token = null;
   responseDiv.style.display = "none";
+  
   const handleAsk = () => {
       const question = questionInput.value;
-      questionInput.innerHTML = " "
+      questionInput.innerHTML = " ";
       if (question) {
-      askButton.innerHTML = '<img id="loading-img" src="assets/images/loading2.svg" width="110" height="20" alt="Loading" />';
-      setResponse('Please wait! Response is coming....')
-      setIsLoading(true)
+        askButton.innerHTML = '<img id="loading-img" src="assets/images/loading2.svg" width="110" height="20" alt="Loading" />';
+        setResponse('Please wait! Response is coming....');
+        setIsLoading(true);
 
-      // if (access_token) {
-          const headers = {
-              'Content-Type': 'application/json',
-              // 'Authorization': `Bearer ${access_token}`,
-          };
-          const api_url = "https://awesome-terra-400014.lm.r.appspot.com/chat/";
-          const data = { "user_input": question };
-  
-          fetch(api_url, {
-              method: "POST",
-              headers: headers,
-              body: JSON.stringify(data),
-          })
-          .then((response) => {
-              if (response.status === 401) {
-                  refreshAccessToken(refresh_token, makeApiRequest);
-              } else {
-                  console.log("I'm not in response mode", response);
-                  return response.json();
-              }
-          })
-          .then((result) => {
-            forVoice = result.chatbot_response;
-            const ans = result.chatbot_response;
-            setResponse(ans);
-            setIsLoading(false)
-            // toogle()
-          })
-          .catch((error) => {
-            responseDiv.textContent = "Request failed with an error.";
-            setIsLoading(false)
-            setResponse('Something went wrong. Please try again')
-          });
-      // } else {
-      //   setIsLoading(false)
-      //   setResponse('No access token found.')
-      // }
-  }};
+        // OpenAI API integration
+        const apiKey = prompt("Please enter your OpenAI API key:");
+        if (!apiKey) {
+          alert("API key is required to proceed.");
+          return;
+        }
+        console.log(apiKey);
+
+        const headers = {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        };
+
+        const data = {
+          model: "gpt-4",
+          messages: [
+            { role: "system", content: "You are the best coder, writing clean, efficient code in a user-friendly manner. Write only code and avoid providing extra text. Include comments wherever necessary to explain key steps and logic." },
+            { role: "user", content: "just output the code and don't output any support text at start or end, just the code without '```' at start and end; now the question is -> "+question }
+          ]
+        };
+
+        const api_url = "https://api.openai.com/v1/chat/completions";
+
+        console.log(api_url, data, headers);
+
+        fetch(api_url, {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(data),
+        })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Request failed!");
+          }
+        })
+        .then((result) => {
+          const ans = result.choices[0].message.content; // Extract OpenAI's response
+          forVoice = ans;
+          setResponse(ans);
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          responseDiv.textContent = "Request failed with an error.";
+          setIsLoading(false);
+          setResponse('Something went wrong. Please try again');
+        });
+      }
+  };
   
   // const refreshAccessToken = (refreshToken, onSuccess) => {
   //     console.log('Refresh token')
